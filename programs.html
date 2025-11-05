@@ -2,53 +2,82 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Programs – AGCIH</title>
+<link rel="icon" href="favicon.png" type="image/png">
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222; }
-header { background:#2b2f40; padding:35px; text-align:center; color:white; }
-nav { margin-top:18px; }
-nav a { margin:0 14px; color:#ceb8ff; text-decoration:none; font-weight:600; }
-nav a:hover, nav a.active { color:#ffffff; text-decoration:underline; }
-section { padding:40px 10%; }
-h1, h2 { color:#4b0082; }
-ul { line-height:1.6; }
-footer { background:#111; color:white; text-align:center; padding:25px; margin-top:30px; font-size:0.9rem; }
+  :root{--purple:#4B0082;--ink:#222;--nav:#e9e3f9}
+  *{box-sizing:border-box} body{margin:0;font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+  header{background:#2b2f40;color:#fff;text-align:center;padding:26px 14px 18px}
+  .logo{max-width:140px;display:block;margin:0 auto 10px}
+  .brand{margin:0;font-size:2rem}
+  nav{background:var(--nav);text-align:center;padding:10px 8px}
+  nav a{color:var(--purple);text-decoration:none;margin:0 12px;font-weight:700}
+  nav a:hover{text-decoration:underline}
+  main{max-width:980px;margin:24px auto;padding:0 16px}
+  h1,h2{color:var(--purple)}
+  .program{margin:32px 0;border-left:4px solid var(--purple);padding-left:14px}
+  footer{text-align:center;margin:40px 0 24px;color:#666}
 </style>
 </head>
 
 <body>
+
 <header>
-<h1>Our Programs</h1>
+  <img src="logo.png" alt="AGCIH logo" class="logo">
+  <h1 class="brand">Our Programs</h1>
+  <div>Shaping ethical innovation, accountable governance & empowered citizenship.</div>
+</header>
+
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="programs.html" class="active">Programs</a>
+  <a href="programs.html">Programs</a>
   <a href="contact.html">Contact</a>
 </nav>
-</header>
 
-<section>
-<h2>1. Digital Rights & Online Safety</h2>
-<p>We build digital literacy and online protection skills, especially among youth, women, journalists and educators.  
-This includes training academies, awareness campaigns, and a citizen helpdesk to report digital harm.</p>
+<main>
 
-<h2>2. Data Protection & Institutional Compliance</h2>
-<p>We support organisations to comply with the Data Protection Act — including DPO training, governance audits, policy templates and secure data management support.</p>
+  <section class="program">
+    <h2>1. Digital Rights, Literacy & Online Safety</h2>
+    <p>We strengthen public awareness and protection of digital rights — especially among young people, women and civic actors. Through trainings, safe-space chats, public campaigns and a support referral network, we help citizens understand and defend their digital dignity.</p>
+    <strong>Key Activities:</strong>
+    <ul>
+      <li>Digital literacy and civic tech training labs</li>
+      <li>Online safety workshops for youth & activists</li>
+      <li>Rapid response referral network for online harm</li>
+    </ul>
+    <em>SDGs: 16, 5, 10</em>
+  </section>
 
-<h2>3. Responsible Artificial Intelligence & Public Policy Dialogue</h2>
-<p>We convene national dialogues, produce policy briefs, and build local expertise to shape ethical AI adoption in public and community systems before frameworks are formalised.</p>
+  <section class="program">
+    <h2>2. Data Protection Compliance & Institutional Support</h2>
+    <p>With Zimbabwe’s Data Protection Act now operational, institutions require guidance. We provide practical, trust-building compliance pathways that protect citizens, reduce risk and strengthen public accountability — while enabling innovation.</p>
+    <strong>Key Activities:</strong>
+    <ul>
+      <li>DPO capacity-building & institutional advisory</li>
+      <li>Privacy audits & compliance assessments</li>
+      <li>User-centered data governance toolkits</li>
+    </ul>
+    <em>SDGs: 16, 17</em>
+  </section>
 
-<h2>4. Youth Civic Innovation Lab</h2>
-<p>A participatory space where young Africans co-create digital and governance solutions rooted in community needs and lived experiences.</p>
-</section>
+  <section class="program">
+    <h2>3. Responsible AI & Public Interest Innovation</h2>
+    <p>Zimbabwe and many African states are developing AI and emerging tech approaches without dedicated oversight bodies. We help ensure that policy development is participatory, rights-respecting and responsive to the realities of African communities.</p>
+    <strong>Key Activities:</strong>
+    <ul>
+      <li>National and regional policy dialogues</li>
+      <li>AI & Public Interest Roundtables with Ministries and civic actors</li>
+      <li>Annual “State of AI, Civic Space & Digital Rights in Zimbabwe” report</li>
+    </ul>
+    <em>SDGs: 16, 5, 10 & African Union’s Digital Transformation Strategy 2063</em>
+  </section>
 
-<footer>
-© <span id="year"></span> Africa Governance & Civic Innovation Hub (AGCIH)
-</footer>
+</main>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<footer>© <span id="y"></span> Africa Governance & Civic Innovation Hub (AGCIH)</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
 </body>
 </html>
