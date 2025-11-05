@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – AGCIH</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222; }
+header { background:#2b2f40; padding:35px; text-align:center; color:white; }
+nav { margin-top:18px; }
+nav a { margin:0 14px; color:#ceb8ff; text-decoration:none; font-weight:600; }
+nav a:hover, nav a.active { color:#ffffff; text-decoration:underline; }
+section { padding:40px 10%; text-align:center; }
+h1 { color:#4b0082; }
+button { background:#4b0082; color:white; border:none; padding:12px 24px; border-radius:6px; cursor:pointer; margin-top:12px; }
+footer { background:#111; color:white; text-align:center; padding:25px; margin-top:30px; font-size:0.9rem; }
+</style>
+</head>
+
+<body>
+<header>
+<h1>Contact AGCIH</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="contact.html" class="active">Contact</a>
+</nav>
+</header>
+
+<section>
+<p><strong>Danai H. Kudya</strong><br>
+Founder & Executive Director (Interim)<br><br>
+
+📞 +263 778 227 492<br>
+📧 <a href="mailto:danai.kudya@agcih.africa">danai.kudya@agcih.africa</a><br>
+🌍 Harare, Zimbabwe</p>
+
+<button onclick="window.location.href='mailto:danai.kudya@agcih.africa';">Send Email</button>
+</section>
+
+<footer>
+© <span id="year"></span> Africa Governance & Civic Innovation Hub (AGCIH)
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
