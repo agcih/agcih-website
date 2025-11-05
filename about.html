@@ -4,20 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About AGCIH</title>
+<meta name="description" content="About the Africa Governance & Civic Innovation Hub (AGCIH) — people-centred governance, digital rights, data protection and responsible AI in Africa.">
 <link rel="icon" href="favicon.png" type="image/png">
 <style>
   :root{--purple:#4B0082;--ink:#222;--nav:#e9e3f9}
   *{box-sizing:border-box} body{margin:0;font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
   header{background:#2b2f40;color:#fff;text-align:center;padding:26px 14px 18px}
-  .logo{max-width:140px;display:block;margin:0 auto 10px}
+  .logo{max-width:180px;display:block;margin:0 auto 12px} /* large logo */
   .brand{margin:0;font-size:2rem}
   nav{background:var(--nav);text-align:center;padding:10px 8px}
-  nav a{color:var(--purple);text-decoration:none;margin:0 10px;font-weight:700}
+  nav a{color:var(--purple);text-decoration:none;margin:0 12px;font-weight:700}
   nav a:hover{text-decoration:underline}
   main{max-width:980px;margin:24px auto;padding:0 16px}
-  h1,h2{color:var(--purple)}
+  h1,h2{color:var(--purple);margin:0 0 8px}
+  section{margin:26px 0}
   ul{padding-left:20px}
+  .grid{display:grid;gap:16px;grid-template-columns:1fr}
+  .lead{font-size:1.05rem}
+  .card{border-left:4px solid var(--purple);padding:12px 14px;background:#faf7ff}
+  /* Governance blocks */
+  .gov-wrap{display:grid;gap:16px;grid-template-columns:1fr}
+  .person{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:start}
+  .ph{width:120px;height:120px;border-radius:8px;background:#eee;border:1px solid #ddd;display:none} /* photo placeholder (hidden) */
+  .name{font-weight:800;color:var(--purple)}
+  .role{color:#4b4b4b;margin-top:2px}
+  .soon{color:#555}
   footer{margin:36px 0 24px;text-align:center;color:#666}
+  @media (min-width:820px){
+    .grid{grid-template-columns:1fr 1fr}
+    .gov-wrap{grid-template-columns:1fr 1fr}
+  }
 </style>
 </head>
 <body>
@@ -31,35 +47,84 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
   <a href="programs.html">Programs</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <main>
+
   <section>
     <h2>Who We Are</h2>
-    <p><strong>Africa Governance & Civic Innovation Hub (AGCIH)</strong> advances dignity-centred governance, digital rights and responsible innovation across Africa. We partner with communities, government and civic actors to build accountable institutions and inclusive public policy.</p>
+    <p class="lead"><strong>Africa Governance & Civic Innovation Hub (AGCIH)</strong> advances dignity-centred governance, digital rights and responsible innovation. We work where institutions, communities and technology meet — so that digital transformation strengthens participation, accountability and public trust.</p>
+  </section>
+
+  <section class="grid">
+    <div>
+      <h2>Why We Exist</h2>
+      <p>Zimbabwe’s Data Protection Act is in force, but a national AI governance architecture is still emerging. This is a rare window to design ethical, people-centred systems before frameworks harden. AGCIH helps shape that future with communities and institutions — not over them.</p>
+    </div>
+    <div>
+      <h2>Vision</h2>
+      <p>A just, ethical and inclusive Africa where governance is rooted in compassion, equity, service and trust.</p>
+      <h2>Mission</h2>
+      <p>To co-create people-centred governance through technology, data rights and civic innovation — with a focus on youth, women and marginalised communities.</p>
+    </div>
   </section>
 
   <section>
-    <h2>Vision</h2>
-    <p>A just, ethical and inclusive Africa where governance is rooted in compassion, equity, service and trust.</p>
+    <h2>Our Approach</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Co-creation, not imposition:</strong> communities are partners from design to delivery.</li>
+        <li><strong>Constructive collaboration:</strong> we work with ministries and regulators to enable reform.</li>
+        <li><strong>Evidence & practice:</strong> compliance toolkits, audits and policy briefs grounded in realities.</li>
+        <li><strong>Future-ready:</strong> preparing society for AI and digital transition with safeguards.</li>
+      </ul>
+    </div>
   </section>
 
   <section>
-    <h2>Mission</h2>
-    <p>To co-create people-centred governance through technology, data rights and civic innovation.</p>
-  </section>
-
-  <section>
-    <h2>Our Distinctives</h2>
+    <h2>Strategic Focus</h2>
     <ul>
-      <li><strong>First-mover:</strong> Zimbabwe lacks an AI Commission; we help shape frameworks now.</li>
-      <li><strong>Co-creation:</strong> demand-driven solutions with communities — never impositional.</li>
-      <li><strong>Constructive posture:</strong> we work with ministries and regulators to enable reform.</li>
-      <li><strong>Evidence-based:</strong> policy briefs, compliance audits and an annual State of Digital Rights & AI report.</li>
+      <li><strong>Digital Rights & Online Safety</strong> — literacy, resilience and citizen protection.</li>
+      <li><strong>Data Protection & Compliance</strong> — DPO support, audits and governance toolkits.</li>
+      <li><strong>Responsible AI & Policy Dialogue</strong> — national dialogues and briefs before regulation sets.</li>
     </ul>
   </section>
+
+  <section>
+    <h2>Governance & Leadership</h2>
+    <div class="gov-wrap">
+
+      <!-- Founder block -->
+      <div class="person">
+        <div class="ph" aria-hidden="true"></div><!-- Photo placeholder; set display:block later and replace with an <img> if you have a headshot -->
+        <div>
+          <div class="name">Danai Hazel Kudya</div>
+          <div class="role">Founder &amp; Chief Executive (Interim)</div>
+          <p>Governance & human rights practitioner working at the intersection of institutional reform, civic participation, digital rights and emerging technology governance. Leads AGCIH’s agenda to build ethical digital systems, strengthen citizen participation, support Data Protection Act compliance, and convene responsible AI dialogue in Zimbabwe and the region.</p>
+          <!-- Optional longer bio link later:
+          <p><a href="founder.html">Read full biography →</a></p>
+          -->
+        </div>
+      </div>
+
+      <!-- Board placeholder -->
+      <div>
+        <h3 style="color:#4B0082;margin:6px 0 4px">Board of Trustees</h3>
+        <p class="soon">Profiles to be announced. The Board will include expertise in public finance & audit, law & policy, technology & AI governance, and community leadership from SADC, East and West Africa.</p>
+        <ul>
+          <li><em>Chairperson – TBC</em></li>
+          <li><em>Treasurer – TBC</em></li>
+          <li><em>Legal/Policy Trustee – TBC</em></li>
+          <li><em>Technology/AI Governance Trustee – TBC</em></li>
+          <li><em>Community/Civic Engagement Trustee – TBC</em></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <footer>© <span id="y"></span> Africa Governance & Civic Innovation Hub (AGCIH)</footer>
