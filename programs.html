@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs – AGCIH</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222; }
+header { background:#2b2f40; padding:35px; text-align:center; color:white; }
+nav { margin-top:18px; }
+nav a { margin:0 14px; color:#ceb8ff; text-decoration:none; font-weight:600; }
+nav a:hover, nav a.active { color:#ffffff; text-decoration:underline; }
+section { padding:40px 10%; }
+h1, h2 { color:#4b0082; }
+ul { line-height:1.6; }
+footer { background:#111; color:white; text-align:center; padding:25px; margin-top:30px; font-size:0.9rem; }
+</style>
+</head>
+
+<body>
+<header>
+<h1>Our Programs</h1>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html" class="active">Programs</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section>
+<h2>1. Digital Rights & Online Safety</h2>
+<p>We build digital literacy and online protection skills, especially among youth, women, journalists and educators.  
+This includes training academies, awareness campaigns, and a citizen helpdesk to report digital harm.</p>
+
+<h2>2. Data Protection & Institutional Compliance</h2>
+<p>We support organisations to comply with the Data Protection Act — including DPO training, governance audits, policy templates and secure data management support.</p>
+
+<h2>3. Responsible Artificial Intelligence & Public Policy Dialogue</h2>
+<p>We convene national dialogues, produce policy briefs, and build local expertise to shape ethical AI adoption in public and community systems before frameworks are formalised.</p>
+
+<h2>4. Youth Civic Innovation Lab</h2>
+<p>A participatory space where young Africans co-create digital and governance solutions rooted in community needs and lived experiences.</p>
+</section>
+
+<footer>
+© <span id="year"></span> Africa Governance & Civic Innovation Hub (AGCIH)
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
