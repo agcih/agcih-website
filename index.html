@@ -8,8 +8,20 @@
 body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222; }
 header { background:#2b2f40; padding:35px; text-align:center; color:white; }
 h1 { margin:0; font-size:2.4rem; }
+nav { margin-top:18px; }
+nav a {
+  margin:0 14px;
+  color:#ceb8ff;
+  text-decoration:none;
+  font-weight:600;
+}
+nav a:hover, nav a.active {
+  color:#ffffff;
+  text-decoration:underline;
+}
 section { padding:40px 10%; }
 h2 { color:#4b0082; margin-bottom:15px; }
+ul { line-height:1.6; }
 button { background:#4b0082; color:white; border:none; padding:12px 24px; border-radius:6px; cursor:pointer; margin-top:12px; }
 footer { background:#111; color:white; text-align:center; padding:25px; margin-top:30px; font-size:0.9rem; }
 </style>
@@ -19,6 +31,14 @@ footer { background:#111; color:white; text-align:center; padding:25px; margin-t
 <header>
 <h1>Africa Governance & Civic Innovation Hub</h1>
 <p>Strengthening Governance • Advancing Civic Participation • Innovating for Public Good</p>
+
+<!-- ✅ Navigation Menu -->
+<nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <section>
@@ -35,24 +55,17 @@ footer { background:#111; color:white; text-align:center; padding:25px; margin-t
 <section>
 <h2>Strategic Focus Areas</h2>
 <ul>
-<li><strong>Civic Empowerment & Voice:</strong> Community-based engagement, leadership strengthening, public dialogue and participation platforms.</li>
-<li><strong>Good Governance & Rule of Law:</strong> Anti-corruption advocacy, institutional support, accountability frameworks and public oversight.</li>
-<li><strong>Digital Innovation for Democracy:</strong> Ethical AI, public data governance, civic-tech solutions and digital rights protection.</li>
+<li><strong>Civic Empowerment & Voice:</strong> Public participation and community dialogue platforms.</li>
+<li><strong>Good Governance & Rule of Law:</strong> Accountability, transparency, anti-corruption and institutional strengthening.</li>
+<li><strong>Digital Innovation for Democracy:</strong> Responsible AI, data protection and digital rights.</li>
 </ul>
 </section>
 
 <section>
-<h2>Why Our Work Matters</h2>
-<p>Africa is entering a new era where governance, democracy and digital transformation intersect. Yet, without safeguards, capacity and inclusion, these advancements may deepen inequality. AGCIH ensures technology, governance reform and civic action work together to protect rights, expand opportunities and build resilient societies.</p>
-<p><strong>We root our work in African realities, community priorities, and global democratic values.</strong></p>
-</section>
-
-<section>
 <h2>SDG Alignment</h2>
-<p>Our work directly contributes to:</p>
 <ul>
 <li><strong>SDG 16:</strong> Peace, Justice & Strong Institutions</li>
-<li><strong>SDG 5:</strong> Gender Equality & Inclusion</li>
+<li><strong>SDG 5:</strong> Gender Equality</li>
 <li><strong>SDG 10:</strong> Reduced Inequalities</li>
 <li><strong>SDG 17:</strong> Partnerships for Sustainable Development</li>
 </ul>
@@ -60,13 +73,17 @@ footer { background:#111; color:white; text-align:center; padding:25px; margin-t
 
 <section style="text-align:center;">
 <h2>Connect With Us</h2>
-<p>Email: <strong>info@agcih.africa</strong> | Phone/WhatsApp: <strong>+263 778 227 492</strong></p>
-<button onclick="window.location.href='mailto:info@agcih.africa';">Send Us a Message</button>
+<p><strong>Contact:</strong> danai.kudya@agcih.africa | +263 778 227 492</p>
+<button onclick="window.location.href='mailto:danai.kudya@agcih.africa';">Email Us</button>
 </section>
 
 <footer>
-© 2025 Africa Governance & Civic Innovation Hub (AGCIH). All Rights Reserved.
+© <span id="year"></span> Africa Governance & Civic Innovation Hub (AGCIH)
 </footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
