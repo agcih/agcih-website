@@ -2,7 +2,98 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — AGCIH</title>
+<link rel="icon" href="favicon.ico">
+<style>
+  :root{--ink:#2b2f40;--purple:#4b0082;--lav:#e9e3f9;--text:#222}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text)}
+  .container{max-width:1100px;margin:0 auto;padding:0 16px}
+  .site-header{background:var(--ink);color:#fff}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:18px 0}
+  .brand-logo{width:72px}
+  .brand-title{margin:0;font-size:1.6rem}
+  .brand-tagline{margin:4px 0 0;font-size:.95rem;opacity:.9}
+  .site-nav{background:var(--lav)}
+  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 16px}
+  .site-nav a{color:var(--purple);font-weight:700;text-decoration:none}
+  .site-nav a:hover{text-decoration:underline}
+  main section{padding:40px 0}
+  h2{color:var(--purple);margin:0 0 12px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{border:1px solid #eee;border-radius:10px;padding:18px}
+  footer{background:#111;color:#fff;text-align:center;padding:24px;margin-top:40px}
+  @media(max-width:740px){.brand-logo{width:56px}.brand-title{font-size:1.25rem}.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="AGCIH logo" class="brand-logo">
+      <div class="brand-text">
+        <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
+        <p class="brand-tagline">Strengthening Governance • Advancing Civic Participation • Innovating for Public Good</p>
+      </div>
+    </a>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+  <section>
+    <h2>About AGCIH</h2>
+    <p>AGCIH is an independent non-profit institution dedicated to people-centred governance and responsible innovation. We work at the intersection of civic participation, accountability and **AI governance**, ensuring digital transformation advances dignity and development.</p>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h2>Vision</h2>
+      <p>An ethical and inclusive Africa where governance is rooted in compassion, equity, service and trust — and where technology strengthens human dignity.</p>
+      <h2>Mission</h2>
+      <p>To strengthen democratic ecosystems by promoting civic participation, ethical digital innovation and accountable institutions — with a focus on youth, women and marginalised groups.</p>
+    </div>
+    <div class="card">
+      <h2>Values</h2>
+      <ul>
+        <li><strong>Dignity:</strong> every voice matters.</li>
+        <li><strong>Co-creation:</strong> solutions with communities, not for them.</li>
+        <li><strong>Integrity:</strong> transparency and accountability.</li>
+        <li><strong>Inclusion:</strong> leave no one behind in the digital era.</li>
+        <li><strong>Stewardship:</strong> responsible, human-centred use of AI.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Founder & Executive Director</h2>
+    <p><strong>Danai Hazel Kudya</strong> is a governance and human rights practitioner specialising in civic participation, accountability, digital rights and emerging technology governance. Her work bridges institutions and communities, ensuring AI and data systems are governed with dignity, equity and public trust.</p>
+    <p>Signature principle: <em>AI must serve people — not replace them, exploit them or disregard them. Technology must advance human development, dignity and equality.</em></p>
+  </section>
+
+  <section class="card">
+    <h2>Board</h2>
+    <p>A five-member Board provides strategic oversight and fiduciary responsibility. Profiles will be published upon confirmation.</p>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> AGCIH. All Rights Reserved.</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
 <title>About AGCIH</title>
 <meta name="description" content="About the Africa Governance & Civic Innovation Hub (AGCIH) — people-centred governance, digital rights, data protection and responsible AI in Africa.">
 <link rel="icon" href="favicon.png" type="image/png">
