@@ -9,31 +9,31 @@
   *{box-sizing:border-box}
   body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text)}
   .container{max-width:1100px;margin:0 auto;padding:0 16px}
+
   /* header */
   .site-header{background:var(--ink);color:#fff}
-  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:18px 0}
-  .brand-logo{width:72px;height:auto;display:block}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:22px 0}
+  .brand-logo{width:72px;height:auto}
   .brand-title{margin:0;font-size:1.6rem;line-height:1.2}
-  .brand-tagline{margin:4px 0 0;font-size:.95rem;opacity:.9}
+  .brand-tagline{margin:6px 0 0;font-size:.95rem;opacity:.9}
+
   /* nav */
   .site-nav{background:var(--lav)}
-  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 16px}
+  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 0}
   .site-nav a{color:var(--purple);font-weight:700;text-decoration:none}
   .site-nav a:hover{text-decoration:underline}
+
   /* content */
-  main section{padding:40px 0}
-  h2{color:var(--purple);margin:0 0 12px}
-  h3{margin:8px 0}
-  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
-  .card{border:1px solid #eee;border-radius:10px;padding:18px}
+  main section{padding:42px 0}
+  h2{color:var(--purple);margin:0 0 14px}
+  h3{margin:0 0 8px}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+  .card{border:1px solid #eee;border-radius:10px;padding:18px;line-height:1.55}
   .muted{color:#666}
   footer{background:#111;color:#fff;text-align:center;padding:24px;margin-top:40px}
+
   @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:640px){
-    .brand-logo{width:56px}
-    .brand-title{font-size:1.25rem}
-    .grid{grid-template-columns:1fr}
-  }
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -44,7 +44,7 @@
       <img src="logo.png" alt="AGCIH logo" class="brand-logo">
       <div class="brand-text">
         <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
-        <p class="brand-tagline">Strengthening Governance • Advancing Civic Innovation • Ethical AI for Public Good</p>
+        <p class="brand-tagline">Research • Innovation • Ethical Technology for Development</p>
       </div>
     </a>
   </div>
@@ -62,270 +62,34 @@
 <main class="container">
   <section>
     <h2>Our Practice Areas</h2>
-    <p class="muted">AGCIH operates as a research, capacity and innovation hub. We share detailed concept notes privately with partners and donors.</p>
+    <p class="muted">AGCIH operates as a research, capacity and innovation hub. Detailed program concepts are shared privately with partners and donors.</p>
   </section>
 
   <section class="grid">
+
     <div class="card">
       <h3>Digital Capacity Strengthening & Public Sector Innovation</h3>
-      <p>Technical learning pathways and systems support for institutions, schools and organisations adapting to new technologies. Focus on safe digital practices, data handling literacy and practical adoption support.</p>
+      <p>Technical learning pathways and systems support for organisations, schools, institutions and small enterprises adapting to digital transformation. Includes digital literacy, data handling readiness and practical adoption support.</p>
     </div>
 
     <div class="card">
       <h3>Research, Foresight & Policy Innovation</h3>
-      <p>Evidence-based studies on digital transformation and AI readiness; futures scanning; and concise knowledge products that inform planning and responsible adoption across sectors (on request; non-advocacy).</p>
+      <p>Evidence-based studies and futures analysis on digital transformation and emerging technology. Knowledge products developed to inform planning, strategy and responsible adoption (on request; non-advocacy).</p>
     </div>
 
     <div class="card">
       <h3>Responsible AI & Data Governance Lab</h3>
-      <p>Implementation support aligned with Zimbabwe’s Data Protection Act and emerging standards: data stewardship basics, AI use protocols, and organisational safeguards that prioritise dignity, safety and trust.</p>
+      <p>Support for understanding and applying safe data practices and AI tools in alignment with Zimbabwe’s Data Protection Act and global ethical standards. Focus on safety, privacy, trust and organisational readiness.</p>
     </div>
+
   </section>
 
   <section>
-    <p class="muted">To request confidential briefs or explore collaboration, please contact us.</p>
+    <p class="muted">To request confidential program briefs or initiate collaboration, contact us.</p>
   </section>
 </main>
 
 <footer>© <span id="year"></span> AGCIH. All Rights Reserved.</footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
-</html>
-<!DOCTYPE html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Programs — AGCIH</title>
-<link rel="icon" href="favicon.ico">
-<style>
-  :root{--ink:#2b2f40;--purple:#4b0082;--lav:#e9e3f9;--text:#222}
-  *{box-sizing:border-box}
-  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text)}
-  .container{max-width:1100px;margin:0 auto;padding:0 16px}
-  /* header */
-  .site-header{background:var(--ink);color:#fff}
-  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:18px 0}
-  .brand-logo{width:72px;height:auto;display:block}
-  .brand-title{margin:0;font-size:1.6rem;line-height:1.2}
-  .brand-tagline{margin:4px 0 0;font-size:.95rem;opacity:.9}
-  /* nav */
-  .site-nav{background:var(--lav)}
-  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 16px}
-  .site-nav a{color:var(--purple);font-weight:700;text-decoration:none}
-  .site-nav a:hover{text-decoration:underline}
-  /* content */
-  main section{padding:40px 0}
-  h2{color:var(--purple);margin:0 0 12px}
-  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
-  .card{border:1px solid #eee;border-radius:10px;padding:18px}
-  .muted{color:#666}
-  .cta{display:inline-block;margin-top:12px;background:var(--purple);color:#fff;
-       padding:10px 16px;border-radius:8px;text-decoration:none}
-  footer{background:#111;color:#fff;text-align:center;padding:24px;margin-top:40px}
-  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:640px){
-    .brand-logo{width:56px}
-    .brand-title{font-size:1.25rem}
-    .grid{grid-template-columns:1fr}
-  }
-</style>
-</head>
-<body>
-
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html" aria-label="AGCIH Home">
-      <img src="logo.png" alt="AGCIH logo" class="brand-logo">
-      <div class="brand-text">
-        <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
-        <p class="brand-tagline">Strengthening Governance • Advancing Civic Participation • Innovating for Public Good</p>
-      </div>
-    </a>
-  </div>
-</header>
-
-<nav class="site-nav">
-  <div class="container">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-
-<main class="container">
-  <section>
-    <h2>Our Program Pillars</h2>
-    <p class="muted">AGCIH works through three pillars. We share detailed project concepts directly with partners and donors.</p>
-  </section>
-
-  <section class="grid">
-    <div class="card">
-      <h3>Civic Empowerment & Voice</h3>
-      <p>Strengthening meaningful public participation and community-led problem solving across governance spaces.</p>
-    </div>
-
-    <div class="card">
-      <h3>Good Governance & Rule of Law</h3>
-      <p>Supporting accountable institutions, transparent practices and service delivery that protects rights and dignity.</p>
-    </div>
-
-    <div class="card">
-      <h3>Digital Rights & AI Governance</h3>
-      <p>Promoting safe, ethical and people-centred use of data and AI, aligned with Zimbabwean law and African values.</p>
-    </div>
-  </section>
-
-  <section>
-    <p class="muted">To explore collaboration or request our confidential program briefs, please contact us.</p>
-    <a class="cta" href="contact.html">Get in touch</a>
-  </section>
-</main>
-
-<footer>© <span id="year"></span> AGCIH. All Rights Reserved.</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
-</html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Programs – AGCIH</title>
-<link rel="icon" href="favicon.png" type="image/png">
-<style>
-  :root{--purple:#4B0082;--ink:#222;--nav:#e9e3f9}
-  *{box-sizing:border-box} body{margin:0;font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-  header{background:#2b2f40;color:#fff;text-align:center;padding:45px 20px 28px}
-  .logo{max-width:210px;display:block;margin:0 auto 16px}
-  .brand{margin:0;font-size:2rem}
-  nav{background:var(--nav);text-align:center;padding:12px}
-  nav a{color:var(--purple);text-decoration:none;margin:0 12px;font-weight:700}
-  nav a:hover{text-decoration:underline}
-  main{max-width:980px;margin:24px auto;padding:0 16px}
-  section{margin:34px 0}
-  h2{color:var(--purple);margin-bottom:10px}
-  footer{margin:36px 0 24px;text-align:center;color:#666}
-</style>
-</head>
-<body>
-
-<header>
-  <img src="logo.png" alt="AGCIH logo" class="logo">
-  <h1 class="brand">Our Programs</h1>
-  <div>Strengthening governance, digital rights and civic participation across Africa.</div>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="programs.html">Programs</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-
-<section>
-  <h2>Digital Rights & Civic Resilience</h2>
-  <p>We work to ensure that individuals and communities understand, defend and exercise their digital rights. This includes strengthening public awareness, promoting safe online spaces, and advancing protections for groups most affected by digital exclusion or harm.</p>
-</section>
-
-<section>
-  <h2>Data Protection & Governance Support</h2>
-  <p>We promote responsible data governance through policy engagement, institutional capacity support and awareness on privacy, rights and compliance. Our work contributes to building systems that protect dignity and foster public trust.</p>
-</section>
-
-<section>
-  <h2>Responsible AI & Public Interest Innovation</h2>
-  <p>We convene dialogues and collaborate with institutions, communities and researchers to shape ethical, inclusive and future-oriented approaches to emerging technologies. Our focus is on ensuring innovation strengthens human rights and public accountability.</p>
-</section>
-
-</main>
-
-<footer>© <span id="y"></span> Africa Governance & Civic Innovation Hub (AGCIH)</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Programs – AGCIH</title>
-<link rel="icon" href="favicon.png" type="image/png">
-<style>
-  :root{--purple:#4B0082;--ink:#222;--nav:#e9e3f9}
-  *{box-sizing:border-box} body{margin:0;font:16px/1.6 Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-  header{background:#2b2f40;color:#fff;text-align:center;padding:26px 14px 18px}
-  .logo{max-width:140px;display:block;margin:0 auto 10px}
-  .brand{margin:0;font-size:2rem}
-  nav{background:var(--nav);text-align:center;padding:10px 8px}
-  nav a{color:var(--purple);text-decoration:none;margin:0 12px;font-weight:700}
-  nav a:hover{text-decoration:underline}
-  main{max-width:980px;margin:24px auto;padding:0 16px}
-  h1,h2{color:var(--purple)}
-  .program{margin:32px 0;border-left:4px solid var(--purple);padding-left:14px}
-  footer{text-align:center;margin:40px 0 24px;color:#666}
-</style>
-</head>
-
-<body>
-
-<header>
-  <img src="logo.png" alt="AGCIH logo" class="logo">
-  <h1 class="brand">Our Programs</h1>
-  <div>Shaping ethical innovation, accountable governance & empowered citizenship.</div>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="programs.html">Programs</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-
-  <section class="program">
-    <h2>1. Digital Rights, Literacy & Online Safety</h2>
-    <p>We strengthen public awareness and protection of digital rights — especially among young people, women and civic actors. Through trainings, safe-space chats, public campaigns and a support referral network, we help citizens understand and defend their digital dignity.</p>
-    <strong>Key Activities:</strong>
-    <ul>
-      <li>Digital literacy and civic tech training labs</li>
-      <li>Online safety workshops for youth & activists</li>
-      <li>Rapid response referral network for online harm</li>
-    </ul>
-    <em>SDGs: 16, 5, 10</em>
-  </section>
-
-  <section class="program">
-    <h2>2. Data Protection Compliance & Institutional Support</h2>
-    <p>With Zimbabwe’s Data Protection Act now operational, institutions require guidance. We provide practical, trust-building compliance pathways that protect citizens, reduce risk and strengthen public accountability — while enabling innovation.</p>
-    <strong>Key Activities:</strong>
-    <ul>
-      <li>DPO capacity-building & institutional advisory</li>
-      <li>Privacy audits & compliance assessments</li>
-      <li>User-centered data governance toolkits</li>
-    </ul>
-    <em>SDGs: 16, 17</em>
-  </section>
-
-  <section class="program">
-    <h2>3. Responsible AI & Public Interest Innovation</h2>
-    <p>Zimbabwe and many African states are developing AI and emerging tech approaches without dedicated oversight bodies. We help ensure that policy development is participatory, rights-respecting and responsive to the realities of African communities.</p>
-    <strong>Key Activities:</strong>
-    <ul>
-      <li>National and regional policy dialogues</li>
-      <li>AI & Public Interest Roundtables with Ministries and civic actors</li>
-      <li>Annual “State of AI, Civic Space & Digital Rights in Zimbabwe” report</li>
-    </ul>
-    <em>SDGs: 16, 5, 10 & African Union’s Digital Transformation Strategy 2063</em>
-  </section>
-
-</main>
-
-<footer>© <span id="y"></span> Africa Governance & Civic Innovation Hub (AGCIH)</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-
 </body>
 </html>
