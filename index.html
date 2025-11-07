@@ -1,4 +1,111 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Africa Governance & Civic Innovation Hub (AGCIH)</title>
+<link rel="icon" href="favicon.ico">
+<style>
+  :root{
+    --ink:#2b2f40; --purple:#4b0082; --lav:#e9e3f9; --text:#222; --muted:#666;
+  }
+  *{box-sizing:border-box}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text);background:#fff}
+  .container{max-width:1100px;margin:0 auto;padding:0 16px}
+  /* header */
+  .site-header{background:var(--ink);color:#fff}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:18px 0}
+  .brand-logo{width:72px;height:auto;display:block}
+  .brand-title{margin:0;font-size:1.6rem;line-height:1.2}
+  .brand-tagline{margin:4px 0 0;font-size:.95rem;opacity:.9}
+  /* nav */
+  .site-nav{background:var(--lav)}
+  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 16px}
+  .site-nav a{color:var(--purple);font-weight:700;text-decoration:none}
+  .site-nav a:hover{text-decoration:underline}
+  /* sections */
+  section{padding:40px 0}
+  h2{color:var(--purple);margin:0 0 14px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{border:1px solid #eee;border-radius:10px;padding:18px}
+  ul{margin:0 0 0 18px}
+  footer{background:#111;color:#fff;text-align:center;padding:24px;margin-top:40px;font-size:.9rem}
+  @media(max-width:740px){
+    .brand-logo{width:56px}
+    .brand-title{font-size:1.25rem}
+    .brand-tagline{font-size:.85rem}
+    .cols{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="AGCIH Home">
+      <img src="logo.png" alt="AGCIH logo" class="brand-logo">
+      <div class="brand-text">
+        <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
+        <p class="brand-tagline">Strengthening Governance • Advancing Civic Participation • Innovating for Public Good</p>
+      </div>
+    </a>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+  <section>
+    <h2>Who We Are</h2>
+    <p>The Africa Governance & Civic Innovation Hub (AGCIH) is a Zimbabwe-led, Africa-focused institution advancing transparent, inclusive and people-centred governance. We equip communities, public institutions and civic actors with the knowledge, tools and **ethical AI practices** needed to build accountable systems.</p>
+    <p><strong>Anchor principle:</strong> AI must serve people — and strengthen development, not replace human purpose.</p>
+  </section>
+
+  <section class="cols">
+    <div class="card">
+      <h2>Strategic Focus</h2>
+      <ul>
+        <li><strong>Civic Empowerment & Voice</strong> — co-creation platforms, listening labs, participation tools.</li>
+        <li><strong>Good Governance & Rule of Law</strong> — anti-corruption, accountability, service delivery improvements.</li>
+        <li><strong>Digital Rights & AI Governance</strong> — data protection compliance, responsible AI, public trust.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>SDG Alignment</h2>
+      <ul>
+        <li><strong>SDG 16</strong>: Peace, Justice & Strong Institutions</li>
+        <li><strong>SDG 5</strong>: Gender Equality & Inclusion</li>
+        <li><strong>SDG 10</strong>: Reduced Inequalities</li>
+        <li><strong>SDG 17</strong>: Partnerships for the Goals</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Why It Matters</h2>
+    <p>Digital transformation is accelerating. Without safeguards and participation, AI and data systems can deepen inequality. AGCIH ensures technology, governance reform and civic action work together to protect rights, expand opportunity and build resilient societies in Zimbabwe and across Africa.</p>
+  </section>
+
+  <section class="card">
+    <h2>Connect</h2>
+    <p><strong>Email:</strong> info@agcih.africa &nbsp;|&nbsp; <strong>WhatsApp:</strong> +263 778 227 492</p>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Africa Governance & Civic Innovation Hub (AGCIH). All Rights Reserved.
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
