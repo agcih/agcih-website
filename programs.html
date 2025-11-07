@@ -9,31 +9,31 @@
   *{box-sizing:border-box}
   body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text)}
   .container{max-width:1100px;margin:0 auto;padding:0 16px}
-
   /* header */
   .site-header{background:var(--ink);color:#fff}
-  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:22px 0}
-  .brand-logo{width:72px;height:auto}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:18px 0}
+  .brand-logo{width:72px;height:auto;display:block}
   .brand-title{margin:0;font-size:1.6rem;line-height:1.2}
-  .brand-tagline{margin:6px 0 0;font-size:.95rem;opacity:.9}
-
+  .brand-tagline{margin:4px 0 0;font-size:.95rem;opacity:.9}
   /* nav */
   .site-nav{background:var(--lav)}
-  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 0}
+  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 16px}
   .site-nav a{color:var(--purple);font-weight:700;text-decoration:none}
   .site-nav a:hover{text-decoration:underline}
-
   /* content */
-  main section{padding:42px 0}
-  h2{color:var(--purple);margin:0 0 14px}
-  h3{margin:0 0 8px}
-  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
-  .card{border:1px solid #eee;border-radius:10px;padding:18px;line-height:1.55}
+  main section{padding:40px 0}
+  h2{color:var(--purple);margin:0 0 12px}
+  h3{margin:8px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+  .card{border:1px solid #eee;border-radius:10px;padding:18px}
   .muted{color:#666}
   footer{background:#111;color:#fff;text-align:center;padding:24px;margin-top:40px}
-
   @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  @media(max-width:640px){
+    .brand-logo{width:56px}
+    .brand-title{font-size:1.25rem}
+    .grid{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -44,7 +44,7 @@
       <img src="logo.png" alt="AGCIH logo" class="brand-logo">
       <div class="brand-text">
         <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
-        <p class="brand-tagline">Research • Innovation • Ethical Technology for Development</p>
+        <p class="brand-tagline">Strengthening Governance • Advancing Civic Innovation • Ethical AI for Public Good</p>
       </div>
     </a>
   </div>
@@ -62,30 +62,28 @@
 <main class="container">
   <section>
     <h2>Our Practice Areas</h2>
-    <p class="muted">AGCIH operates as a research, capacity and innovation hub. Detailed program concepts are shared privately with partners and donors.</p>
+    <p class="muted">AGCIH operates as a research, capacity and innovation hub. We share detailed concept notes privately with partners and donors.</p>
   </section>
 
   <section class="grid">
-
     <div class="card">
       <h3>Digital Capacity Strengthening & Public Sector Innovation</h3>
-      <p>Technical learning pathways and systems support for organisations, schools, institutions and small enterprises adapting to digital transformation. Includes digital literacy, data handling readiness and practical adoption support.</p>
+      <p>Technical learning pathways and systems support for institutions, schools and organisations adapting to new technologies. Focus on safe digital practices, data handling literacy and practical adoption support.</p>
     </div>
 
     <div class="card">
       <h3>Research, Foresight & Policy Innovation</h3>
-      <p>Evidence-based studies and futures analysis on digital transformation and emerging technology. Knowledge products developed to inform planning, strategy and responsible adoption (on request; non-advocacy).</p>
+      <p>Evidence-based studies on digital transformation and AI readiness; futures scanning; and concise knowledge products that inform planning and responsible adoption across sectors (on request; non-advocacy).</p>
     </div>
 
     <div class="card">
       <h3>Responsible AI & Data Governance Lab</h3>
-      <p>Support for understanding and applying safe data practices and AI tools in alignment with Zimbabwe’s Data Protection Act and global ethical standards. Focus on safety, privacy, trust and organisational readiness.</p>
+      <p>Implementation support aligned with Zimbabwe’s Data Protection Act and emerging standards: data stewardship basics, AI use protocols, and organisational safeguards that prioritise dignity, safety and trust.</p>
     </div>
-
   </section>
 
   <section>
-    <p class="muted">To request confidential program briefs or initiate collaboration, contact us.</p>
+    <p class="muted">To request confidential briefs or explore collaboration, please contact us.</p>
   </section>
 </main>
 
