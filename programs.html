@@ -1,3 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — AGCIH</title>
+<link rel="icon" href="favicon.ico">
+<style>
+  :root{--ink:#2b2f40;--purple:#4b0082;--lav:#e9e3f9;--text:#222}
+  *{box-sizing:border-box}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text)}
+  .container{max-width:1100px;margin:0 auto;padding:0 16px}
+  /* header */
+  .site-header{background:var(--ink);color:#fff}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;padding:18px 0}
+  .brand-logo{width:72px;height:auto;display:block}
+  .brand-title{margin:0;font-size:1.6rem;line-height:1.2}
+  .brand-tagline{margin:4px 0 0;font-size:.95rem;opacity:.9}
+  /* nav */
+  .site-nav{background:var(--lav)}
+  .site-nav .container{display:flex;gap:18px;flex-wrap:wrap;padding:10px 16px}
+  .site-nav a{color:var(--purple);font-weight:700;text-decoration:none}
+  .site-nav a:hover{text-decoration:underline}
+  /* content */
+  main section{padding:40px 0}
+  h2{color:var(--purple);margin:0 0 12px}
+  h3{margin:8px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+  .card{border:1px solid #eee;border-radius:10px;padding:18px}
+  .muted{color:#666}
+  footer{background:#111;color:#fff;text-align:center;padding:24px;margin-top:40px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){
+    .brand-logo{width:56px}
+    .brand-title{font-size:1.25rem}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="AGCIH Home">
+      <img src="logo.png" alt="AGCIH logo" class="brand-logo">
+      <div class="brand-text">
+        <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
+        <p class="brand-tagline">Strengthening Governance • Advancing Civic Innovation • Ethical AI for Public Good</p>
+      </div>
+    </a>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="container">
+  <section>
+    <h2>Our Practice Areas</h2>
+    <p class="muted">AGCIH operates as a research, capacity and innovation hub. We share detailed concept notes privately with partners and donors.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h3>Digital Capacity Strengthening & Public Sector Innovation</h3>
+      <p>Technical learning pathways and systems support for institutions, schools and organisations adapting to new technologies. Focus on safe digital practices, data handling literacy and practical adoption support.</p>
+    </div>
+
+    <div class="card">
+      <h3>Research, Foresight & Policy Innovation</h3>
+      <p>Evidence-based studies on digital transformation and AI readiness; futures scanning; and concise knowledge products that inform planning and responsible adoption across sectors (on request; non-advocacy).</p>
+    </div>
+
+    <div class="card">
+      <h3>Responsible AI & Data Governance Lab</h3>
+      <p>Implementation support aligned with Zimbabwe’s Data Protection Act and emerging standards: data stewardship basics, AI use protocols, and organisational safeguards that prioritise dignity, safety and trust.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="muted">To request confidential briefs or explore collaboration, please contact us.</p>
+  </section>
+</main>
+
+<footer>© <span id="year"></span> AGCIH. All Rights Reserved.</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
 <!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
