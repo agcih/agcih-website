@@ -11,53 +11,42 @@
   .container{max-width:1120px;margin:0 auto;padding:0 20px}
 
   /* header */
-  .site-header{background:var(--ink);color:#fff}
-  .brand{display:flex;align-items:center;gap:18px;text-decoration:none;color:inherit;padding:22px 0}
-  .brand-logo{width:160px;height:auto;display:block} /* LARGE LOGO */
-  .brand-title{margin:0;font-size:1.6rem;line-height:1.2}
-  .brand-tagline{margin:6px 0 0;font-size:.95rem;opacity:.9}
+  header{background:var(--ink);color:#fff;text-align:center;padding:30px 0}
+  header img{width:160px;height:auto;display:block;margin:0 auto 12px} /* LARGE LOGO */
 
   /* nav */
-  .site-nav{background:var(--lav);border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid #ddd}
-  .site-nav .container{display:flex;gap:24px;flex-wrap:wrap;padding:10px 0}
-  .site-nav a{color:var(--purple);font-weight:700;text-decoration:none;padding:6px 2px}
-  .site-nav a:hover{text-decoration:underline}
+  nav{background:var(--lav);border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid #ddd}
+  nav .container{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;padding:10px 0}
+  nav a{color:var(--purple);font-weight:700;text-decoration:none;padding:6px 2px}
+  nav a:hover{text-decoration:underline}
 
   /* sections */
   main section{padding:42px 0;border-bottom:1px solid var(--line)}
   h1,h2{color:var(--purple);margin:0 0 14px}
   h3{margin:0 0 8px}
   p{margin:0 0 12px}
+  ul{margin:0 0 12px 18px}
 
   .card{border:1px solid var(--line);border-radius:10px;padding:20px;background:#fff}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
   .muted{color:var(--muted)}
   footer{background:#111;color:#fff;text-align:center;padding:28px;margin-top:0;font-size:.9rem}
 
-  @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
   @media(max-width:760px){
-    .brand-logo{width:140px}
-    .brand-title{font-size:1.28rem}
-    .grid-2,.grid-3{grid-template-columns:1fr}
+    header img{width:140px}
+    .grid-2{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html" aria-label="AGCIH Home">
-      <img src="logo.png" alt="AGCIH logo" class="brand-logo">
-      <div class="brand-text">
-        <h1 class="brand-title">Africa Governance & Civic Innovation Hub</h1>
-        <p class="brand-tagline">Research. Innovation. Ethical Technology for Development.</p>
-      </div>
-    </a>
-  </div>
+<header>
+  <img src="logo.png" alt="AGCIH logo">
+  <h1>What We Do</h1>
+  <p>Research • Innovation • Ethical Technology for Development</p>
 </header>
 
-<nav class="site-nav">
+<nav>
   <div class="container">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -68,22 +57,19 @@
 
 <main class="container">
 
-  <!-- Page intro -->
   <section>
-    <h2>What We Do</h2>
+    <h2>Our Role</h2>
     <p>AGCIH is a governance and civic innovation hub working to ensure that digital transformation and AI in Zimbabwe and Africa are developed and implemented in ways that protect dignity, prevent harm and expand opportunity. We support the responsible use of AI and emerging technologies, and help shape national and institutional governance approaches so that technology strengthens communities rather than leaving them behind.</p>
-    <p class="muted">Our distinct role is to connect <em>governance with technology</em>, <em>technology with dignity</em>, and <em>institutions with communities</em>.</p>
+    <p class="muted">We connect <em>governance with technology</em>, <em>technology with dignity</em>, and <em>institutions with communities</em>.</p>
   </section>
 
-  <!-- Pillars -->
   <section class="card">
     <h2>Our Pillars</h2>
 
     <div class="grid-2">
-
       <div class="card">
         <h3>1) Knowledge & Research on Emerging Technologies</h3>
-        <p><strong>Making the complex understandable.</strong> We produce clear, contextual insights that help decision-makers, media, communities and institutions understand AI and digital transformation.</p>
+        <p><strong>Making the complex understandable.</strong> Clear, contextual insights that help decision-makers, media, communities and institutions understand AI and digital transformation.</p>
         <ul>
           <li>Research briefs on digital transformation and public systems</li>
           <li>Policy and regulatory analysis on AI, data governance and ethics</li>
@@ -110,7 +96,7 @@
           <li>Alignment with the Cyber and Data Protection Act</li>
           <li>Internal AI and data governance safeguards</li>
           <li>Ethical use guidance for digital tools and workflows</li>
-          <li>Practical, steady, sustainable implementation support</li>
+          <li>Practical, steady and sustainable implementation support</li>
         </ul>
       </div>
 
@@ -124,11 +110,9 @@
           <li>Reducing fear, fragmentation and misinformation</li>
         </ul>
       </div>
-
     </div>
   </section>
 
-  <!-- Ethos -->
   <section class="card">
     <h2>Our Ethos</h2>
     <p><em>Governance must feel like compassion. Technology must serve dignity. Institutions must listen to the people they exist to serve.</em></p>
