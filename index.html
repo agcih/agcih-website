@@ -6,21 +6,23 @@
 <title>Africa Governance & Civic Innovation Hub (AGCIH)</title>
 
 <style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222; }
+:root{--ink:#2b2f40;--purple:#4b0082;--lav:#e9e3f9;--text:#222;--line:#e7e7e7}
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:var(--text); line-height:1.6; }
 
-header { background:#2b2f40; padding:35px; text-align:center; color:white; }
-header img { width:150px; height:auto; display:block; margin:0 auto 15px; }
+header { background:var(--ink); padding:35px; text-align:center; color:white; }
+header img { width:160px; height:auto; display:block; margin:0 auto 18px; }
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="whatwedo.html">What We Do</a>
-  <a href="contact.html">Contact</a>
-</nav>
+nav { background:var(--lav); padding:12px; text-align:center; }
+nav a { margin:0 14px; color:var(--purple); font-weight:bold; text-decoration:none; }
+nav a:hover { text-decoration:underline; }
 
+.container { max-width:1120px; margin:0 auto; padding:0 20px; }
 
-section { padding:45px 10%; line-height:1.6; }
-h2 { color:#4b0082; margin-top:0; }
+section { padding:45px 0; }
+
+h1, h2 { color:var(--purple); margin-top:0; }
+
+button { background:var(--purple); color:white; border:none; padding:12px 24px; border-radius:6px; cursor:pointer; }
 
 footer { background:#111; color:white; text-align:center; padding:25px; margin-top:40px; font-size:0.9rem; }
 </style>
@@ -32,47 +34,40 @@ footer { background:#111; color:white; text-align:center; padding:25px; margin-t
 <header>
 <img src="logo.png" alt="AGCIH logo">
 <h1>Africa Governance & Civic Innovation Hub</h1>
-<p>Advancing Smart, Ethical & Inclusive Governance in the Digital Age</p>
+<p>Research • Innovation • Ethical Technology for Development</p>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="programs.html">Programs</a>
+  <a href="whatwedo.html">What We Do</a>
   <a href="contact.html">Contact</a>
 </nav>
 
+<main class="container">
+
 <section>
 <h2>Who We Are</h2>
-<p>The Africa Governance & Civic Innovation Hub (AGCIH) is a Zimbabwe-founded research and innovation trust focused on supporting institutions and partners in navigating digital transformation responsibly and effectively.</p>
-<p>We work at the intersection of policy, technology and institutional capacity — helping ensure that innovation strengthens public systems, enhances service delivery, and promotes dignity and trust.</p>
+<p>The Africa Governance & Civic Innovation Hub (AGCIH) is a Zimbabwe-founded policy research and innovation hub supporting responsible and inclusive digital transformation. We work at the intersection of governance, technology and public interest to ensure that the adoption of AI and emerging technologies strengthens people, institutions and development.</p>
 </section>
 
 <section>
-<h2>Our Focus</h2>
+<h2>Our Work</h2>
 <ul>
-<li>Responsible Artificial Intelligence (AI) & emerging technology governance</li>
-<li>Strengthening public systems through digital innovation</li>
-<li>Secure and ethical data governance practices</li>
-<li>Knowledge exchange and capacity development for institutions</li>
+<li>Understanding and communicating emerging technology impacts</li>
+<li>Strengthening institutional capacity and digital readiness</li>
+<li>Supporting ethical implementation of digital systems</li>
+<li>Convening multi-sector knowledge and collaboration spaces</li>
 </ul>
 </section>
 
 <section style="text-align:center;">
-<h2>Contact</h2>
-<p><strong>Email:</strong> info@agcih.africa &nbsp; | &nbsp; <strong>WhatsApp:</strong> +263 778 227 492</p>
-<button onclick="window.location.href='mailto:info@agcih.africa';" style="background:#4b0082;color:white;border:none;padding:12px 24px;border-radius:6px;cursor:pointer;">
-Send Us a Message
-</button>
+<h2>Contact Us</h2>
+<p><strong>Email:</strong> info@agcih.africa | <strong>WhatsApp:</strong> +263 778 227 492</p>
+<button onclick="window.location.href='mailto:info@agcih.africa'">Send Us a Message</button>
 </section>
 
+</main>
+
 <footer>
-© <span id="year"></span> Africa Governance & Civic Innovation Hub (AGCIH). All Rights Reserved.
-</footer>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+© <span id="year"></span> AGCI
