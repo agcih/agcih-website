@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team & Advisory Board — AGCIH</title>
+<meta name="description" content="Meet the AGCIH leadership team and advisory board guiding ethical, practical and inclusive digital governance in Africa.">
+<link rel="canonical" href="https://www.agcih.africa/team.html">
+<link rel="icon" href="favicon.ico">
+<style>
+  :root{--ink:#2b2f40;--purple:#4b0082;--lav:#e9e3f9;--text:#222;--line:#e7e7e7;--muted:#5a5a5a}
+  *{box-sizing:border-box}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text);background:#fff;line-height:1.65}
+
+  header{background:var(--ink);color:#fff;text-align:center;padding:40px 20px}
+  header img{width:165px;height:auto;display:block;margin:0 auto 16px}
+
+  nav{background:var(--lav);border-bottom:1px solid #dcdcdc}
+  nav .nav-wrap{max-width:1120px;margin:0 auto;padding:12px 20px;text-align:center}
+  nav a{margin:0 14px;color:var(--purple);font-weight:700;text-decoration:none}
+  nav a:hover{text-decoration:underline}
+
+  main{max-width:1120px;margin:0 auto;padding:0 20px}
+  section{padding:55px 0;border-bottom:1px solid var(--line)}
+  h1,h2{color:var(--purple);margin:0 0 14px}
+  p{margin:0 0 12px}
+  .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}
+  .name{font-weight:700;margin:8px 0 6px}
+  .role{color:var(--muted);margin:0 0 10px}
+  .bio{font-size:.95rem}
+  .placeholder{width:100%;height:140px;background:#f3f3f8;border-radius:10px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;color:#777}
+
+  footer{background:#111;color:#fff;text-align:center;padding:28px;margin-top:0;font-size:.9rem}
+
+  @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.grid-3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="AGCIH logo">
+  <h1>Team & Advisory Board</h1>
+  <p>Stewardship for ethical, practical and inclusive digital governance.</p>
+</header>
+
+<nav>
+  <div class="nav-wrap">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="whatwedo.html">What We Do</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <section>
+    <h2>Executive Leadership</h2>
+    <div class="grid-3">
+
+      <div class="card">
+        <div class="placeholder">Photo</div>
+        <div class="name">Danai Hazel Kudya</div>
+        <div class="role">Founder & Executive Director (Interim)</div>
+        <p class="bio">Governance, policy and innovation practitioner working at the intersection of public systems, human dignity and emerging technologies. Leads AGCIH’s strategic direction, partnerships and technical positioning.</p>
+      </div>
+
+      <!-- Add more executives as they join -->
+      <div class="card">
+        <div class="placeholder">Photo</div>
+        <div class="name">–</div>
+        <div class="role">Operations & Partnerships Lead</div>
+        <p class="bio">Role to be announced. Oversees operations, delivery and institutional partnerships.</p>
+      </div>
+
+      <div class="card">
+        <div class="placeholder">Photo</div>
+        <div class="name">–</div>
+        <div class="role">Technology & Data Governance Lead</div>
+        <p class="bio">Role to be announced. Provides technical direction on AI, data, and digital systems.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Advisory Board</h2>
+    <p class="bio" style="max-width:760px">A multidisciplinary advisory group providing strategic guidance on AGCIH’s public-interest mandate, alignment with national priorities, and relevance to the AI and digital governance ecosystem. Profiles published upon confirmation.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="placeholder">Photo</div>
+        <div class="name">Adviser — Policy & Institutions</div>
+        <div class="role">To be announced</div>
+        <p class="bio">Senior expertise in national policy ecosystems and institutional development.</p>
+      </div>
+
+      <div class="card">
+        <div class="placeholder">Photo</div>
+        <div class="name">Adviser — Technology & AI</div>
+        <div class="role">To be announced</div>
+        <p class="bio">Expertise in AI governance, safety and responsible adoption.</p>
+      </div>
+
+      <div class="card">
+        <div class="placeholder">Photo</div>
+        <div class="name">Adviser — Law & Data Protection</div>
+        <div class="role">To be announced</div>
+        <p class="bio">Specialist in legal frameworks, data protection and compliance design.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© <span id="year"></span> AGCIH. All Rights Reserved.</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
