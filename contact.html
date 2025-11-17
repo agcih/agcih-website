@@ -1,78 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — AGCIH</title>
-<meta name="description" content="Contact the Africa Governance & Civic Innovation Hub (AGCIH) for technical enquiries, partnerships and research collaboration.">
-<link rel="icon" href="favicon.ico">
-<style>
-  :root{--ink:#2b2f40;--purple:#4b0082;--lav:#e9e3f9;--text:#222;--line:#dcdcdc}
-  *{box-sizing:border-box}
-  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:var(--text);background:#fff;line-height:1.65}
-
-  /* Header */
-  header{background:var(--ink);color:#fff;text-align:center;padding:40px 20px}
-  header img{width:165px;height:auto;display:block;margin:0 auto 16px}
-
-  /* NAV — flex, centered, wraps on small screens */
-  nav{background:var(--lav);border-bottom:1px solid var(--line)}
-  nav .nav-wrap{
-    max-width:1120px;margin:0 auto;padding:12px 20px;
-    display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:center;
-    text-align:center;
-  }
-  nav a{color:var(--purple);font-weight:700;text-decoration:none;padding:6px 8px;display:inline-block}
-  nav a:hover{text-decoration:underline}
-
-  /* Content */
-  main{max-width:800px;margin:0 auto;padding:0 20px}
-  section{padding:55px 0;border-bottom:1px solid #eee}
-  h1,h2{color:var(--purple);margin:0 0 14px}
-  p{margin:0 0 12px}
-  .card{border:1px solid #e7e7e7;border-radius:10px;padding:22px;background:#fff}
-
-  .contact-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
-  .btn{background:var(--purple);color:#fff;text-decoration:none;padding:12px 18px;border-radius:8px;font-weight:700;display:inline-block}
-  .btn.outline{background:#fff;color:var(--purple);border:2px solid var(--purple)}
-
-  /* Footer */
-  footer{background:#111;color:#fff;text-align:center;padding:28px;margin-top:0;font-size:.9rem}
-</style>
+  <meta charset="UTF-8">
+  <title>AGCIH | Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact the Africa Governance & Civic Innovation Hub (AGCIH) for partnerships, collaboration and enquiries.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="AGCIH logo">
-  <h1>Contact</h1>
-  <p>We welcome technical enquiries, partnership discussions and research collaboration.</p>
+  <div class="container navbar">
+    <div class="logo">
+      <img src="logo-agcih.png" alt="Africa Governance & Civic Innovation Hub logo">
+      <div class="logo-text">
+        <strong>AGCIH</strong>
+        <span>Africa Governance & Civic Innovation Hub</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li><a href="resources.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/company/agcih" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
 </header>
 
-<nav>
-  <div class="nav-wrap">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="whatwedo.html">What We Do</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-
 <main>
-  <section class="card">
-    <h2>Get in Touch</h2>
-    <p><strong>Email:</strong> <a href="mailto:info@agcih.africa">info@agcih.africa</a></p>
-    <p><strong>WhatsApp:</strong> <a href="https://wa.me/263778227492" target="_blank" rel="noopener">+263 778 227 492</a></p>
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>We welcome partnerships, collaboration and engagement with institutions across Africa and beyond.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h3>Get in Touch</h3>
+          <p>For general enquiries, partnership opportunities or programme discussions:</p>
+          <p><strong>Email:</strong> <a href="mailto:admin@agcih.africa">admin@agcih.africa</a></p>
+          <p><strong>Location:</strong> Harare, Zimbabwe</p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/agcih" target="_blank" rel="noopener">AGCIH – Africa Governance & Civic Innovation Hub</a></p>
+          <p style="margin-top:1rem;">We aim to respond to serious professional enquiries within 3–5 working days.</p>
+        </div>
+        <div>
+          <h3>Contact Form</h3>
+          <form>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name">
 
-    <div class="contact-actions">
-      <a class="btn" href="mailto:info@agcih.africa?subject=AGCIH%20Enquiry">Email Us</a>
-      <a class="btn outline" href="https://wa.me/263778227492" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <label for="org">Organisation</label>
+            <input id="org" type="text" placeholder="Institution / organisation">
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="your@email.com">
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="How can we work together?"></textarea>
+
+            <button type="submit" class="btn btn-primary">Send (placeholder)</button>
+          </form>
+          <p style="font-size:0.8rem; color:#6b7280; margin-top:0.25rem;">
+            This is a static form. For production, connect it to your preferred form handler or email service.
+          </p>
+        </div>
+      </div>
     </div>
-
-    <p style="margin-top:14px;color:#5a5a5a;">Office hours: Monday–Friday, 09:00–17:00 (CAT). Virtual meetings available on request.</p>
   </section>
 </main>
 
-<footer>© <span id="year"></span> AGCIH. All Rights Reserved.</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<footer>
+  <div class="container footer-inner">
+    <div>© 2025 Africa Governance & Civic Innovation Hub (AGCIH). All rights reserved.</div>
+    <div class="footer-links">
+      <a href="terms.html">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="ip-policy.html">Intellectual Property Policy</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/agcih" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
