@@ -18,6 +18,81 @@
       --agcih-shadow-soft: 0 14px 35px rgba(15, 23, 42, 0.10);
     }
 
+    /* NAVBAR */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--agcih-border-soft);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--agcih-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-logo-mark {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--agcih-purple), var(--agcih-navy));
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--agcih-text-main);
+      padding-bottom: 0.1rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--agcih-purple);
+      border-bottom-color: rgba(91, 44, 131, 0.5);
+    }
+
+    .nav-links a.nav-active {
+      color: var(--agcih-purple);
+      border-bottom-color: var(--agcih-purple);
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.6rem 1.1rem 0.9rem;
+      }
+
+      .nav-links {
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* PAGE STYLES */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -69,6 +144,22 @@
       max-width: 680px;
       font-size: 0.94rem;
       color: var(--agcih-text-muted);
+    }
+
+    .page-link-note {
+      margin-top: 0.7rem;
+      font-size: 0.86rem;
+      color: var(--agcih-text-muted);
+    }
+
+    .page-link-note a {
+      color: var(--agcih-purple);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(91, 44, 131, 0.4);
+    }
+
+    .page-link-note a:hover {
+      border-bottom-color: var(--agcih-purple);
     }
 
     .section {
@@ -251,6 +342,24 @@
 </head>
 
 <body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="nav-logo-mark"></span>
+        <span>AGCIH</span>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="team.html" class="nav-active">Team</a>
+        <a href="governance.html">Governance</a>
+        <a href="insights.html">Insights</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <div class="page-wrapper">
     <main class="page-container">
       <!-- PAGE HEADER -->
@@ -261,6 +370,11 @@
           AGCIH is led by a governance and AI-focused Executive Director and supported by an independent
           Board of Trustees providing strategic oversight across governance, gender equality, digital
           transformation and public-sector innovation.
+        </p>
+        <p class="page-link-note">
+          AGCIH operates under a transparent governance framework guided by this Board. To learn how the Board
+          functions and the principles that guide our work, read our
+          <a href="governance.html">Governance &amp; Board Charter</a>.
         </p>
       </header>
 
