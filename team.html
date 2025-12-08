@@ -1,816 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>AGCIH | Leadership & Governance</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    :root {
-      --agcih-purple: #5b2c83;
-      --agcih-navy: #101b3b;
-      --agcih-light-bg: #f5f5f9;
-      --agcih-card-bg: #ffffff;
-      --agcih-text-main: #1f2430;
-      --agcih-text-muted: #6b7280;
-      --agcih-border-soft: #e2e4ee;
-      --agcih-radius-lg: 18px;
-      --agcih-shadow-soft: 0 14px 35px rgba(15, 23, 42, 0.10);
-    }
-
-    /* NAVBAR */
-    .site-header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--agcih-border-soft);
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-    }
-
-    .nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .nav-logo {
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--agcih-navy);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .nav-logo-mark {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--agcih-purple), var(--agcih-navy));
-      display: inline-block;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      font-size: 0.88rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--agcih-text-main);
-      padding-bottom: 0.1rem;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav-links a:hover {
-      color: var(--agcih-purple);
-      border-bottom-color: rgba(91, 44, 131, 0.5);
-    }
-
-    .nav-links a.nav-active {
-      color: var(--agcih-purple);
-      border-bottom-color: var(--agcih-purple);
-      font-weight: 600;
-    }
-
-    @media (max-width: 640px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.6rem 1.1rem 0.9rem;
-      }
-
-      .nav-links {
-        gap: 0.9rem;
-        flex-wrap: wrap;
-      }
-    }
-
-    /* PAGE STYLES */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
-      background: var(--agcih-light-bg);
-      color: var(--agcih-text-main);
-      line-height: 1.6;
-    }
-
-    .page-wrapper {
-      min-height: 100vh;
-      padding: 3rem 1.5rem 4rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .page-container {
-      width: 100%;
-      max-width: 1180px;
-    }
-
-    .page-header {
-      text-align: left;
-      margin-bottom: 2.5rem;
-    }
-
-    .page-kicker {
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      color: var(--agcih-purple);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .page-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--agcih-navy);
-      margin-bottom: 0.5rem;
-    }
-
-    .page-subtitle {
-      max-width: 680px;
-      font-size: 0.94rem;
-      color: var(--agcih-text-muted);
-    }
-
-    .page-link-note {
-      margin-top: 0.7rem;
-      font-size: 0.86rem;
-      color: var(--agcih-text-muted);
-    }
-
-    .page-link-note a {
-      color: var(--agcih-purple);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(91, 44, 131, 0.4);
-    }
-
-    .page-link-note a:hover {
-      border-bottom-color: var(--agcih-purple);
-    }
-
-    .section {
-      margin-top: 2.75rem;
-    }
-
-    .section-title {
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: var(--agcih-navy);
-      margin-bottom: 0.35rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.88rem;
-      color: var(--agcih-text-muted);
-      max-width: 640px;
-      margin-bottom: 1.4rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-
-    @media (min-width: 720px) {
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 1040px) {
-      .grid.board-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .card {
-      background: var(--agcih-card-bg);
-      border-radius: var(--agcih-radius-lg);
-      border: 1px solid var(--agcih-border-soft);
-      box-shadow: var(--agcih-shadow-soft);
-      padding: 1.6rem 1.4rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-tag {
-      position: absolute;
-      top: 1.1rem;
-      right: 1.1rem;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(91, 44, 131, 0.08);
-      color: var(--agcih-purple);
-      font-weight: 600;
-    }
-
-    .card-header-row {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      margin-top: 0.4rem;
-    }
-
-    .avatar-circle {
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #9f7aea, #5b2c83);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f9fafb;
-      font-weight: 700;
-      font-size: 1.05rem;
-      flex-shrink: 0;
-    }
-
-    .card-name {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--agcih-navy);
-      margin-bottom: 0.15rem;
-    }
-
-    .card-role {
-      font-size: 0.82rem;
-      color: var(--agcih-text-muted);
-    }
-
-    .card-summary {
-      font-size: 0.86rem;
-      color: var(--agcih-text-main);
-    }
-
-    .expertise-title {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--agcih-text-muted);
-      margin-top: 0.2rem;
-    }
-
-    .expertise-list {
-      list-style: none;
-      margin-top: 0.3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .expertise-list li {
-      font-size: 0.78rem;
-      padding: 0.18rem 0.55rem;
-      border-radius: 999px;
-      background: #f3f3fb;
-      color: var(--agcih-navy);
-    }
-
-    details.bio {
-      margin-top: 0.4rem;
-      padding-top: 0.6rem;
-      border-top: 1px dashed var(--agcih-border-soft);
-    }
-
-    details.bio summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--agcih-purple);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    details.bio summary::marker {
-      display: none;
-    }
-
-    details.bio[open] summary {
-      margin-bottom: 0.45rem;
-    }
-
-    .chevron {
-      display: inline-block;
-      transition: transform 0.18s ease;
-      font-size: 0.9rem;
-    }
-
-    details[open] .chevron {
-      transform: rotate(90deg);
-    }
-
-    .bio-content {
-      font-size: 0.83rem;
-      color: var(--agcih-text-main);
-      margin-top: 0.1rem;
-    }
-
-    .bio-content p + p {
-      margin-top: 0.55rem;
-    }
-
-    .footer-note {
-      margin-top: 2.4rem;
-      font-size: 0.78rem;
-      color: var(--agcih-text-muted);
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>AGCIH | Our Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the leadership and Board of Trustees guiding the Africa Governance & Civic Innovation Hub (AGCIH).">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- NAVBAR -->
-  <header class="site-header">
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <span class="nav-logo-mark"></span>
-        <span>AGCIH</span>
-      </div>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="team.html" class="nav-active">Team</a>
-        <a href="governance.html">Governance</a>
-        <a href="insights.html">Insights</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <div class="page-wrapper">
-    <main class="page-container">
-      <!-- PAGE HEADER -->
-      <header class="page-header">
-        <div class="page-kicker">Leadership & Governance</div>
-        <h1 class="page-title">People guiding the Africa Governance & Civic Innovation Hub</h1>
-        <p class="page-subtitle">
-          AGCIH is led by a governance and AI-focused Executive Director and supported by an independent
-          Board of Trustees providing strategic oversight across governance, gender equality, digital
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Africa Governance & Civic Innovation Hub logo" style="height:60px;">
+      <div class="logo-text">
+        <strong>AGCIH</strong>
+        <span>Africa Governance & Civic Innovation Hub</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="whatwedo.html">What We Do</a></li>
+        <li><a href="resources.html">Insights</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/company/agcih" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h1>Our Team</h1>
+        <p>
+          AGCIH is led by a governance and AI-focused Executive Director and overseen by an independent
+          Board of Trustees providing strategic guidance across governance, gender equality, digital
           transformation and public-sector innovation.
         </p>
-        <p class="page-link-note">
-          AGCIH operates under a transparent governance framework guided by this Board. To learn how the Board
-          functions and the principles that guide our work, read our
+        <p style="margin-top:0.5rem;font-size:0.95rem;">
+          To understand how the Board functions and the principles that guide our work, read our
           <a href="governance.html">Governance &amp; Board Charter</a>.
         </p>
-      </header>
+      </div>
+    </div>
+  </section>
 
-      <!-- SECTION 1: LEADERSHIP -->
-      <section class="section" aria-label="AGCIH Leadership">
-        <h2 class="section-title">Leadership</h2>
-        <p class="section-subtitle">
-          The Office of the Executive Director provides strategic direction for AGCIH’s work at the
-          intersection of governance, artificial intelligence, digital rights and public-sector innovation.
-        </p>
+  <!-- EXECUTIVE DIRECTOR -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Leadership</h2>
+        <p>The Office of the Executive Director provides overall strategic direction for AGCIH.</p>
+      </div>
 
-        <div class="grid">
-          <!-- EXECUTIVE DIRECTOR: DANAI HAZEL KUDYA -->
-          <article class="card">
-            <div class="card-tag">Founder &amp; Executive Director</div>
-
-            <div class="card-header-row">
-              <div class="avatar-circle" aria-hidden="true">
-                DK
-              </div>
-              <div>
-                <h3 class="card-name">Danai Hazel Kudya</h3>
-                <p class="card-role">
-                  Founder &amp; Executive Director – Africa Governance &amp; Civic Innovation Hub (AGCIH)
-                </p>
-              </div>
-            </div>
-
-            <p class="card-summary">
-              Danai Hazel Kudya is a governance, human rights and anti-corruption lawyer whose work focuses
-              on strengthening public institutions, safeguarding civic space and guiding responsible adoption
-              of emerging technologies. Over more than 15 years, she has worked with national institutions,
-              human rights commissions, UN agencies and civil society to advance accountable, people-centred
-              governance in Zimbabwe and across Africa.
-            </p>
-
-            <p class="card-summary">
-              As Founder and Executive Director of AGCIH, she leads the Hub’s vision at the intersection of
-              governance, AI policy, digital rights and public-sector innovation, with a particular focus on
-              ensuring that Zimbabwe’s digital and AI agenda is inclusive, ethical and grounded in real
-              institutional realities.
-            </p>
-
-            <div>
-              <div class="expertise-title">Areas of expertise</div>
-              <ul class="expertise-list">
-                <li>Governance &amp; institutional reform</li>
-                <li>AI governance &amp; digital policy</li>
-                <li>Human rights &amp; anti-corruption</li>
-                <li>Public-sector innovation</li>
-                <li>Rule of law &amp; access to justice</li>
-                <li>Strategy &amp; institutional design</li>
-              </ul>
-            </div>
-
-            <details class="bio">
-              <summary>
-                <span class="chevron">▶</span>
-                <span>Read full biography</span>
-              </summary>
-              <div class="bio-content">
-                <p>
-                  Danai Hazel Kudya is the Founder and Executive Director of the Africa Governance &amp; Civic
-                  Innovation Hub (AGCIH), a governance and public-sector innovation trust focused on
-                  responsible AI governance, digital transformation and system-level strengthening in Zimbabwe
-                  and across Africa. Her career spans more than 15 years across national human rights
-                  institutions, anti-corruption organisations, peacebuilding bodies and the United Nations,
-                  with a consistent focus on making public institutions more accountable, transparent and
-                  people-centred.
-                </p>
-
-                <p>
-                  Before establishing AGCIH, Danai served as a Human Rights Officer with the Office of the
-                  United Nations High Commissioner for Human Rights (OHCHR) in Liberia, where she worked on
-                  rule of law, access to justice, accountability, civic space and support to national
-                  institutions. Prior to that, she held senior roles with Zimbabwe’s National Peace and
-                  Reconciliation Commission and the Zimbabwe Human Rights Commission, and led anti-corruption
-                  and legal advocacy work at Transparency International Zimbabwe. Across these roles she has
-                  worked closely with government ministries, independent commissions, Parliament, civil
-                  society and international partners.
-                </p>
-
-                <p>
-                  Through AGCIH, Danai is deliberately positioning governance, ethics and institutional
-                  capacity at the centre of Zimbabwe’s emerging AI and digital transformation agenda. Her work
-                  includes developing governance frameworks, readiness tools and practical guidance that help
-                  public institutions adopt AI and digital systems responsibly, while protecting rights,
-                  guarding against corruption risks and ensuring that technology serves people rather than
-                  displacing them.
-                </p>
-
-                <p>
-                  Danai’s approach to AI governance is grounded in Africa’s lived realities: fragile
-                  institutions, constrained resources, complex political economies and deep inequalities. She
-                  works to bridge global debates on AI ethics and regulation with Zimbabwe’s own policy
-                  processes, including the forthcoming National AI Strategy and broader Smart Zimbabwe 2030
-                  vision, so that national choices are both future-facing and contextually feasible.
-                </p>
-
-                <p>
-                  As Executive Director, she leads AGCIH’s strategy, partnerships and thought leadership,
-                  engaging government, regulators, parliament, independent commissions, civil society, private
-                  sector and regional bodies. Her goal is to help build an ecosystem where governance,
-                  oversight and Ubuntu-informed values shape how AI and digital systems are designed,
-                  procured and deployed across the public sector.
-                </p>
-              </div>
-            </details>
-          </article>
+      <div class="cards">
+        <div class="card">
+          <h3>Danai Hazel Kudya</h3>
+          <p><strong>Founder &amp; Executive Director – Africa Governance &amp; Civic Innovation Hub (AGCIH)</strong></p>
+          <p>
+            Danai Hazel Kudya is a governance, human rights and anti-corruption lawyer whose work focuses
+            on strengthening public institutions, safeguarding civic space and guiding responsible adoption
+            of emerging technologies. Over more than 15 years, she has worked with national institutions,
+            human rights commissions, UN agencies and civil society to advance accountable, people-centred
+            governance in Zimbabwe and across Africa.
+          </p>
+          <p>
+            As Founder and Executive Director of AGCIH, she leads the Hub’s vision at the intersection of
+            governance, AI policy, digital rights and public-sector innovation, with a particular focus on
+            ensuring that Zimbabwe’s digital and AI agenda is inclusive, ethical and grounded in real
+            institutional realities.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- SECTION 2: BOARD OF TRUSTEES -->
-      <section class="section" aria-label="AGCIH Board of Trustees">
-        <h2 class="section-title">Board of Trustees</h2>
-        <p class="section-subtitle">
+  <!-- BOARD OF TRUSTEES -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Board of Trustees</h2>
+        <p>
           The Board of Trustees provides independent oversight and strategic guidance, ensuring that AGCIH’s
           work remains rooted in strong governance, inclusion, ethics and public interest outcomes.
         </p>
+      </div>
 
-        <div class="grid board-grid">
-          <!-- BOARD MEMBER 1: MS. SHIMTAH ATIPA NEMBAWARE -->
-          <article class="card">
-            <div class="card-tag">Gender, Inclusion &amp; Equity</div>
-
-            <div class="card-header-row">
-              <div class="avatar-circle" aria-hidden="true">
-                SN
-              </div>
-              <div>
-                <h3 class="card-name">Ms. Shimtah Atipa Nembaware</h3>
-                <p class="card-role">
-                  Manager, Complaints Handling &amp; Investigations – Zimbabwe Gender Commission
-                </p>
-              </div>
-            </div>
-
-            <p class="card-summary">
-              Ms. Shimtah Atipa Nembaware is an accomplished advocate for gender equality and human rights,
-              with over a decade of experience in community programming, investigations and rights-based
-              governance. She currently serves as Manager, Complaints Handling and Investigations at the
-              Zimbabwe Gender Commission, leading national efforts to combat both online and offline
-              gender-based violence (GBV) and to strengthen institutional responses and access to redress.
-            </p>
-
-            <div>
-              <div class="expertise-title">Areas of expertise</div>
-              <ul class="expertise-list">
-                <li>Gender equality &amp; social inclusion</li>
-                <li>GBV prevention &amp; response</li>
-                <li>Human rights investigations</li>
-                <li>Community advocacy</li>
-                <li>Peace, leadership &amp; conflict resolution</li>
-                <li>Monitoring &amp; evaluation</li>
-              </ul>
-            </div>
-
-            <p class="card-summary">
-              Within AGCIH, she provides strategic guidance on gender-responsive governance, digital inclusion
-              and safeguarding as the Hub develops frameworks and tools for responsible AI and public-sector
-              innovation.
-            </p>
-
-            <details class="bio">
-              <summary>
-                <span class="chevron">▶</span>
-                <span>Read full biography</span>
-              </summary>
-              <div class="bio-content">
-                <p>
-                  Ms. Shimtah Atipa Nembaware is a distinguished gender, human rights and social inclusion
-                  advocate whose work over the past decade has shaped community protection systems,
-                  institutional responses and national efforts to address gender-based violence (GBV) in
-                  Zimbabwe. In her role as Manager: Complaints Handling and Investigations at the Zimbabwe
-                  Gender Commission, she oversees sensitive investigations, coordinates stakeholder engagement
-                  and supports the enforcement of women’s rights within a constitutional and governance
-                  framework.
-                </p>
-
-                <p>
-                  Her experience cuts across community programming, private legal practice, advocacy and
-                  national human rights institutions (NHRIs). She has led initiatives that empower women and
-                  marginalised groups to prevent, identify and respond to GBV, including emerging digital harms
-                  such as online abuse, cyber-harassment and technology-facilitated violence. Through this
-                  work, she has strengthened pathways for access to justice and contributed to policy dialogues
-                  on inclusion, equality and human dignity.
-                </p>
-
-                <p>
-                  Ms. Nembaware holds a Bachelor of Laws (Honours) Degree from the University of Zimbabwe; a
-                  Master of Arts in Women, Children and Nature Rights in Environmental Governance from the
-                  University of Nairobi (Kenya); and a Master of Science in Peace, Leadership and Conflict
-                  Resolution from the Zimbabwe Open University. She also holds a Post-Graduate Diploma in
-                  Higher Education from Chinhoyi University of Technology and an Executive Certificate in
-                  Monitoring and Evaluation from the University of Zimbabwe, among several other professional
-                  qualifications.
-                </p>
-
-                <p>
-                  Her contributions to human rights leadership extend beyond Zimbabwe. As a participant in the
-                  prestigious International Visitor Leadership Program (IVLP), she gained exposure to global
-                  good practices in gender justice, institutional strengthening and governance systems. This
-                  global perspective enhances her ability to translate international insights into contextually
-                  relevant solutions for Zimbabwe and the broader region.
-                </p>
-
-                <p>
-                  Within the Africa Governance &amp; Civic Innovation Hub (AGCIH), Ms. Nembaware brings
-                  invaluable expertise in gender-responsive governance, safeguarding, inclusion frameworks and
-                  the intersection between gender and technology. Her leadership supports AGCIH’s mission to
-                  ensure that emerging technologies – including artificial intelligence – are deployed in ways
-                  that protect rights, promote equitable participation and strengthen public institutions.
-                </p>
-              </div>
-            </details>
-          </article>
-
-          <!-- BOARD MEMBER 2: MS. MIRIRAI MUYENGWA MAPASURE -->
-          <article class="card">
-            <div class="card-tag">Digital Transformation &amp; AI Governance</div>
-
-            <div class="card-header-row">
-              <div class="avatar-circle" aria-hidden="true">
-                MM
-              </div>
-              <div>
-                <h3 class="card-name">Ms. Mirirai Muyengwa Mapasure</h3>
-                <p class="card-role">
-                  Data Scientist &amp; IT Consultant – Public Health &amp; ICT
-                </p>
-              </div>
-            </div>
-
-            <p class="card-summary">
-              Ms. Mirirai Muyengwa Mapasure is a seasoned Data Scientist and IT Consultant with over 16 years
-              of experience in the ICT and public health sectors. She brings a blend of technical expertise,
-              data-driven decision-making and strategic ICT advisory across government and development
-              settings.
-            </p>
-
-            <p class="card-summary">
-              She holds BSc (Hons) degrees in Information Systems and Monitoring &amp; Evaluation, a Master of
-              Commerce in Strategic Management and Corporate Governance, and a Certificate in Linux Network
-              Administration. She is currently pursuing a Master of Science in Big Data Analytics.
-            </p>
-
-            <div>
-              <div class="expertise-title">Areas of expertise</div>
-              <ul class="expertise-list">
-                <li>Data science &amp; analytics</li>
-                <li>ICT systems design &amp; implementation</li>
-                <li>Digital transformation in public institutions</li>
-                <li>AI literacy &amp; community mentoring</li>
-                <li>Monitoring &amp; evaluation</li>
-                <li>Strategic management &amp; governance</li>
-              </ul>
-            </div>
-
-            <p class="card-summary">
-              Mirirai is passionate about empowering communities through digital transformation and AI
-              mentoring, bridging technology and purpose to create meaningful impact. Within AGCIH, she
-              provides strategic guidance on digital transformation, AI adoption and data governance, ensuring
-              that technology choices align with ethical, inclusive and context-aware governance.
-            </p>
-
-            <details class="bio">
-              <summary>
-                <span class="chevron">▶</span>
-                <span>Read full biography</span>
-              </summary>
-              <div class="bio-content">
-                <p>
-                  Ms. Mirirai Muyengwa Mapasure is a Data Scientist and IT Consultant with more than 16 years
-                  of professional experience working at the intersection of ICT, public health, evidence
-                  systems and digital transformation. Her work spans the design, deployment and strengthening
-                  of technology systems that support service delivery, institutional performance and
-                  data-driven decision-making across public and development sectors in Zimbabwe.
-                </p>
-
-                <p>
-                  She holds a BSc (Hons) in Information Systems, a BSc (Hons) in Monitoring and Evaluation, a
-                  Master of Commerce in Strategic Management and Corporate Governance, and a Certificate in
-                  Linux Network Administration, and is currently pursuing a Master of Science in Big Data
-                  Analytics. Her multidisciplinary academic and professional background positions her to bridge
-                  technical implementation, strategic oversight and governance concerns in digital systems.
-                </p>
-
-                <p>
-                  Mirirai’s professional experience includes leading and supporting ICT solutions in the public
-                  health sector, where she has worked extensively on data systems, analytics platforms, digital
-                  health tools and monitoring frameworks. She brings a strong understanding of how digital
-                  systems interact with institutional realities, resource constraints and user needs—making her
-                  contributions practical, grounded and responsive to the contexts in which public institutions
-                  operate.
-                </p>
-
-                <p>
-                  Beyond her technical work, she is deeply passionate about community empowerment through
-                  technology. She is an advocate for AI literacy, digital inclusion and youth mentoring,
-                  helping individuals and communities understand and leverage emerging technologies
-                  responsibly. Her interest lies in ensuring that digital transformation is not only technically
-                  sound but socially meaningful and accessible.
-                </p>
-
-                <p>
-                  Within the Africa Governance &amp; Civic Innovation Hub (AGCIH), Ms. Muyengwa Mapasure serves
-                  as the Trustee for Digital Transformation &amp; AI Governance. She provides strategic guidance
-                  on the adoption of digital systems, the opportunities and risks of AI, and the development of
-                  governance frameworks that protect users while enabling innovation. Her perspective
-                  strengthens AGCIH’s ability to support government, regulators and public institutions in
-                  building ethical, inclusive and context-relevant digital futures.
-                </p>
-              </div>
-            </details>
-          </article>
-
-          <!-- BOARD MEMBER 3: MS. TINAH KADHAU – LEGAL, GOVERNANCE & COMPLIANCE -->
-          <article class="card">
-            <div class="card-tag">Legal, Governance &amp; Compliance</div>
-
-            <div class="card-header-row">
-              <div class="avatar-circle" aria-hidden="true">
-                TK
-              </div>
-              <div>
-                <h3 class="card-name">Ms. Tinah Kadhau</h3>
-                <p class="card-role">Trustee – Legal, Governance &amp; Compliance</p>
-              </div>
-            </div>
-
-            <p class="card-summary">
-              Ms. Tinah Kadhau serves as AGCIH’s Trustee for Legal, Governance &amp; Compliance, offering
-              oversight on regulatory obligations, institutional governance and legal risk management. She
-              supports AGCIH in aligning its work and structures with applicable laws, its Trust Deed and good
-              governance practice.
-            </p>
-
-            <div>
-              <div class="expertise-title">Areas of focus</div>
-              <ul class="expertise-list">
-                <li>Legal &amp; regulatory compliance</li>
-                <li>Governance frameworks</li>
-                <li>Institutional risk oversight</li>
-                <li>Trust &amp; organisational governance</li>
-              </ul>
-            </div>
-
-            <p class="card-summary">
-              Her role is central to ensuring that AGCIH’s growth is underpinned by clear governance
-              arrangements, sound decision-making processes and respect for legal and ethical standards. A
-              detailed professional profile will be added once finalised.
-            </p>
-          </article>
-
-          <!-- BOARD MEMBER 4: MRS. CATHERINE MAREYA-CHIVIYA – FINANCE, AUDIT & RISK -->
-          <article class="card">
-            <div class="card-tag">Finance, Audit &amp; Risk Oversight</div>
-
-            <div class="card-header-row">
-              <div class="avatar-circle" aria-hidden="true">
-                CM
-              </div>
-              <div>
-                <h3 class="card-name">Mrs. Catherine Mareya-Chiviya</h3>
-                <p class="card-role">Trustee – Finance, Audit &amp; Risk Oversight</p>
-              </div>
-            </div>
-
-            <p class="card-summary">
-              Mrs. Catherine Mareya-Chiviya serves as the Trustee for Finance, Audit &amp; Risk Oversight at
-              AGCIH, providing stewardship on financial governance, accountability and organisational risk
-              management. She supports the development of transparent financial systems that enable partners
-              and donors to have confidence in AGCIH’s operations.
-            </p>
-
-            <div>
-              <div class="expertise-title">Areas of focus</div>
-              <ul class="expertise-list">
-                <li>Financial governance</li>
-                <li>Audit &amp; assurance</li>
-                <li>Risk management</li>
-                <li>Donor accountability</li>
-              </ul>
-            </div>
-
-            <p class="card-summary">
-              Her role strengthens AGCIH’s ability to plan sustainably, meet compliance requirements and
-              manage resources responsibly as the organisation grows. A detailed professional profile will be
-              added once finalised.
-            </p>
-          </article>
-
-          <!-- BOARD MEMBER 5: YOUTH, INNOVATION & FUTURE READINESS (RESERVED) -->
-          <article class="card">
-            <div class="card-tag">Youth, Innovation &amp; Future Readiness</div>
-
-            <div class="card-header-row">
-              <div class="avatar-circle" aria-hidden="true">
-                YI
-              </div>
-              <div>
-                <h3 class="card-name">To be appointed</h3>
-                <p class="card-role">Trustee – Youth, Innovation &amp; Future Readiness</p>
-              </div>
-            </div>
-
-            <p class="card-summary">
-              This Board seat is reserved for Youth, Innovation &amp; Future Readiness to ensure that AGCIH
-              remains connected to emerging ideas, innovation ecosystems and next-generation perspectives in
-              governance, AI and digital transformation.
-            </p>
-
-            <div>
-              <div class="expertise-title">Areas of focus</div>
-              <ul class="expertise-list">
-                <li>Youth leadership</li>
-                <li>Innovation ecosystems</li>
-                <li>Digital skills &amp; creativity</li>
-                <li>Future of work &amp; technology</li>
-              </ul>
-            </div>
-
-            <p class="card-summary">
-              Appointment to this role will be announced in due course. The Trustee will help AGCIH connect
-              governance and AI debates with youth priorities, experimentation and new forms of civic
-              innovation.
-            </p>
-          </article>
+      <div class="cards">
+        <!-- Shimtah -->
+        <div class="card">
+          <h3>Ms. Shimtah Atipa Nembaware</h3>
+          <p><strong>Trustee – Gender, Inclusion &amp; Equity</strong></p>
+          <p><em>Manager, Complaints Handling &amp; Investigations – Zimbabwe Gender Commission</em></p>
+          <p>
+            Ms. Shimtah Atipa Nembaware is an accomplished advocate for gender equality and human rights,
+            with over a decade of experience in community programming, investigations and rights-based
+            governance. She currently serves as Manager, Complaints Handling and Investigations at the
+            Zimbabwe Gender Commission, leading national efforts to combat both online and offline
+            gender-based violence (GBV) and to strengthen institutional responses and access to redress.
+          </p>
+          <p>
+            Within AGCIH, she provides strategic guidance on gender-responsive governance, digital inclusion
+            and safeguarding as the Hub develops frameworks and tools for responsible AI and public-sector
+            innovation.
+          </p>
         </div>
 
-        <p class="footer-note">
-          To update this page, duplicate any card and edit the name, tag, role, summary, areas of expertise
-          and biography text as new Trustees are confirmed or profiles are updated.
-        </p>
-      </section>
-    </main>
+        <!-- Mirirai -->
+        <div class="card">
+          <h3>Ms. Mirirai Muyengwa Mapasure</h3>
+          <p><strong>Trustee – Digital Transformation &amp; AI Governance</strong></p>
+          <p><em>Data Scientist &amp; IT Consultant – Public Health &amp; ICT</em></p>
+          <p>
+            Ms. Mirirai Muyengwa Mapasure is a seasoned Data Scientist and IT Consultant with over 16 years
+            of experience in the ICT and public health sectors. She brings a blend of technical expertise,
+            data-driven decision-making and strategic ICT advisory across government and development settings.
+          </p>
+          <p>
+            Mirirai is passionate about empowering communities through digital transformation and AI mentoring,
+            bridging technology and purpose to create meaningful impact. Within AGCIH, she provides strategic
+            guidance on digital transformation, AI adoption and data governance, ensuring that technology choices
+            align with ethical, inclusive and context-aware governance.
+          </p>
+        </div>
+
+        <!-- Tinah -->
+        <div class="card">
+          <h3>Ms. Tinah Kadhau</h3>
+          <p><strong>Trustee – Legal, Governance &amp; Compliance</strong></p>
+          <p>
+            Ms. Tinah Kadhau serves as AGCIH’s Trustee for Legal, Governance &amp; Compliance, offering
+            oversight on regulatory obligations, institutional governance and legal risk management. She
+            supports AGCIH in aligning its work and structures with applicable laws, its Trust Deed and good
+            governance practice.
+          </p>
+          <p>
+            Her role is central to ensuring that AGCIH’s growth is underpinned by clear governance
+            arrangements, sound decision-making processes and respect for legal and ethical standards. A
+            detailed professional profile will be added once finalised.
+          </p>
+        </div>
+
+        <!-- Catherine -->
+        <div class="card">
+          <h3>Mrs. Catherine Mareya-Chiviya</h3>
+          <p><strong>Trustee – Finance, Audit &amp; Risk Oversight</strong></p>
+          <p>
+            Mrs. Catherine Mareya-Chiviya serves as the Trustee for Finance, Audit &amp; Risk Oversight at
+            AGCIH, providing stewardship on financial governance, accountability and organisational risk
+            management. She supports the development of transparent financial systems that enable partners
+            and donors to have confidence in AGCIH’s operations.
+          </p>
+          <p>
+            Her role strengthens AGCIH’s ability to plan sustainably, meet compliance requirements and
+            manage resources responsibly as the organisation grows. A detailed professional profile will be
+            added once finalised.
+          </p>
+        </div>
+
+        <!-- Youth seat -->
+        <div class="card">
+          <h3>To be appointed</h3>
+          <p><strong>Trustee – Youth, Innovation &amp; Future Readiness</strong></p>
+          <p>
+            This Board seat is reserved for Youth, Innovation &amp; Future Readiness to ensure that AGCIH
+            remains connected to emerging ideas, innovation ecosystems and next-generation perspectives in
+            governance, AI and digital transformation.
+          </p>
+          <p>
+            Appointment to this role will be announced in due course. The Trustee will help AGCIH connect
+            governance and AI debates with youth priorities, experimentation and new forms of civic innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2025 Africa Governance & Civic Innovation Hub (AGCIH). All rights reserved.</div>
+    <div class="footer-links">
+      <a href="terms.html">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="ip-policy.html">Intellectual Property Policy</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/agcih" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Twitter</a>
+      <a href="#" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
   </div>
+</footer>
+
 </body>
 </html>
