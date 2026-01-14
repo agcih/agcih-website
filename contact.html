@@ -20,18 +20,18 @@
     </div>
 
     <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="whatwedo.html">What We Do</a></li>
-    <li><a href="resources.html">Resources</a></li>
-    <li><a href="frameworks.html">Frameworks</a></li>
-    <li><a href="workwithus.html">Work With Us</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="governance.html">Governance</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="whatwedo.html">What We Do</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="frameworks.html">Frameworks</a></li>
+        <li><a href="workwithus.html">Work With Us</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="governance.html">Governance</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
 
     <div class="nav-social">
       <a href="https://www.linkedin.com/company/agcih" target="_blank" rel="noopener">LinkedIn</a>
@@ -124,24 +124,46 @@
         <div>
           <h3>Enquiry Form</h3>
 
-          <form>
+          <form action="https://formsubmit.co/admin@agcih.africa" method="POST">
+
+            <!-- =========================
+                 FORM SETTINGS (FormSubmit)
+                 ========================= -->
+            <input type="hidden" name="_subject" value="New AGCIH Website Enquiry">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="https://agcih.africa/thank-you.html">
+
+            <!-- Honeypot anti-spam (leave hidden) -->
+            <input type="text" name="_honey" style="display:none">
+
+            <!-- =========================
+                 FORM FIELDS
+                 ========================= -->
+
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Full name">
+            <input id="name" name="name" type="text" placeholder="Full name" required>
 
             <label for="org">Organisation / Institution</label>
-            <input id="org" type="text" placeholder="Ministry, agency, organisation">
+            <input id="org" name="organisation" type="text" placeholder="Ministry, agency, organisation">
 
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="your@email.com">
+            <input id="email" name="email" type="email" placeholder="your@email.com" required>
 
             <label for="message">Message</label>
-            <textarea id="message" rows="4" placeholder="Briefly outline the nature of your enquiry or proposed engagement."></textarea>
+            <textarea id="message"
+                      name="message"
+                      rows="4"
+                      placeholder="Briefly outline the nature of your enquiry or proposed engagement."
+                      required></textarea>
 
             <button type="submit" class="btn btn-primary">Submit Enquiry</button>
           </form>
 
-          <p style="font-size:0.8rem; color:#6b7280; margin-top:0.25rem;">
-            This is a static form. For production use, connect to your preferred secure form or email service.
+          <p style="font-size:0.8rem; color:#6b7280; margin-top:0.5rem;">
+            By submitting this form, you agree that AGCIH may contact you in response to your enquiry.
           </p>
         </div>
 
