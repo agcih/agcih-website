@@ -25,11 +25,11 @@ a:hover {
 }
 
 /* ================================
-   Layout: Header & Navigation
+   Layout: Header and Navigation
    ================================ */
 
 header {
-  background: #2e2157; /* deep purple */
+  background: #2e2157;
   color: #ffffff;
   padding: 0.8rem 0;
 }
@@ -45,10 +45,8 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* prevents squashing on small screens */
+  flex-wrap: wrap;
 }
-
-/* Logo with image */
 
 .logo {
   display: flex;
@@ -78,8 +76,6 @@ header {
   font-size: 0.82rem;
 }
 
-/* Main navigation */
-
 nav ul {
   list-style: none;
   display: flex;
@@ -91,8 +87,6 @@ nav ul li a {
   font-size: 0.95rem;
   font-weight: 500;
 }
-
-/* Social links in header */
 
 .nav-social {
   display: flex;
@@ -137,6 +131,10 @@ nav ul li a {
   gap: 0.75rem;
 }
 
+/* ================================
+   Buttons (Global Fix)
+   ================================ */
+
 .btn {
   display: inline-block;
   padding: 0.6rem 1.3rem;
@@ -144,21 +142,65 @@ nav ul li a {
   font-size: 0.9rem;
   font-weight: 500;
   border: 1px solid transparent;
+  transition: all 0.2s ease;
 }
+
+.btn:hover {
+  text-decoration: none;
+}
+
+/* Primary Button */
 
 .btn-primary {
-  background: #f5f5ff;
-  color: #2e2157;
+  background: #2e2157;
+  color: #ffffff;
+  border-color: #2e2157;
 }
 
+.btn-primary:hover {
+  background: #241a45;
+  border-color: #241a45;
+}
+
+/* Outline Button (Readable Everywhere) */
+
 .btn-outline {
+  background: #ffffff;
+  color: #2e2157;
+  border: 1px solid #2e2157;
+}
+
+.btn-outline:hover {
+  background: rgba(46, 33, 87, 0.08);
+  color: #241a45;
+  border-color: #241a45;
+}
+
+/* Hero-specific overrides */
+
+.hero .btn-primary {
+  background: #f5f5ff;
+  color: #2e2157;
+  border-color: #f5f5ff;
+}
+
+.hero .btn-primary:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.hero .btn-outline {
+  background: transparent;
   border-color: #f5f5ff;
   color: #f5f5ff;
-  background: transparent;
+}
+
+.hero .btn-outline:hover {
+  background: rgba(245, 245, 255, 0.12);
 }
 
 /* ================================
-   Generic Sections & Typography
+   Sections and Typography
    ================================ */
 
 section {
@@ -186,7 +228,7 @@ main p {
 }
 
 /* ================================
-   Cards & Grids
+   Cards and Layout
    ================================ */
 
 .cards {
@@ -213,8 +255,6 @@ main p {
   color: #4b5563;
 }
 
-/* Two-column splits */
-
 .split {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -226,8 +266,6 @@ main p {
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
 }
 
-/* Quote styling */
-
 .quote {
   border-left: 4px solid #2e2157;
   padding-left: 1rem;
@@ -236,8 +274,6 @@ main p {
   color: #4b5563;
   font-style: italic;
 }
-
-/* Contact grid */
 
 .contact-grid {
   display: grid;
@@ -311,18 +347,15 @@ footer {
 }
 
 /* ================================
-   Responsive tweaks
+   Responsive
    ================================ */
 
-@media (max-width: 900px) {
-  nav ul {
-    gap: 1.2rem;
-  }
-}
-
 @media (max-width: 768px) {
+
   .navbar {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
 
   nav ul {
@@ -330,49 +363,6 @@ footer {
     gap: 0.9rem;
   }
 
-  .nav-social {
-    flex-wrap: wrap;
-  }
-
-  .split,
-  .split-reverse,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 3rem 0 2.2rem;
-  }
-}
-/* ================================
-   Mobile layout improvements
-   (affects screens <= 768px only)
-   ================================ */
-@media (max-width: 768px) {
-
-  /* Stack navbar content nicely */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .logo img {
-    height: 48px;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-  }
-
-  /* Stack hero content, cards and splits vertically */
   .hero-inner,
   .split,
   .split-reverse,
@@ -382,24 +372,15 @@ footer {
     gap: 1rem;
   }
 
-  /* Make cards stack nicely on mobile */
   .cards {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
-  /* Give sections a bit more breathing room */
   section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
   }
 
   .section-header h2 {
     font-size: 1.4rem;
-  }
-
-  .section-header p {
-    font-size: 0.95rem;
   }
 }
