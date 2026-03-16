@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGCIH Governance Paper 004 | Beyond Readiness: The Six Pillars of AI Governance</title>
+  <meta name="description" content="AGCIH Governance Paper 004 — Beyond Readiness: The Six Pillars of AI Governance. A governance-first framework for public authority, institutional readiness, and responsible implementation." />
+  <style>
+    :root{
+      --ink:#111827;
+      --text:#374151;
+      --muted:#6b7280;
+      --brand:#2b1f55;
+      --brand-2:#241a45;
+      --navy:#14213d;
+      --bg:#ffffff;
+      --bg-soft:#f7f8fb;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --shadow:0 10px 28px rgba(17,24,39,.08);
+      --shadow-soft:0 6px 18px rgba(17,24,39,.06);
+      --max:980px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background:var(--bg-soft);
+      line-height:1.78;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .topbar{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar .inner,
+    .hero .inner,
+    .page,
+    .footer .inner{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar .inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      min-height:64px;
+      gap:16px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .site-brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--ink);
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+
+    .site-brand .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--brand),var(--navy));
+      flex:0 0 auto;
+    }
+
+    .top-actions{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-size:.95rem;
+      color:var(--muted);
+    }
+
+    .hero{
+      background:linear-gradient(135deg, var(--brand), var(--navy));
+      color:#fff;
+      padding:54px 0 42px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .eyebrow{
+      display:inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:.78rem;
+      font-weight:700;
+      opacity:.95;
+      margin:0 0 14px;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(2rem, 4.6vw, 3.4rem);
+      line-height:1.12;
+      color:#fff;
+    }
+
+    .subtitle{
+      margin:0 0 18px;
+      max-width:820px;
+      font-size:1.1rem;
+      color:rgba(255,255,255,.94);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.6;
+    }
+
+    .byline{
+      font-family: Arial, Helvetica, sans-serif;
+      color:rgba(255,255,255,.94);
+      font-size:1rem;
+      line-height:1.6;
+    }
+
+    .page{
+      padding:28px 0 54px;
+    }
+
+    .article{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .article-inner{
+      padding:34px 34px 42px;
+    }
+
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px 18px;
+      padding:18px 34px;
+      border-bottom:1px solid var(--line);
+      background:#fcfcfe;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .abstract{
+      background:#fafafe;
+      border:1px solid var(--line);
+      border-left:4px solid var(--brand);
+      border-radius:16px;
+      padding:18px 18px 14px;
+      margin:0 0 26px;
+    }
+
+    .label{
+      display:block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight:700;
+      color:var(--ink);
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      font-size:.8rem;
+      margin:0 0 10px;
+    }
+
+    .keywords{
+      margin:0 0 26px;
+      padding-bottom:16px;
+      border-bottom:1px solid var(--line);
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--muted);
+      font-size:.97rem;
+    }
+
+    h2{
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      margin:0 0 14px;
+      font-size:1.22rem;
+      line-height:1.35;
+    }
+
+    h3{
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--brand);
+      margin:0 0 12px;
+      font-size:1.08rem;
+      line-height:1.4;
+    }
+
+    p{
+      margin:0 0 16px;
+      font-size:1.06rem;
+      color:var(--text);
+    }
+
+    .lead{
+      font-size:1.12rem;
+      color:#2f3d52;
+    }
+
+    .section{
+      margin:0 0 28px;
+    }
+
+    .pillars-banner{
+      margin:34px 0 22px;
+      padding:20px 22px;
+      border-radius:18px;
+      background:linear-gradient(135deg,#f7f5ff,#f8fbff);
+      border:1px solid var(--line);
+    }
+
+    .pillars-banner .small{
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.8rem;
+      color:var(--muted);
+      font-weight:700;
+      margin:0 0 8px;
+    }
+
+    .pillars-banner h2{
+      margin:0 0 6px;
+      font-size:1.35rem;
+    }
+
+    .roman-list{
+      margin:12px 0 0 24px;
+      padding:0;
+    }
+
+    .roman-list li{
+      margin:0 0 10px;
+      padding-left:4px;
+    }
+
+    .pillar{
+      margin:0 0 28px;
+      padding:24px 22px 12px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+    }
+
+    .pillar h3{
+      color:var(--ink);
+      font-size:1.16rem;
+      margin-bottom:14px;
+    }
+
+    .pillar strong.num{
+      color:var(--brand);
+      margin-right:8px;
+    }
+
+    .quote-line{
+      margin:16px 0 22px;
+      padding:16px 18px;
+      border-left:4px solid var(--brand);
+      background:#fafafe;
+      border-radius:12px;
+      font-style:italic;
+      color:#2f3d52;
+    }
+
+    .author-box,
+    .org-box{
+      margin-top:28px;
+      padding:20px 22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fcfcfe;
+    }
+
+    .author-box h3,
+    .org-box h3{
+      margin-bottom:10px;
+      color:var(--ink);
+    }
+
+    .footer{
+      padding:24px 0 46px;
+      color:var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:.93rem;
+    }
+
+    .footer .inner{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    @media (max-width: 760px){
+      .hero{padding:42px 0 34px}
+      .article-inner{padding:24px 20px 28px}
+      .meta-row{padding:14px 20px}
+      p{font-size:1rem}
+      .subtitle{font-size:1rem}
+      .pillar{padding:20px 16px 8px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div class="site-brand">
+        <span class="dot"></span>
+        <span>AGCIH</span>
+      </div>
+      <div class="top-actions">
+        <span>Africa Governance &amp; Civic Innovation Hub</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="inner">
+      <div class="eyebrow">AGCIH Governance Paper 004</div>
+      <h1>Beyond Readiness: The Six Pillars of AI Governance</h1>
+      <p class="subtitle">A Governance-First Framework for Public Authority, Institutional Readiness, and Responsible Implementation</p>
+      <div class="byline">
+        Danai Hazel Kudya<br />
+        Founder &amp; Executive Director<br />
+        Africa Governance &amp; Civic Innovation Hub (AGCIH)<br />
+        Harare, Zimbabwe &nbsp;|&nbsp; agcih.africa
+      </div>
+    </div>
+  </section>
+
+  <main class="page">
+    <article class="article">
+      <div class="meta-row">
+        <span><strong>Series:</strong> Governance Papers</span>
+        <span><strong>Paper:</strong> 004</span>
+        <span><strong>Region:</strong> Africa</span>
+        <span><strong>Theme:</strong> AI Governance</span>
+      </div>
+
+      <div class="article-inner">
+        <div class="abstract">
+          <span class="label">Abstract</span>
+          <p>As African states accelerate digital transformation and begin adopting artificial intelligence within public institutions, governance discussions remain heavily focused on readiness indicators such as infrastructure, data, skills, and policy. While these are necessary foundations, they are insufficient to explain whether AI can be governed responsibly once embedded in real administrative systems. This paper proposes a governance-first framework of Six Pillars of AI Governance: Infrastructure and Compute Sovereignty; Data Governance and Data Integrity; Skills, Capability, and Institutional Literacy; Policy, Law, and Regulatory Alignment; Institutional Hosting and Supervisory Architecture; and Accountability, Auditability, and Public Authority Continuity. Together, these pillars provide a practical lens for assessing whether AI adoption is merely ambitious or institutionally governable. The paper argues that the next phase of AI governance in Africa must move beyond readiness in the abstract and toward the institutional architecture required to preserve authority, accountability, and public trust in implementation.</p>
+        </div>
+
+        <div class="keywords">
+          <span class="label">Keywords</span>
+          AI governance · public authority · institutional readiness · administrative law · accountability · digital governance · Africa · regulatory architecture · supervisory systems · public sector innovation
+        </div>
+
+        <section class="section" id="introduction">
+          <h2>1. Introduction</h2>
+          <p class="lead">Across Africa, artificial intelligence is increasingly discussed as a strategic tool for public sector modernisation, economic transformation, and digital inclusion. Governments are drafting strategies, ministries are exploring deployment pathways, and policy spaces are filling with conversations about ethics, infrastructure, capacity, and innovation. This is an important and necessary phase.</p>
+
+          <p><strong>Yet readiness is not the same as governability.</strong></p>
+
+          <p>A country may possess digital ambition, emerging policy frameworks, growing technical ecosystems, and access to technology vendors, while still lacking the institutional architecture required to govern AI responsibly once it enters real systems of administration. The central question is therefore changing. It is no longer only whether states are ready to adopt AI, but whether their institutions are prepared to host, supervise, review, and remain accountable for AI systems once they begin shaping public processes.</p>
+
+          <p>This distinction matters.</p>
+
+          <p>Much of the prevailing discourse treats AI governance as a front-end challenge: build digital infrastructure, improve data quality, develop skills, and adopt strategies or ethical principles. These are indispensable foundations. But public institutions do not govern AI simply by approving its use. They govern AI by being able to absorb it into lawful and coherent systems of authority. Governance, in this sense, becomes an institutional question rather than a purely technological or policy one.</p>
+
+          <p>This paper proposes a governance-first framework of Six Pillars of AI Governance. The purpose is not to displace existing readiness discussions, but to deepen them by asking what conditions must exist for AI to remain governable after adoption. The framework is especially relevant to African states, where digital transformation is often advancing within institutions that are already navigating administrative strain, regulatory transition, infrastructure asymmetry, and uneven oversight capacity.</p>
+
+          <p>Two doctrinal concepts developed by AGCIH ground the governance architecture proposed in this paper and are most fully expressed in Pillars V and VI. The first, <strong>Administrative Hosting Capacity</strong>, refers to the institutional ability of a public authority to legally anchor, supervise, recalibrate, and remain accountable for automated systems operating in continuous mode — not as a precondition to deployment, but as an ongoing administrative obligation throughout operational life. The second, <strong>Relocation of Judgment</strong>, identifies the displacement of administrative discretion upstream into system design and configuration decisions, such that by the time a citizen receives a decision, the legally significant act of judgment may already have been exercised — silently, technically, and often without traceable attribution. These doctrines are introduced here as the conceptual foundation of the framework’s most consequential pillars. A full doctrinal treatment, including engagement with administrative law principles of legality, rationality, and accountability, is the subject of forthcoming publication in the <em>Journal of African Law</em>.</p>
+
+          <p>The six pillars are:</p>
+          <ol class="roman-list" type="I">
+            <li>Infrastructure and Compute Sovereignty</li>
+            <li>Data Governance and Data Integrity</li>
+            <li>Skills, Capability, and Institutional Literacy</li>
+            <li>Policy, Law, and Regulatory Alignment</li>
+            <li>Institutional Hosting and Supervisory Architecture</li>
+            <li>Accountability, Auditability, and Public Authority Continuity</li>
+          </ol>
+
+          <p>Together, these pillars provide a more practical lens for assessing whether AI adoption is merely possible or genuinely governable.</p>
+        </section>
+
+        <section class="section" id="architecture">
+          <h2>2. From Readiness to Governance Architecture</h2>
+          <p>The language of readiness has been useful in early AI policy debates. It has helped identify obvious preconditions for participation in the digital transition: connectivity, talent, legal frameworks, and data systems. But readiness discourse can also flatten the real complexity of implementation. It often assumes that once inputs are present, governance will follow.</p>
+
+          <p><strong>That assumption is too optimistic.</strong></p>
+
+          <p>The governance challenge intensifies when AI systems move from concept papers and pilot conversations into live institutional environments. At that point, important questions emerge: Under whose authority does the system operate? Who supervises outputs and intervenes when necessary? How are risk, error, and liability managed? What legal framework governs system-assisted decisions? How can decisions be explained, reviewed, or challenged? How does the institution prevent the diffusion of responsibility?</p>
+
+          <p>These are not secondary matters. They are the core of governance.</p>
+
+          <p>A governance-first framework therefore requires more than asking whether AI can be adopted. It asks whether institutions can remain institutions once AI becomes part of everyday decision environments. That is the transition this paper seeks to address.</p>
+        </section>
+
+        <div class="pillars-banner">
+          <div class="small">The Six Pillars</div>
+          <h2>A Governance-First Framework for AI in Public Administration</h2>
+        </div>
+
+        <section class="pillar" id="pillar-1">
+          <h3><strong class="num">Pillar I</strong> Infrastructure and Compute Sovereignty</h3>
+          <p>The first pillar concerns the technical foundations on which AI systems depend: electricity, connectivity, storage, cloud access, data centres, and compute capacity. These are often treated as development questions, but they are equally governance questions.</p>
+
+          <p>Infrastructure determines not only whether a system can function, but also the degree to which institutions can maintain operational control over it. Where public systems are highly dependent on infrastructure that sits outside domestic administrative oversight, governance becomes weaker. Institutions may rely on services they cannot meaningfully inspect, control, or sustain independently.</p>
+
+          <p>Compute sovereignty does not imply technological isolation. Rather, it points to the importance of understanding who controls the environments within which AI systems operate, how resilient those environments are, and whether critical public functions can remain stable under conditions of disruption, external dependence, or contractual strain.</p>
+
+          <p>In fragile infrastructure environments, automation can deepen vulnerability rather than solve it. Governance therefore requires more than digital access. It requires sufficiently stable and governable operating conditions within which public responsibility can be exercised.</p>
+        </section>
+
+        <section class="pillar" id="pillar-2">
+          <h3><strong class="num">Pillar II</strong> Data Governance and Data Integrity</h3>
+          <p>The second pillar addresses the data environment that supports AI systems. Data is often described as the raw material of AI. In governance terms, however, data is not merely an input; it is a legal, institutional, and ethical responsibility.</p>
+
+          <p>Public institutions require more than large datasets. They require lawful collection practices, privacy protections, interoperability, stewardship arrangements, documentation standards, quality assurance mechanisms, and clarity regarding ownership and access. Without these, AI systems may embed and reproduce underlying weaknesses across administrative processes.</p>
+
+          <p>Weak data governance can generate multiple forms of risk: bias, inaccuracy, exclusion, procedural unfairness, and legal uncertainty. In public sector environments, such weaknesses can affect rights, entitlements, oversight decisions, or resource allocation. This means that poor data governance is not simply a technical flaw. It is an administrative and legal problem.</p>
+
+          <p>Data integrity matters because governance depends on whether inputs can be trusted, explained, and defended. AI systems cannot produce responsible outcomes within data environments that are themselves institutionally incoherent.</p>
+        </section>
+
+        <section class="pillar" id="pillar-3">
+          <h3><strong class="num">Pillar III</strong> Skills, Capability, and Institutional Literacy</h3>
+          <p>The third pillar concerns institutional capability. AI governance is often framed as a matter of national talent development, usually with emphasis on engineers and technical specialists. While technical expertise is important, public governance requires a broader and more layered form of competence.</p>
+
+          <p>Institutions need procurement officers who can interrogate vendor claims, lawyers who can identify legal and constitutional implications, regulators who can assess compliance and risk, auditors who can evaluate traceability, judges who can understand system-mediated evidence or decision pathways, and senior officials who can distinguish efficiency claims from accountability realities.</p>
+
+          <p>Institutional literacy is therefore a governance requirement. Systems cannot be meaningfully supervised if the institution adopting them lacks the capacity to understand their function, limitations, and implications. Capability gaps often create overreliance on vendors, external consultants, or technical elites, thereby weakening public oversight.</p>
+
+          <p>In this sense, skills are not merely developmental assets. They are part of the architecture through which authority is preserved.</p>
+        </section>
+
+        <section class="pillar" id="pillar-4">
+          <h3><strong class="num">Pillar IV</strong> Policy, Law, and Regulatory Alignment</h3>
+          <p>The fourth pillar concerns the visible legal and policy environment within which AI is introduced. National strategies, data protection laws, cybersecurity statutes, procurement rules, administrative law principles, sector regulations, and institutional mandates all shape the formal basis of governance.</p>
+
+          <p>However, governance does not arise from legal existence alone. It depends on alignment.</p>
+
+          <p>A national AI strategy may signal ambition, but unless ministries, regulators, and public bodies understand how that ambition translates into real administrative process, the governance effect remains weak. Institutions need more than broad principles. They need coherence between strategy, statutory authority, operational guidance, procurement practice, oversight pathways, and review mechanisms.</p>
+
+          <p>This pillar therefore asks whether the legal environment is not only present, but usable. Can existing frameworks govern automated or AI-assisted decisions? Are procurement systems prepared for AI acquisition? Are sector regulators aligned with digital transformation agendas? Are institutional mandates clear where system outputs affect rights or public obligations?</p>
+
+          <p>Policy abundance should not be mistaken for governance maturity. Responsible implementation depends on whether law and regulation remain meaningful when systems are used in practice.</p>
+        </section>
+
+        <section class="pillar" id="pillar-5">
+          <h3><strong class="num">Pillar V</strong> Institutional Hosting and Supervisory Architecture</h3>
+          <p>The fifth pillar is one of the least discussed and most decisive. It concerns the internal administrative capacity required to host AI systems responsibly within institutions — and is where the doctrine of Administrative Hosting Capacity finds its direct institutional expression.</p>
+
+          <p>Institutions do not govern AI merely by procuring or approving it. They govern AI by embedding it within clear structures of authority, supervision, intervention, and review. This requires role clarity, escalation channels, internal oversight, cross-departmental coordination, and visible ownership of governance risk.</p>
+
+          <p>Institutional hosting means that an organisation knows where responsibility sits once the system begins operating. It knows who monitors outputs, who responds to anomalies, who has authority to intervene, and how conflicts between system recommendations and administrative judgement are handled.</p>
+
+          <p>Where supervisory architecture is absent, responsibility begins to drift. Over time, institutions may rely heavily on external vendors, internal technical teams, or opaque workflows, while formal authority becomes harder to locate. This can produce a dangerous gap between legal responsibility and operational control.</p>
+
+          <p><strong>Institutional hosting is the point at which governance becomes organisational rather than declaratory.</strong></p>
+        </section>
+
+        <section class="pillar" id="pillar-6">
+          <h3><strong class="num">Pillar VI</strong> Accountability, Auditability, and Public Authority Continuity</h3>
+          <p>The sixth pillar concerns whether public authority remains visible once AI begins influencing administrative processes, and is where the doctrine of Relocation of Judgment carries its most direct governance implications. This is the pillar that most clearly distinguishes a governance-first framework from a readiness framework.</p>
+
+          <p>AI-supported systems must remain accountable to institutions, and institutions must remain accountable to the public. This requires traceability, logging, documentation, review pathways, human oversight, appeal mechanisms, and legally intelligible attribution of responsibility.</p>
+
+          <p>Citizens affected by system-assisted decisions must not be left in a position where outcomes cannot be explained, challenged, or reconstructed. Officials must not become dependent on outputs they cannot interrogate. Public institutions must not lose the ability to say who decided, on what basis, and under what authority.</p>
+
+          <p>Public authority continuity refers to the principle that lawful administrative responsibility must remain identifiable even where technology shapes process. Governance fails when systems become influential but responsibility becomes opaque.</p>
+
+          <p><strong>Accountability and auditability are not supplementary safeguards. They are central to whether AI remains subordinate to law and public administration.</strong></p>
+        </section>
+
+        <section class="section" id="african-context">
+          <h2>3. Why the Six Pillars Matter in the African Context</h2>
+          <p>African states are entering the AI era under conditions that are structurally distinct from many higher-capacity jurisdictions. These conditions include infrastructure asymmetry, external technology dependence, rapidly evolving regulatory systems, uneven institutional capacity, and strong pressures to modernise public administration quickly.</p>
+
+          <p>This creates a dual challenge. On one hand, there is a legitimate desire to avoid being left behind in the global digital transition. On the other, there is a real risk that institutions may adopt technologies faster than they can govern them.</p>
+
+          <p>The Six Pillars framework matters because it addresses that second challenge directly. It provides a way of asking not only whether AI is possible, but whether it is institutionally governable under existing conditions. It also reframes AI governance away from abstract ethical language alone and toward administrative realities: authority, supervision, oversight, legal coherence, and continuity.</p>
+
+          <p>For African states, the real governance test may not be whether AI strategies are launched, but whether institutions remain coherent once those strategies begin to materialise in operational systems.</p>
+        </section>
+
+        <section class="section" id="conclusion">
+          <h2>4. Conclusion</h2>
+          <p>The future of AI governance in Africa will not be determined only by policy ambition, vendor activity, or technological adoption. It will be shaped by whether institutions can implement these systems while preserving authority, accountability, and public trust.</p>
+
+          <p>The language of readiness remains useful, but it is no longer sufficient. As AI begins entering real public institutions, governance must be understood as an architectural question. It depends on infrastructure that can be relied upon, data that can be defended, institutions that can understand what they supervise, laws that remain meaningful in implementation, supervisory structures that keep authority visible, and accountability mechanisms that preserve continuity of public responsibility.</p>
+
+          <p>The Six Pillars framework offers one way of naming these conditions clearly.</p>
+
+          <div class="quote-line">It is not a checklist for technological enthusiasm. It is a framework for institutional seriousness.</div>
+
+          <p>The next phase of AI governance in Africa must move beyond readiness.</p>
+          <p>It must move toward architecture.</p>
+        </section>
+
+        <section class="author-box">
+          <h3>About the Author</h3>
+          <p>Danai Hazel Kudya is the Founder and Executive Director of the Africa Governance &amp; Civic Innovation Hub (AGCIH), an independent governance institution based in Harare, Zimbabwe. Her work focuses on AI governance, administrative law, institutional design, and digital governance across Africa. She works at the intersection of public law and institutional architecture, engaging governments, regulators, and oversight bodies across the continent.</p>
+        </section>
+
+        <section class="org-box">
+          <h3>About AGCIH</h3>
+          <p>The Africa Governance &amp; Civic Innovation Hub (AGCIH) is an independent governance institution working on the institutional, legal, and administrative dimensions of digital transformation and AI governance in Africa. AGCIH publishes governance papers, working papers, and advisory frameworks for governments, regulators, and public institutions across the continent.</p>
+          <p><a href="https://agcih.africa">agcih.africa</a></p>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="inner">
+      <div>© 2026 Africa Governance &amp; Civic Innovation Hub (AGCIH). All rights reserved.</div>
+      <div>This paper may be cited with attribution. Reproduction for non-commercial purposes is permitted with acknowledgement of source.</div>
+    </div>
+  </footer>
+</body>
+</html>
