@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kenya AI Bill 2026 Commentary | AGCIH</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --purple-dark: #2D1B6E;
+    --purple-mid: #5B3898;
+    --purple-light: #7B58B8;
+    --navy: #1F2D5C;
+    --ink: #0F0B1E;
+    --mist: #F4F2FA;
+    --white: #FFFFFF;
+    --rule: rgba(91,56,152,0.18);
+    --gap-bg: #FAF9FE;
+    --rec-bg: #F0EDF9;
+    --accent-gold: #C9A84C;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER BAND ─────────────────────────────────────── */
+  .series-band {
+    background: var(--purple-dark);
+    color: rgba(255,255,255,0.7);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 24px;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(150deg, var(--purple-dark) 0%, var(--navy) 55%, #0D1A3A 100%);
+    padding: 64px 24px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 90% 20%, rgba(91,56,152,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(45,27,110,0.5) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Logo lockup */
+  .logo-lockup {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+
+  .logo-svg {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .logo-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .logo-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+
+  .doc-label {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4.5vw, 3rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.78);
+    font-weight: 500;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .meta-value {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .author-block {
+    margin-top: 28px;
+  }
+
+  .author-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--white);
+  }
+
+  .author-title {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.58);
+    margin-top: 2px;
+  }
+
+  /* ── MAIN CONTENT ─────────────────────────────────────── */
+  .main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ── EXECUTIVE SUMMARY ────────────────────────────────── */
+  .exec-summary {
+    background: var(--mist);
+    border-left: 4px solid var(--purple-mid);
+    padding: 40px 44px;
+    margin: 56px 0 52px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .exec-summary h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--purple-dark);
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  .exec-summary p {
+    font-size: 0.95rem;
+    color: #2A2340;
+    margin-bottom: 14px;
+    line-height: 1.8;
+  }
+
+  .exec-summary p:last-child { margin-bottom: 0; }
+
+  /* Gaps preview strip */
+  .gaps-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 36px 0;
+  }
+
+  @media (max-width: 600px) {
+    .gaps-strip { grid-template-columns: 1fr; }
+  }
+
+  .gap-chip {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .gap-chip-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+  }
+
+  .gap-chip-label {
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--purple-dark);
+  }
+
+  /* ── STRENGTHS SECTION ────────────────────────────────── */
+  .section-block {
+    margin: 52px 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--purple-dark);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .section-rule {
+    width: 48px;
+    height: 3px;
+    background: var(--purple-mid);
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+
+  .section-intro {
+    font-size: 0.95rem;
+    color: #2A2340;
+    margin-bottom: 28px;
+    line-height: 1.8;
+  }
+
+  /* Strengths grid */
+  .strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+  }
+
+  .strength-card {
+    background: var(--mist);
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+
+  .strength-card h4 {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--purple-dark);
+    margin-bottom: 6px;
+  }
+
+  .strength-card p {
+    font-size: 0.82rem;
+    color: #3A3060;
+    line-height: 1.65;
+  }
+
+  /* ── ACCORDION BASE ───────────────────────────────────── */
+  .accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .accordion-item {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    transition: border-color 0.2s;
+  }
+
+  .accordion-item.open {
+    border-color: var(--purple-mid);
+  }
+
+  .accordion-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    text-align: left;
+    transition: background 0.2s;
+  }
+
+  .accordion-trigger:hover {
+    background: var(--gap-bg);
+  }
+
+  .accordion-item.open .accordion-trigger {
+    background: var(--gap-bg);
+  }
+
+  .acc-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .acc-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+  }
+
+  .acc-title {
+    font-weight: 600;
+    font-size: 0.97rem;
+    color: var(--purple-dark);
+    line-height: 1.3;
+  }
+
+  .acc-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--mist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.3s;
+  }
+
+  .accordion-item.open .acc-arrow {
+    background: var(--purple-mid);
+    transform: rotate(180deg);
+  }
+
+  .acc-arrow svg {
+    width: 12px;
+    height: 12px;
+    stroke: var(--purple-dark);
+    fill: none;
+    stroke-width: 2.5;
+    transition: stroke 0.2s;
+  }
+
+  .accordion-item.open .acc-arrow svg {
+    stroke: var(--white);
+  }
+
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accordion-body-inner {
+    padding: 0 24px 28px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .accordion-body-inner p {
+    font-size: 0.92rem;
+    color: #2A2340;
+    margin-top: 20px;
+    line-height: 1.82;
+  }
+
+  .accordion-body-inner p + p {
+    margin-top: 14px;
+  }
+
+  /* Doctrine callout */
+  .doctrine-box {
+    background: var(--purple-dark);
+    color: rgba(255,255,255,0.9);
+    border-radius: 4px;
+    padding: 20px 22px;
+    margin: 20px 0;
+  }
+
+  .doctrine-box-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .doctrine-box p {
+    font-size: 0.85rem !important;
+    color: rgba(255,255,255,0.85) !important;
+    line-height: 1.72 !important;
+    margin-top: 0 !important;
+    font-style: italic;
+  }
+
+  /* Rule of law risk tag */
+  .rl-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    background: #FFF3E0;
+    color: #A0531A;
+    border: 1px solid #F5C98C;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-top: 16px;
+  }
+
+  /* Recommendations */
+  .rec-body .accordion-trigger {
+    background: var(--rec-bg);
+  }
+
+  .rec-body .accordion-item.open .accordion-trigger {
+    background: var(--rec-bg);
+  }
+
+  .rec-body .accordion-item {
+    border-color: rgba(91,56,152,0.22);
+  }
+
+  .rec-body .accordion-item.open {
+    border-color: var(--purple-mid);
+  }
+
+  .rec-num-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--purple-mid);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .rec-trigger-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .rec-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--purple-dark);
+    line-height: 1.3;
+  }
+
+  .rec-body .accordion-body-inner ul {
+    margin: 14px 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rec-body .accordion-body-inner li {
+    font-size: 0.9rem;
+    color: #2A2340;
+    line-height: 1.72;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .rec-body .accordion-body-inner li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--purple-mid);
+    font-size: 0.78rem;
+  }
+
+  /* ── DOCTRINE TABLE ───────────────────────────────────── */
+  .doctrine-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 20px;
+  }
+
+  .doctrine-table th {
+    background: var(--purple-dark);
+    color: rgba(255,255,255,0.85);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .doctrine-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.65;
+    color: #2A2340;
+  }
+
+  .doctrine-table tr:nth-child(even) td {
+    background: var(--mist);
+  }
+
+  .doctrine-table td:first-child {
+    font-weight: 600;
+    color: var(--purple-dark);
+    width: 32%;
+    white-space: nowrap;
+  }
+
+  /* ── CONCLUSION ───────────────────────────────────────── */
+  .conclusion {
+    background: linear-gradient(135deg, var(--purple-dark) 0%, var(--navy) 100%);
+    border-radius: 8px;
+    padding: 48px 44px;
+    margin: 56px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .conclusion::after {
+    content: '"';
+    position: absolute;
+    right: 32px;
+    top: -10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14rem;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .conclusion h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .conclusion p {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.82;
+    margin-bottom: 14px;
+  }
+
+  .conclusion p:last-child { margin-bottom: 0; }
+
+  .conclusion-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.92);
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 20px;
+    margin: 24px 0;
+    line-height: 1.65;
+  }
+
+  /* ── ABOUT ────────────────────────────────────────────── */
+  .about-section {
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 640px) {
+    .about-section { grid-template-columns: 1fr; }
+    .exec-summary { padding: 28px 22px; }
+    .conclusion { padding: 36px 24px; }
+  }
+
+  .about-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--purple-dark);
+    margin-bottom: 10px;
+  }
+
+  .about-section p {
+    font-size: 0.82rem;
+    color: #4A4068;
+    line-height: 1.75;
+  }
+
+  .ip-notice {
+    margin-top: 32px;
+    padding: 16px 20px;
+    background: var(--mist);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #5A5078;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ───────────────────────────────────────────── */
+  .footer {
+    background: var(--ink);
+    padding: 24px;
+    text-align: center;
+    margin-top: 56px;
+  }
+
+  .footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+  }
+
+  .footer a {
+    color: var(--purple-light);
+    text-decoration: none;
+  }
+
+  /* ── DIVIDER ──────────────────────────────────────────── */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--rule);
+    margin: 52px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Series band -->
+<div class="series-band">AGCIH Commentary Series — Governance Architecture &amp; AI Regulation</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+
+    <!-- Logo lockup -->
+    <div class="logo-lockup">
+      <svg class="logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Africa outline simplified -->
+        <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <!-- Scales of justice -->
+        <line x1="40" y1="22" x2="40" y2="58" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="28" y1="32" x2="52" y2="32" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="28" cy="40" r="5" stroke="#7B58B8" stroke-width="1.5" fill="rgba(123,88,184,0.15)"/>
+        <circle cx="52" cy="40" r="5" stroke="#7B58B8" stroke-width="1.5" fill="rgba(123,88,184,0.15)"/>
+        <!-- Network nodes -->
+        <circle cx="18" cy="22" r="3" fill="#5B3898" opacity="0.7"/>
+        <circle cx="62" cy="25" r="3" fill="#5B3898" opacity="0.7"/>
+        <circle cx="15" cy="52" r="2.5" fill="#7B58B8" opacity="0.6"/>
+        <circle cx="64" cy="55" r="2.5" fill="#7B58B8" opacity="0.6"/>
+        <circle cx="38" cy="65" r="3" fill="#5B3898" opacity="0.7"/>
+        <line x1="18" y1="22" x2="28" y2="32" stroke="rgba(123,88,184,0.4)" stroke-width="1"/>
+        <line x1="62" y1="25" x2="52" y2="32" stroke="rgba(123,88,184,0.4)" stroke-width="1"/>
+        <line x1="15" y1="52" x2="28" y2="40" stroke="rgba(123,88,184,0.3)" stroke-width="1"/>
+        <line x1="64" y1="55" x2="52" y2="40" stroke="rgba(123,88,184,0.3)" stroke-width="1"/>
+        <line x1="38" y1="65" x2="40" y2="58" stroke="rgba(123,88,184,0.4)" stroke-width="1"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">Africa Governance &amp; Civic Innovation Hub</span>
+        <span class="logo-tagline">Governance First. Africa Sovereign.</span>
+      </div>
+    </div>
+
+    <span class="doc-label">Policy Commentary</span>
+
+    <h1>Kenya Artificial Intelligence Bill, 2026:<br><em>Governance Architecture, Administrative Capacity, and the Rule-of-Law Threshold</em></h1>
+
+    <div class="author-block">
+      <div class="author-name">Danai Hazel Kudya</div>
+      <div class="author-title">Founder and Executive Director, Africa Governance and Civic Innovation Hub (AGCIH) — March 2026</div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Subject Bill</span>
+        <span class="meta-value">AI Bill, 2026 (Senate Bills No. 4)</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Jurisdiction</span>
+        <span class="meta-value">Republic of Kenya</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">AGCIH Series</span>
+        <span class="meta-value">Governance Architecture &amp; AI Regulation</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Executive Summary -->
+  <div class="exec-summary">
+    <span class="section-eyebrow">Executive Summary</span>
+    <h2>A credible framework — with four structural gaps that must be closed before commencement</h2>
+    <p>The Kenya Artificial Intelligence Bill, 2026 is one of the most substantive AI governance proposals currently before an African legislature. It establishes a Commissioner's Office, adopts a risk-based classification framework, introduces regulatory sandboxes, mandates transparency obligations, and creates criminal liability for specified violations. As a foundational legislative framework, it is credible.</p>
+    <p>This commentary does not dispute the Bill's ambition. It tests the Bill's implementability: whether the institutional architecture it creates can, in practice, sustain the governance functions it mandates on rule of law terms.</p>
+    <p>AGCIH's analysis identifies four structural gaps that, if not addressed before commencement, will produce a governance framework that exists on paper but operates unevenly — or harmfully — in practice.</p>
+
+    <div class="gaps-strip">
+      <div class="gap-chip">
+        <span class="gap-chip-num">Gap 01</span>
+        <span class="gap-chip-label">Administrative Hosting Capacity Deficit</span>
+      </div>
+      <div class="gap-chip">
+        <span class="gap-chip-num">Gap 02</span>
+        <span class="gap-chip-label">Procurement Entry Failure</span>
+      </div>
+      <div class="gap-chip">
+        <span class="gap-chip-num">Gap 03</span>
+        <span class="gap-chip-label">Criminal Liability Before Standards</span>
+      </div>
+      <div class="gap-chip">
+        <span class="gap-chip-num">Gap 04</span>
+        <span class="gap-chip-label">Relocation of Judgment Without Anchoring</span>
+      </div>
+    </div>
+
+    <p>The six recommendations in this commentary are each actionable within the Bill's existing structure and do not require a full redraft. They are addressed to the Senate, to the Office of the Attorney-General, and to technical working processes at committee stage.</p>
+  </div>
+
+  <!-- What the Bill Does Well -->
+  <div class="section-block">
+    <span class="section-eyebrow">Assessment</span>
+    <h2 class="section-title">What the Bill Does Well</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">Before identifying structural gaps, it is important to characterise the Bill accurately. Several of its features are genuinely well designed and, in the African legislative context, represent forward movement.</p>
+
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <h4>Risk-Classification Architecture</h4>
+        <p>Part V's four-tier framework — unacceptable, high, limited, and minimal risk — is the right structural approach. The inclusion of public administration as a high-risk sector in Section 25(2)(b) is particularly significant.</p>
+      </div>
+      <div class="strength-card">
+        <h4>Transparency &amp; Disclosure Obligations</h4>
+        <p>Section 28's requirements — disclosure of system nature, limitations, automated decision-making extent, and bias mitigation — are substantive obligations, not aspirational language.</p>
+      </div>
+      <div class="strength-card">
+        <h4>Workforce Impact Obligations</h4>
+        <p>Section 33's requirement for workforce impact assessments and reskilling programmes is an uncommon and commendable feature in AI legislation globally, and particularly apt for the Kenyan labour market.</p>
+      </div>
+      <div class="strength-card">
+        <h4>Advisory Committee Composition</h4>
+        <p>Section 17's consultative nomination processes — through registered organisations rather than ministerial appointment — provide a structural buffer against capture.</p>
+      </div>
+      <div class="strength-card">
+        <h4>Three-Year Review Requirement</h4>
+        <p>Section 37's mandatory parliamentary review every three years builds in a self-correction mechanism that recognises AI regulation cannot be static. This is governance-literate drafting.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- The Four Gaps -->
+  <div class="section-block">
+    <span class="section-eyebrow">Structural Analysis</span>
+    <h2 class="section-title">The Four Structural Gaps</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">AGCIH's analysis identifies four points in the Bill's architecture where the governance design fails to match the governance ambition. Each gap is identified by its location in the Bill, its precise nature, and its rule of law implications.</p>
+
+    <div class="accordion-list" id="gaps-accordion">
+
+      <!-- Gap 1 -->
+      <div class="accordion-item" data-index="0">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="acc-title-group">
+            <span class="acc-num">Gap 01 — Part II</span>
+            <span class="acc-title">Administrative Hosting Capacity Deficit</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>The Office of the Artificial Intelligence Commissioner is granted, under Section 10, one of the broadest regulatory mandates in Kenyan statutory law — encompassing risk assessments, conformity audits, sandbox management, nationwide literacy programmes, and enforcement. The Bill provides for appointment of staff and financial provisions, but these are necessary, not sufficient.</p>
+            <p>What the Bill does not provide is a phased operationalisation framework: a requirement that the Office demonstrates, by reference to defined minimum governance criteria, that it is institutionally ready to exercise particular functions before those functions are activated.</p>
+            <div class="doctrine-box">
+              <span class="doctrine-box-label">AGCIH Doctrine — Administrative Hosting Capacity</span>
+              <p>An institution must be capable of hosting a governance function before it can legitimately exercise it. Hosting means more than formal establishment. It means the institution can define boundaries, understand scope, supervise use, investigate failures, retain records, and explain its actions to affected parties and to the public. A regulator that cannot host its own mandate becomes a governance structure that generates legal exposure without generating legal protection.</p>
+            </div>
+            <p>The consequence is predictable. The Office will commence with its full mandate legally active before it has staffed, systemised, or operationally grounded the functions those demands require. Early enforcement taken without adequate capacity will be legally fragile. Early inaction in the face of legitimate complaints will erode public credibility.</p>
+            <div class="rl-tag">⚠ Rule of Law Risk: Enforcement without institutional capacity; public credibility erosion</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gap 2 -->
+      <div class="accordion-item" data-index="1">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="acc-title-group">
+            <span class="acc-num">Gap 02 — Section 34</span>
+            <span class="acc-title">The Procurement Entry Failure</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Section 34 is the Bill's entire provision governing AI use by public institutions. It reads, in full: <em>"A public entity, including a county government, that uses an artificial intelligence system shall ensure compliance with this Act."</em> That is the entirety of Section 34. One sentence.</p>
+            <p>The section does not specify who holds responsibility for compliance. It does not require a pre-deployment governance assessment. It does not address procurement — the moment at which public institutions are most exposed. It does not differentiate between a national ministry deploying a high-risk AI system in a criminal justice context and a county government using a scheduling tool.</p>
+            <div class="doctrine-box">
+              <span class="doctrine-box-label">AGCIH Doctrine — Procurement Entry</span>
+              <p>AI enters public administration primarily through procurement. The governance risk is highest at the moment of institutional entry — when a public body decides to acquire, integrate, or authorise a system within its administrative workflows. Post-deployment enforcement cannot substitute for governance at the entry point. By the time a regulator investigates a public institution's AI-related harm, the harm is already operational and often structurally embedded in administrative practice.</p>
+            </div>
+            <p>A governance framework that applies less rigour to the public sector than to private deployers inverts the accountability structure that rule of law governance requires. Public institutions exercise public authority. Their use of AI is subject to constitutional obligations of fairness, accountability, and transparency that private actors do not carry in the same form.</p>
+            <div class="rl-tag">⚠ Rule of Law Risk: Government AI ungoverned at point of entry; less rigour than the private sector</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gap 3 -->
+      <div class="accordion-item" data-index="2">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="acc-title-group">
+            <span class="acc-num">Gap 03 — Sections 35 &amp; 36</span>
+            <span class="acc-title">Criminal Liability Before Standards</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Section 35 (Offences and Penalties) is active upon the Bill's commencement. Penalties include fines of up to five million shillings and imprisonment of up to two years for non-compliance with risk assessment and transparency obligations.</p>
+            <p>Yet Section 36(2) expressly defers to the Cabinet Secretary the detailed criteria for risk classification, the forms and processes for risk assessments, and the content requirements for transparency disclosures. These regulations have not yet been written and are not required to be written before commencement.</p>
+            <div class="doctrine-box">
+              <span class="doctrine-box-label">AGCIH Doctrine — Governance Readiness</span>
+              <p>Governance readiness means that the institutional and regulatory infrastructure necessary to exercise a power, enforce an obligation, or apply a standard must be in place before that power is exercised, that obligation is enforced, or that standard is applied. A Bill that creates criminal liability for non-compliance with standards yet to be defined is institutionally incomplete at commencement.</p>
+            </div>
+            <p>This creates a direct rule of law problem. The principle of legal certainty, recognised in the Constitution of Kenya under Article 47 (fair administrative action) and Article 10, requires that persons subject to law must be able to know in advance what the law requires of them. A criminal provision that activates before its compliance standards have been defined does not satisfy that requirement.</p>
+            <div class="rl-tag">⚠ Rule of Law Risk: Violation of legal certainty; unenforceable on commencement</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gap 4 -->
+      <div class="accordion-item" data-index="3">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="acc-title-group">
+            <span class="acc-num">Gap 04 — Section 32(3)</span>
+            <span class="acc-title">Relocation of Judgment Without Anchoring</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Section 32 requires that AI systems incorporate human oversight in critical decisions, including review mechanisms that allow a qualified person to intervene or override the system's outputs where decisions may affect human rights, safety, or societal well-being. This is the right principle.</p>
+            <p>The problem is Section 32(3). The definition of what constitutes a "critical decision" — and therefore the scope of the entire human oversight obligation — is deferred to Cabinet Secretary regulations. Until those regulations are made, a deployer can argue in good faith that their system's decisions do not fall within the undefined category of 'critical.'</p>
+            <div class="doctrine-box">
+              <span class="doctrine-box-label">AGCIH Doctrine — Relocation of Judgment</span>
+              <p>Relocation of Judgment occurs when formal authority is nominally retained by a human institution or officer, while operational reality reorganises decision-making around system outputs. The risk is not only formal delegation, but the condition in which accountability appears assigned but cannot, in practice, be located, exercised, or enforced. A provision that guarantees human oversight without defining when that oversight is required is a provision that permits the relocation of judgment while appearing to prevent it.</p>
+            </div>
+            <p>The definition of 'critical decisions' is a governance question, not a technical one. That choice belongs in primary legislation, not in subordinate instruments that may be delayed, contested, or quietly circumscribed.</p>
+            <div class="rl-tag">⚠ Rule of Law Risk: Human oversight protection formally present but operationally unenforceable</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Recommendations -->
+  <div class="section-block rec-body">
+    <span class="section-eyebrow">Legislative Action</span>
+    <h2 class="section-title">Six Recommendations for Amendment</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">The following recommendations address each structural gap with specificity. Each is actionable within the Bill's existing structure and does not require a full redraft. They are addressed to the Senate, to the Office of the Attorney-General, and to any technical working process at committee stage.</p>
+
+    <div class="accordion-list">
+
+      <div class="accordion-item" data-index="r0">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="rec-trigger-inner">
+            <div class="rec-num-badge">01</div>
+            <span class="rec-label">Insert a Phased Operationalisation Provision for the Commissioner's Office</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>The Bill should be amended to include a phased operationalisation provision under Part II, requiring the Commissioner to publish a Governance Readiness Plan within six months of appointment. The Plan must demonstrate, for each category of function under Section 10, the staffing, technical systems, and administrative protocols that the Office has established — or has a funded timeline to establish — before exercising that function.</p>
+            <p>Specifically, the Bill should differentiate between:</p>
+            <ul>
+              <li>Functions the Office may exercise from the date of the Commissioner's appointment (receipt of complaints, publication of the high-risk register, advisory functions)</li>
+              <li>Functions requiring demonstrated operational readiness before activation (enforcement action, conformity audits, imposition of administrative fines)</li>
+            </ul>
+            <p>This phasing is not a limitation on the Office's mandate. It is the condition that makes the mandate credible.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-index="r1">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="rec-trigger-inner">
+            <div class="rec-num-badge">02</div>
+            <span class="rec-label">Replace Section 34 with a Public Sector AI Governance Framework</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Section 34 must be replaced with a substantive provision governing AI use in the public sector. At a minimum, the replacement provision should require:</p>
+            <ul>
+              <li>That each public entity designates a named Accountable Officer for AI governance before deploying any AI system in its administrative operations</li>
+              <li>That any public entity intending to procure or deploy a high-risk AI system must notify the Commissioner and complete a pre-deployment governance assessment, the minimum content of which is defined in primary legislation</li>
+              <li>That procurement contracts for AI systems include specified governance provisions covering transparency, suspension rights, audit access, and vendor obligations in the event of system failure or harm to citizens</li>
+              <li>That public entities maintain documentation of AI system use sufficient to support internal review, external audit, and the exercise of rights by affected persons</li>
+              <li>That the Commissioner publishes a Public Sector AI Governance Code against which public entity compliance is assessed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-index="r2">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="rec-trigger-inner">
+            <div class="rec-num-badge">03</div>
+            <span class="rec-label">Establish a Regulations-First Commencement Condition for Enforcement Provisions</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>The offences and penalties under Part VI should not come into force until the Cabinet Secretary has gazetted regulations prescribing, at minimum: the detailed criteria for risk classification under Section 25; the forms, processes, and timelines for risk assessments under Section 26; and the content and format requirements for transparency disclosures under Section 28.</p>
+            <p>This may be achieved by inserting a commencement provision specifying that Part VI comes into force on a date to be notified by the Cabinet Secretary in the Gazette, and that no such notice may be issued before the required regulations are in force.</p>
+            <p>The principle at stake is straightforward: criminal liability requires prior notice of the conduct it criminalises. That notice cannot be given by a Bill alone when the Bill expressly defers the operative standard to regulations yet to be written.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-index="r3">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="rec-trigger-inner">
+            <div class="rec-num-badge">04</div>
+            <span class="rec-label">Define 'Critical Decisions' in Primary Legislation</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>Section 32's human oversight obligation should not be contingent on regulations for its operational definition. The Bill should define, in primary legislation, a non-exhaustive list of decision categories that constitute 'critical decisions', including decisions affecting:</p>
+            <ul>
+              <li>Liberty, welfare entitlements, employment, and housing</li>
+              <li>Health treatment and immigration status</li>
+              <li>Criminal justice outcomes and access to public services</li>
+            </ul>
+            <p>The Cabinet Secretary may, by regulation, extend this list. But the baseline must be in the Act. The protection of human oversight in decisions affecting fundamental rights is not appropriate for subordinate instruments subject to ministerial discretion.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-index="r4">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="rec-trigger-inner">
+            <div class="rec-num-badge">05</div>
+            <span class="rec-label">Introduce a Regulatory Readiness Assessment for the Commissioner's Appointment</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>The Bill should require that the Commissioner, within ninety days of taking office, publish a public institutional readiness assessment identifying: the governance functions the Office is prepared to exercise; those requiring further resourcing; and a timeline for full operationalisation.</p>
+            <p>This assessment should be submitted to the relevant Parliamentary Committee and made publicly available. This is not a burden on the Commissioner — it is transparency about the institution's actual starting condition, and it creates the public accountability the Office will need to function with legitimacy from its earliest days.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-index="r5">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          <div class="rec-trigger-inner">
+            <div class="rec-num-badge">06</div>
+            <span class="rec-label">Clarify the Relationship Between the Commissioner and Existing Sectoral Regulators</span>
+          </div>
+          <div class="acc-arrow">
+            <svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg>
+          </div>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">
+            <p>The Bill's mandate extends across healthcare, education, agriculture, finance, security, employment, and public administration — each with an existing regulatory body. The Bill does not specify how the Commissioner's authority relates to the Communications Authority, the Data Protection Commissioner, the Capital Markets Authority, the Kenya Revenue Authority, or sector-specific regulators.</p>
+            <p>The Bill should include a provision establishing a mandatory coordination protocol between the Commissioner and named sectoral regulators, specifying lead authority, concurrent obligations, and conflict resolution mechanisms. Clarity on regulatory jurisdiction is not a luxury in complex institutional environments. It is the condition that makes enforcement coherent.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Doctrine Framework -->
+  <div class="section-block">
+    <span class="section-eyebrow">AGCIH Doctrinal Framework</span>
+    <h2 class="section-title">Why Architecture Comes First</h2>
+    <div class="section-rule"></div>
+    <p class="section-intro">The analysis in this commentary is grounded in AGCIH's doctrinal framework for AI governance in public administration. Applied to the Kenya AI Bill, these doctrines function as diagnostic tools — identifying specific provisions that must be strengthened and design choices that, if left unaddressed, will produce governance failures that no amount of enforcement capacity can later repair.</p>
+
+    <table class="doctrine-table">
+      <thead>
+        <tr>
+          <th>AGCIH Doctrine</th>
+          <th>Application to the Kenya AI Bill</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Continuous Administration</td>
+          <td>Public institutions administer continuously. AI systems enter this environment and alter its character over time, not at a single point. Governance cannot be treated as a one-time compliance check.</td>
+        </tr>
+        <tr>
+          <td>Administrative Hosting Capacity</td>
+          <td>A regulator must be able to define boundaries, supervise use, investigate failures, and explain its actions before it operationally authorises any function. The Commissioner's Office Gap is a hosting capacity deficit.</td>
+        </tr>
+        <tr>
+          <td>Procurement Entry Doctrine</td>
+          <td>Governance risk for public institutions is highest at the procurement decision. Section 34's failure to govern public sector AI procurement leaves the most consequential governance moment unaddressed.</td>
+        </tr>
+        <tr>
+          <td>Relocation of Judgment</td>
+          <td>When accountability appears assigned but cannot in practice be located, exercised, or enforced, judgment has been relocated without authorisation. Section 32's undefined 'critical decisions' creates this condition.</td>
+        </tr>
+        <tr>
+          <td>Governance Readiness</td>
+          <td>Readiness is not ambition. It is an institutional condition — defined responsibility, supervision protocols, documentation standards, and contestation pathways — before a governance function is exercised.</td>
+        </tr>
+        <tr>
+          <td>Institutional Friction</td>
+          <td>AI does not enter neutral environments. Where governance architecture does not prepare institutions for legal procedures, professional duties, and constitutional obligations, frictions accumulate silently as over-reliance, poor documentation, or system-shaped decisions that appear attributable but are not.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Conclusion -->
+  <div class="conclusion">
+    <h2>Conclusion</h2>
+    <p>The Kenya Artificial Intelligence Bill, 2026 is a serious legislative effort. It names the right problems, reaches toward the right principles, and creates a structural framework capable of genuine governance — if that framework is completed.</p>
+    <p>The four gaps identified in this commentary are not peripheral. They go to the centre of whether the Bill, as currently drafted, can produce the governance outcomes it seeks.</p>
+    <div class="conclusion-quote">
+      "The rule of law is not preserved by ambition. It is preserved by design. And in AI governance, the most important design question is this: can the institutions this legislation creates remain fully responsible for the authority they are given to exercise in public?"
+    </div>
+    <p>Kenya has an opportunity to enact AI governance legislation that the continent can learn from. That opportunity is best taken by getting the architecture right before commencement — not by discovering its gaps after the Commissioner is in office and the public sector is using systems whose governance framework consists of a single sentence.</p>
+    <p>AGCIH submits that, with the amendments proposed in this commentary, the answer can be yes.</p>
+  </div>
+
+  <!-- About -->
+  <div class="about-section">
+    <div>
+      <h3>About AGCIH</h3>
+      <p>The Africa Governance and Civic Innovation Hub (AGCIH) is an independent governance institution based in Harare, Zimbabwe. AGCIH works at the intersection of administrative law, digital governance, and institutional design, with a focus on AI and digital systems in African public administration.</p>
+      <p style="margin-top:10px;">AGCIH does not advocate, regulate, or deploy technology. AGCIH operationalises governance.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>Africa Governance and Civic Innovation Hub (AGCIH)<br>Harare, Zimbabwe<br>admin@agcih.africa<br>www.agcih.africa</p>
+      <p style="margin-top:10px;font-weight:600;color:var(--purple-dark);">Founder and Executive Director:<br>Danai Hazel Kudya</p>
+    </div>
+  </div>
+
+  <div class="ip-notice">
+    All AGCIH doctrines referenced in this commentary — including Continuous Administration, Administrative Hosting Capacity, Relocation of Judgment, Procurement Entry Doctrine, Governance Readiness, and Institutional Friction — are the intellectual property of the Africa Governance and Civic Innovation Hub (AGCIH) and must carry AGCIH attribution whenever referenced. © Africa Governance and Civic Innovation Hub (AGCIH), 2026. All rights reserved.
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>© 2026 Africa Governance and Civic Innovation Hub (AGCIH) — <a href="https://www.agcih.africa">www.agcih.africa</a> — Governance First. Africa Sovereign.</p>
+</div>
+
+<script>
+  function toggleAccordion(btn) {
+    const item = btn.closest('.accordion-item');
+    const body = item.querySelector('.accordion-body');
+    const isOpen = item.classList.contains('open');
+
+    if (isOpen) {
+      item.classList.remove('open');
+      body.style.maxHeight = '0';
+    } else {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+
+  // Recalculate open accordion heights on resize
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.accordion-item.open .accordion-body').forEach(body => {
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  });
+</script>
+</body>
+</html>
