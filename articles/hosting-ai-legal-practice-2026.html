@@ -15,27 +15,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── TOKENS ─────────────────────────────────────── */
     :root {
-      --navy:      #1F3864;
-      --navy-deep: #162845;
-      --gold:      #B8922A;
-      --gold-light:#D4A843;
-      --slate:     #3A5177;
-      --slate-mid: #4A6490;
-      --bg:        #FAFAF8;
-      --surface:   #FFFFFF;
-      --text:      #1A1A2E;
-      --text-mid:  #3D3D5C;
-      --text-light:#6B6B8A;
-      --rule:      #E2DDD6;
-      --box-bg:    #EEF2F7;
+      --navy:       #1F3864;
+      --navy-deep:  #162845;
+      --navy-mid:   #2A4A7F;
+      --purple:     #5B2D8E;
+      --purple-mid: #6B3FA0;
+      --purple-pale:#EDE5F5;
+      --bg:         #FAFAF8;
+      --text:       #1A1A2E;
+      --text-mid:   #3D3D5C;
+      --text-light: #6B6B8A;
+      --rule:       #E0DCF0;
+      --box-bg:     #EDE5F5;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body:    'Source Serif 4', Georgia, serif;
       --font-ui:      'DM Sans', system-ui, sans-serif;
     }
 
-    /* ── RESET ──────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 18px; scroll-behavior: smooth; }
     body {
@@ -46,20 +43,20 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── SITE HEADER ────────────────────────────────── */
+    /* SITE HEADER */
     .site-header {
       background: var(--navy-deep);
       padding: 0.75rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 3px solid var(--gold);
+      border-bottom: 3px solid var(--purple);
     }
     .site-header .brand {
       font-family: var(--font-ui);
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--gold);
+      color: #AABBDD;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       text-decoration: none;
@@ -72,26 +69,22 @@
       margin-left: 1.5rem;
       transition: color 0.2s;
     }
-    .site-header nav a:hover { color: var(--gold); }
+    .site-header nav a:hover { color: #FFFFFF; }
 
-    /* ── HERO ───────────────────────────────────────── */
+    /* HERO */
     .hero {
       background: var(--navy);
       background-image:
-        radial-gradient(ellipse at 70% 0%, rgba(184,146,42,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse at 0% 100%, rgba(58,81,119,0.4) 0%, transparent 50%);
+        radial-gradient(ellipse at 80% 0%, rgba(91,45,142,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse at 0% 100%, rgba(42,74,127,0.35) 0%, transparent 50%);
       padding: 5rem 2rem 4rem;
-      text-align: left;
     }
-    .hero-inner {
-      max-width: 780px;
-      margin: 0 auto;
-    }
+    .hero-inner { max-width: 780px; margin: 0 auto; }
     .hero-series {
       font-family: var(--font-ui);
       font-size: 0.7rem;
       font-weight: 600;
-      color: var(--gold);
+      color: #A07DD0;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 1.5rem;
@@ -104,7 +97,7 @@
       display: block;
       width: 2rem;
       height: 2px;
-      background: var(--gold);
+      background: var(--purple-mid);
     }
     .hero h1 {
       font-family: var(--font-display);
@@ -115,59 +108,50 @@
       margin-bottom: 1.25rem;
     }
     .hero-subtitle {
-      font-family: var(--font-body);
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #AABBDD;
       font-style: italic;
       margin-bottom: 2.5rem;
       line-height: 1.55;
     }
     .hero-byline {
-      border-top: 1px solid rgba(184,146,42,0.3);
+      border-top: 1px solid rgba(107,63,160,0.4);
       padding-top: 1.25rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1.25rem;
       align-items: center;
     }
     .hero-byline .author {
       font-family: var(--font-ui);
       font-size: 0.85rem;
-      color: #FFFFFF;
       font-weight: 600;
+      color: #FFFFFF;
     }
     .hero-byline .affil {
       font-family: var(--font-ui);
       font-size: 0.82rem;
       color: #9AACCB;
     }
-    .hero-byline .affil a {
-      color: var(--gold);
-      text-decoration: none;
-    }
+    .hero-byline .affil a { color: #A07DD0; text-decoration: none; }
 
-    /* ── ARTICLE LAYOUT ─────────────────────────────── */
-    .article-wrap {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
+    /* LAYOUT */
+    .article-wrap { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
 
-    /* ── OPENING SECTION ────────────────────────────── */
+    /* OPENING */
     .opening {
       padding: 3.5rem 0 2rem;
       border-bottom: 1px solid var(--rule);
       margin-bottom: 3rem;
     }
     .opening p {
-      font-size: 1.08rem;
-      line-height: 1.8;
+      font-size: 1.05rem;
+      line-height: 1.82;
       margin-bottom: 1.4rem;
       color: var(--text);
     }
-    .opening p:last-child { margin-bottom: 0; }
 
-    /* ── SOURCE NOTE ────────────────────────────────── */
+    /* SOURCE NOTE */
     .source-note {
       font-size: 0.78rem;
       color: var(--text-light);
@@ -178,11 +162,12 @@
       border-left: 2px solid var(--rule);
     }
 
-    /* ── PART DIVIDER ───────────────────────────────── */
+    /* PART DIVIDER */
     .part-divider {
       background: var(--navy);
-      background-image: radial-gradient(ellipse at 90% 50%, rgba(184,146,42,0.1) 0%, transparent 60%);
-      border-radius: 4px;
+      background-image: radial-gradient(ellipse at 90% 50%, rgba(91,45,142,0.2) 0%, transparent 60%);
+      border-left: 5px solid var(--purple);
+      border-radius: 3px;
       padding: 1.75rem 2rem;
       margin: 3.5rem 0 2.5rem;
     }
@@ -190,7 +175,7 @@
       font-family: var(--font-ui);
       font-size: 0.65rem;
       font-weight: 600;
-      color: var(--gold);
+      color: #A07DD0;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 0.4rem;
@@ -200,13 +185,12 @@
       font-size: 1.6rem;
       font-weight: 700;
       color: #FFFFFF;
-      line-height: 1.2;
     }
 
-    /* ── SECTION HEADINGS ───────────────────────────── */
+    /* HEADINGS */
     .section-head {
       font-family: var(--font-display);
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--navy);
       margin: 2.5rem 0 0.9rem;
@@ -214,15 +198,15 @@
     }
     .sub-head {
       font-family: var(--font-ui);
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 600;
-      color: var(--slate);
-      margin: 2rem 0 0.6rem;
+      color: var(--purple);
+      margin: 2rem 0 0.5rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
     }
 
-    /* ── BODY TEXT ──────────────────────────────────── */
+    /* BODY */
     .body-text p {
       font-size: 1rem;
       line-height: 1.82;
@@ -233,7 +217,7 @@
     }
     .body-text p:last-child { margin-bottom: 0; }
 
-    /* ── PULL QUOTE ─────────────────────────────────── */
+    /* PULL QUOTE */
     .pull-quote {
       display: flex;
       margin: 2.5rem 0;
@@ -243,27 +227,27 @@
     .pull-quote .bar {
       width: 5px;
       flex-shrink: 0;
-      background: var(--gold);
+      background: var(--purple);
     }
     .pull-quote .content {
-      background: var(--box-bg);
+      background: var(--purple-pale);
       padding: 1.5rem 1.75rem;
       flex: 1;
     }
     .pull-quote p {
       font-family: var(--font-display);
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       font-style: italic;
       color: var(--navy);
       line-height: 1.6;
       font-weight: 600;
     }
 
-    /* ── ELEMENT BOXES (7 elements) ─────────────────── */
+    /* ELEMENT BOXES */
     .element-box {
-      background: var(--slate);
-      background-image: radial-gradient(ellipse at 100% 0%, rgba(255,255,255,0.04) 0%, transparent 50%);
-      border-radius: 4px;
+      background: var(--navy);
+      background-image: radial-gradient(ellipse at 100% 0%, rgba(91,45,142,0.15) 0%, transparent 50%);
+      border-radius: 3px;
       padding: 1.75rem 2rem;
       margin: 1.25rem 0;
     }
@@ -272,37 +256,38 @@
       align-items: baseline;
       gap: 0.75rem;
       margin-bottom: 0.9rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(107,63,160,0.4);
     }
     .element-box .el-num {
       font-family: var(--font-ui);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.08em;
+      color: #A07DD0;
+      letter-spacing: 0.1em;
     }
     .element-box .el-title {
       font-family: var(--font-ui);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: #FFFFFF;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
     .element-box p {
-      font-family: var(--font-body);
       font-size: 0.95rem;
       line-height: 1.75;
-      color: #D8E2F0;
+      color: #C8D5E8;
       margin-bottom: 0.85rem;
       text-align: justify;
     }
     .element-box p:last-child { margin-bottom: 0; }
 
-    /* ── CONCLUSION DIVIDER ─────────────────────────── */
+    /* CONCLUSION */
     .conclusion-divider {
       background: var(--navy-deep);
-      border-top: 4px solid var(--gold);
-      border-radius: 4px;
+      border-top: 4px solid var(--purple);
+      border-radius: 3px;
       padding: 1.75rem 2rem;
       margin: 3.5rem 0 2.5rem;
     }
@@ -310,7 +295,7 @@
       font-family: var(--font-ui);
       font-size: 0.65rem;
       font-weight: 600;
-      color: var(--gold);
+      color: #A07DD0;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 0.4rem;
@@ -322,15 +307,15 @@
       color: #FFFFFF;
     }
 
-    /* ── LEXICON ────────────────────────────────────── */
+    /* LEXICON */
     .lexicon {
       margin: 3.5rem 0;
-      border-top: 3px solid var(--gold);
+      border-top: 3px solid var(--purple);
       padding-top: 2.5rem;
     }
     .lexicon h3 {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--navy);
       margin-bottom: 0.5rem;
     }
@@ -340,16 +325,9 @@
       font-style: italic;
       margin-bottom: 2rem;
     }
-    .lex-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .lex-table tr {
-      border-bottom: 1px solid var(--rule);
-    }
-    .lex-table tr:last-child {
-      border-bottom: none;
-    }
+    .lex-table { width: 100%; border-collapse: collapse; }
+    .lex-table tr { border-bottom: 1px solid var(--rule); }
+    .lex-table tr:last-child { border-bottom: none; }
     .lex-table td {
       padding: 1rem 0.75rem 1rem 0;
       vertical-align: top;
@@ -363,14 +341,29 @@
       width: 30%;
       padding-right: 1.5rem;
     }
-    .lex-table td:last-child {
-      color: var(--text-mid);
-      font-style: italic;
-    }
+    .lex-table td:last-child { color: var(--text-mid); font-style: italic; }
 
-    /* ── FOOTER BRAND ───────────────────────────────── */
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--purple-mid);
+      text-decoration: none;
+      margin: 2rem 0 0;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .back-link:hover { border-color: var(--purple-mid); }
+    .back-link::before { content: '\2190'; font-size: 1rem; }
+
+    /* FOOTER */
     .article-footer {
-      background: var(--navy);
+      background: var(--navy-deep);
+      border-top: 3px solid var(--purple);
       margin-top: 4rem;
       padding: 2.5rem 2rem;
       text-align: center;
@@ -379,7 +372,7 @@
       font-family: var(--font-ui);
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--gold);
+      color: #A07DD0;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 0.4rem;
@@ -390,29 +383,8 @@
       color: #9AACCB;
       font-style: italic;
     }
-    .article-footer .footer-sub a {
-      color: var(--gold);
-      text-decoration: none;
-    }
+    .article-footer .footer-sub a { color: #A07DD0; text-decoration: none; }
 
-    /* ── BACK LINK ──────────────────────────────────── */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-ui);
-      font-size: 0.8rem;
-      color: var(--gold);
-      text-decoration: none;
-      margin: 2rem 0 0;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .back-link:hover { border-color: var(--gold); }
-    .back-link::before { content: '\2190'; font-size: 1rem; }
-
-    /* ── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 640px) {
       .hero { padding: 3rem 1.25rem 2.5rem; }
       .article-wrap { padding: 0 1.25rem; }
@@ -423,7 +395,6 @@
 </head>
 <body>
 
-  <!-- SITE HEADER -->
   <header class="site-header">
     <a class="brand" href="/">AGCIH &nbsp;|&nbsp; agcih.africa</a>
     <nav>
@@ -433,7 +404,6 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-series">AGCIH Governance Article &nbsp; Legal Series</div>
@@ -446,13 +416,11 @@
     </div>
   </section>
 
-  <!-- ARTICLE BODY -->
   <main>
     <div class="article-wrap">
 
       <a class="back-link" href="/articles">Back to Articles</a>
 
-      <!-- OPENING -->
       <section class="opening">
         <p>Artificial intelligence has already entered the legal field. This is no longer a speculative question. Around the world, lawyers, judges, court staff, legal researchers, and law firms are already using AI tools to summarise text, support drafting, organise material, assist research, and accelerate routine work. Yet the pattern emerging globally is not one of simple technological progress. It is one of uneven institutional readiness.</p>
         <p>AI uptake is advancing faster than legal professions, courts, and professional bodies are building the governance systems required to supervise its use responsibly. UNESCO's global survey of judicial professionals captures this plainly: 44% of respondents reported already using AI tools in their work, yet only 9% had received training or institutional guidance, and a strong majority supported mandatory regulations and formal guidance frameworks. The American Bar Association has itself recognised that AI has moved from experimentation into the working infrastructure of legal practice.</p>
@@ -467,7 +435,6 @@
       </div>
 
       <div class="body-text">
-
         <h3 class="section-head">The global picture is already becoming harder to ignore</h3>
         <p>Major legal institutions have begun to respond. In the United States, the American Bar Association's Formal Opinion 512 makes clear that lawyers using generative AI still owe the same duties of competence, confidentiality, communication, and accuracy, and must understand the capabilities and limitations of the tools they use. In England and Wales, the Law Society has issued dedicated guidance on generative AI for solicitors, while the Bar Council has updated guidance for barristers, stressing risks such as hallucinations, bias, confidentiality, and information disorder.</p>
         <p>Recent events have sharpened the stakes. In 2025, the UK High Court warned lawyers over fake case citations and inaccurate AI-assisted material submitted in proceedings, linking professional misuse of AI directly to risks to justice and public trust. The warning was not about whether AI exists. It was about the professional failure to verify and supervise its use. By mid-2025, over 600 cases in the United States had already involved lawyers citing non-existent authority generated by AI tools.</p>
@@ -525,64 +492,43 @@
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">01</span>
-          <span class="el-title">Confidentiality Governance</span>
-        </div>
+        <div class="el-header"><span class="el-num">01</span><span class="el-title">Confidentiality Governance</span></div>
         <p>One of the easiest mistakes in AI-assisted practice is also one of the most dangerous: the unreflective input of sensitive or client-related material into external systems without a proper understanding of how that information is processed, stored, retained, or exposed.</p>
         <p>AI introduces new pathways of exposure through prompts, uploaded documents, system memory, vendor terms, cloud architecture, and staff use habits. Confidentiality governance requires actual internal structures, not merely a vague instruction to be careful. Without such structures, confidentiality becomes dependent on individual caution alone. That is not governance. That is fragility.</p>
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">02</span>
-          <span class="el-title">Verification Discipline</span>
-        </div>
+        <div class="el-header"><span class="el-num">02</span><span class="el-title">Verification Discipline</span></div>
         <p>One of the most dangerous qualities of AI output is not simply that it can be wrong, but that it can be wrong in a fluent, plausible, and professionally persuasive way. The profession must therefore build habits and standards of verification that are stronger, not weaker, when AI enters legal work.</p>
         <p>Verification discipline means that no practitioner treats AI-generated material as professionally reliable merely because it is well written, confidently expressed, or delivered quickly. Legal authorities must still be checked, factual claims confirmed, legal reasoning interrogated, and final responsibility must still sit with the practitioner.</p>
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">03</span>
-          <span class="el-title">Attributable Professional Judgment</span>
-        </div>
+        <div class="el-header"><span class="el-num">03</span><span class="el-title">Attributable Professional Judgment</span></div>
         <p>Legal practice depends on the existence of a responsible professional who can stand behind the work produced in their name. AI can blur this line if the profession is not careful.</p>
         <p>Drawing on AGCIH's Attributable Professional Judgment concept, the principle is clear: AI may support the workflow, but it may not displace the lawyer's own review, reasoning, and responsibility. The professional must remain identifiable as the source of the judgment, not merely the signatory of its output.</p>
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">04</span>
-          <span class="el-title">Supervision and Internal Review</span>
-        </div>
+        <div class="el-header"><span class="el-num">04</span><span class="el-title">Supervision and Internal Review</span></div>
         <p>AI in legal practice cannot be governed solely at the level of individual personal caution. It must also be governed institutionally through supervision and internal review.</p>
         <p>This is especially important where junior lawyers, candidate legal practitioners, paralegals, and support staff may use AI tools in ways that materially affect legal work. Without clear supervisory expectations, the profession risks creating a hidden layer of unsupervised machine-assisted drafting and reasoning beneath outwardly conventional legal work.</p>
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">05</span>
-          <span class="el-title">Client-Facing Boundaries</span>
-        </div>
+        <div class="el-header"><span class="el-num">05</span><span class="el-title">Client-Facing Boundaries</span></div>
         <p>The profession must think carefully about how AI affects the lawyer-client relationship: transparency, consent, cost, quality, communication, and trust. If AI materially influences drafting, research, document production, or service delivery, the standards of quality and professional responsibility that clients are entitled to expect must remain unchanged.</p>
         <p>Client-facing boundaries also matter in relation to cost and fairness. If AI significantly reduces the time spent on a task, how is billing treated? If errors arise, how are responsibilities explained? These are not merely technical questions. They go to professional integrity.</p>
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">06</span>
-          <span class="el-title">Court-Facing Integrity</span>
-        </div>
+        <div class="el-header"><span class="el-num">06</span><span class="el-title">Court-Facing Integrity</span></div>
         <p>Court-facing work carries heightened obligations because errors, inaccuracies, or fictitious material do not only affect a lawyer's internal workflow. They affect the administration of justice itself.</p>
         <p>No AI-assisted court-facing work should enter proceedings unless a lawyer has independently verified its factual, legal, and procedural soundness. That principle is entirely consistent with the direction of recent judicial and professional guidance internationally, and it must be treated as non-negotiable.</p>
       </div>
 
       <div class="element-box">
-        <div class="el-header">
-          <span class="el-num">07</span>
-          <span class="el-title">Continuous Administration</span>
-        </div>
+        <div class="el-header"><span class="el-num">07</span><span class="el-title">Continuous Administration</span></div>
         <p>Professional hosting capacity cannot be built through one conference, one circular, or one training session. AGCIH's Continuous Administration doctrine holds that governance of dynamic systems must be ongoing, adaptive, and institutionally embedded, not episodic.</p>
         <p>The profession will need continuing education, policy refinement, review of emerging failures, updated practice protocols, and institutional mechanisms that can learn as tools evolve. A profession that treats AI governance as complete after an initial awareness phase will quickly fall behind reality.</p>
       </div>
@@ -650,50 +596,22 @@
         <p class="intro">The following concepts are drawn from AGCIH's governance doctrine and applied in this article to the legal profession context. All concepts carry explicit AGCIH attribution.</p>
         <table class="lex-table">
           <tbody>
-            <tr>
-              <td>Administrative Hosting Capacity</td>
-              <td>(AGCIH doctrine) The institutional conditions required for a governance body to absorb an AI system into its operational and administrative functions without losing supervisory control, ethical accountability, or the capacity for attributable decision-making. Applied in this article to legal institutions as Professional Hosting Capacity.</td>
-            </tr>
-            <tr>
-              <td>Professional Hosting Capacity</td>
-              <td>(AGCIH, legal sector application) The ability of legal institutions, law firms, legal-service organisations, chambers, and professional bodies to absorb AI into legal practice without losing human oversight, ethical control, confidentiality, accountability, and attributable professional judgment.</td>
-            </tr>
-            <tr>
-              <td>Continuous Administration</td>
-              <td>(AGCIH doctrine) The ongoing institutional responsibility to supervise, update, review, and govern AI use over time, rather than treating governance as a one-off intervention. Applied here to the continuous professional oversight required across the full lifecycle of AI use in legal practice.</td>
-            </tr>
-            <tr>
-              <td>Attributable Professional Judgment</td>
-              <td>(AGCIH concept) Judgment that remains clearly traceable to a responsible legal practitioner, even where AI tools assist in the workflow. The principle that authorship of legal work must carry genuine, reviewable human judgment behind it.</td>
-            </tr>
-            <tr>
-              <td>Governability Gap</td>
-              <td>(AGCIH concept) The gap between the fact that AI is already being used within an institution or profession and the institution's actual capacity to supervise and control that use responsibly.</td>
-            </tr>
-            <tr>
-              <td>Episodic Governance</td>
-              <td>A weak governance pattern in which institutions respond to AI through isolated workshops, statements, or events without creating ongoing oversight structures. The absence of Continuous Administration.</td>
-            </tr>
-            <tr>
-              <td>Assistance / Substitution Boundary</td>
-              <td>The line between AI as a support tool and AI as an improper replacement for human legal reasoning, verification, or professional responsibility.</td>
-            </tr>
-            <tr>
-              <td>Confidentiality Exposure by Design</td>
-              <td>Risk created when practitioners input sensitive information into tools or workflows that have not been institutionally assessed for confidentiality and data-governance safeguards.</td>
-            </tr>
-            <tr>
-              <td>Governance-First Adoption</td>
-              <td>An approach that does not begin by asking how to use AI more, but by asking what safeguards, standards, and oversight are required around use already taking place.</td>
-            </tr>
+            <tr><td>Administrative Hosting Capacity</td><td>(AGCIH doctrine) The institutional conditions required for a governance body to absorb an AI system into its operational and administrative functions without losing supervisory control, ethical accountability, or the capacity for attributable decision-making. Applied in this article to legal institutions as Professional Hosting Capacity.</td></tr>
+            <tr><td>Professional Hosting Capacity</td><td>(AGCIH, legal sector application) The ability of legal institutions, law firms, legal-service organisations, chambers, and professional bodies to absorb AI into legal practice without losing human oversight, ethical control, confidentiality, accountability, and attributable professional judgment.</td></tr>
+            <tr><td>Continuous Administration</td><td>(AGCIH doctrine) The ongoing institutional responsibility to supervise, update, review, and govern AI use over time, rather than treating governance as a one-off intervention.</td></tr>
+            <tr><td>Attributable Professional Judgment</td><td>(AGCIH concept) Judgment that remains clearly traceable to a responsible legal practitioner, even where AI tools assist in the workflow. The principle that authorship of legal work must carry genuine, reviewable human judgment behind it.</td></tr>
+            <tr><td>Governability Gap</td><td>(AGCIH concept) The gap between the fact that AI is already being used within an institution or profession and the institution's actual capacity to supervise and control that use responsibly.</td></tr>
+            <tr><td>Episodic Governance</td><td>A weak governance pattern in which institutions respond to AI through isolated workshops, statements, or events without creating ongoing oversight structures. The absence of Continuous Administration.</td></tr>
+            <tr><td>Assistance / Substitution Boundary</td><td>The line between AI as a support tool and AI as an improper replacement for human legal reasoning, verification, or professional responsibility.</td></tr>
+            <tr><td>Confidentiality Exposure by Design</td><td>Risk created when practitioners input sensitive information into tools or workflows that have not been institutionally assessed for confidentiality and data-governance safeguards.</td></tr>
+            <tr><td>Governance-First Adoption</td><td>An approach that does not begin by asking how to use AI more, but by asking what safeguards, standards, and oversight are required around use already taking place.</td></tr>
           </tbody>
         </table>
       </div>
 
-    </div><!-- end article-wrap -->
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="article-footer">
     <div class="footer-brand">Africa Governance &amp; Civic Innovation Hub &nbsp;(AGCIH)</div>
     <div class="footer-sub"><a href="https://agcih.africa">agcih.africa</a> &nbsp;&middot;&nbsp; Harare, Zimbabwe &nbsp;&middot;&nbsp; Governance First. Africa Sovereign.</div>
