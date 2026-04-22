@@ -172,3 +172,398 @@
 
     .back-link:hover { border-color: var(--purple-mid); }
     .back-link::before { content: '\2190'; font-size: 1rem; }
+
+    .opening {
+      padding: 3.3rem 0 2rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.25rem;
+    }
+
+    .opening p,
+    .body-text p {
+      font-size: 1rem;
+      line-height: 1.82;
+      margin-bottom: 1.35rem;
+      color: var(--text);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .opening p:last-child,
+    .body-text p:last-child { margin-bottom: 0; }
+
+    .download-paper {
+      margin: 0 0 2.8rem;
+    }
+
+    .download-paper a {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: #FFFFFF;
+      background: var(--purple);
+      padding: 0.9rem 1.2rem;
+      border-radius: 3px;
+      transition: background 0.2s ease;
+    }
+
+    .download-paper a:hover {
+      background: var(--purple-mid);
+    }
+
+    .part-divider,
+    .conclusion-divider {
+      border-radius: 3px;
+      padding: 1.7rem 2rem;
+      margin: 3.2rem 0 2.2rem;
+    }
+
+    .part-divider {
+      background: var(--navy);
+      background-image: radial-gradient(ellipse at 90% 50%, rgba(91,45,142,0.2) 0%, transparent 60%);
+      border-left: 5px solid var(--purple);
+    }
+
+    .conclusion-divider {
+      background: var(--navy-deep);
+      border-top: 4px solid var(--purple);
+    }
+
+    .part-divider .part-label,
+    .conclusion-divider .part-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #A07DD0;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .part-divider h2,
+    .conclusion-divider h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+    }
+
+    .section-head {
+      font-family: var(--font-display);
+      font-size: 1.42rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 2.3rem 0 0.9rem;
+      line-height: 1.3;
+    }
+
+    .sub-head {
+      font-family: var(--font-ui);
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--purple);
+      margin: 1.9rem 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .pull-quote {
+      display: flex;
+      margin: 2.4rem 0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .pull-quote .bar {
+      width: 5px;
+      flex-shrink: 0;
+      background: var(--purple);
+    }
+
+    .pull-quote .content {
+      background: var(--purple-pale);
+      padding: 1.45rem 1.7rem;
+      flex: 1;
+    }
+
+    .pull-quote p {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.6;
+      font-weight: 600;
+      margin: 0;
+      text-align: left;
+    }
+
+    .note-box {
+      background: #F4F0FA;
+      border-left: 4px solid var(--purple);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0 2rem;
+      color: var(--text-mid);
+      font-size: 0.95rem;
+    }
+
+    .bibliography {
+      margin-top: 3rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 2rem;
+    }
+
+    .bibliography h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .bibliography ul {
+      padding-left: 1.2rem;
+    }
+
+    .bibliography li {
+      margin-bottom: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .article-footer {
+      background: var(--navy-deep);
+      border-top: 3px solid var(--purple);
+      margin-top: 4rem;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .article-footer .footer-brand {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #A07DD0;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .article-footer .footer-sub {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: #9AACCB;
+      font-style: italic;
+    }
+
+    .article-footer .footer-sub a {
+      color: #A07DD0;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding: 3.2rem 1.25rem 2.6rem; }
+      .article-wrap { padding: 0 1.25rem; }
+      .site-header nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="/">AGCIH | agcih.africa</a>
+    <nav>
+      <a href="/articles">Articles</a>
+      <a href="/resources">Resources</a>
+      <a href="/frameworks">Frameworks</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-series">AGCIH Working Paper | WP-2026-01</div>
+      <h1>Administrative Risk: A Governance Framework for AI Infrastructure in Africa</h1>
+      <p class="hero-subtitle">
+        A working paper on the governance implications of Africa’s infrastructure moment, introducing the concepts of administrative risk, institutional absorption, and pro-governability.
+      </p>
+      <div class="hero-byline">
+        <span class="author">Africa Governance and Civic Innovation Hub</span>
+        <span class="affil">Harare, Zimbabwe · <a href="https://agcih.africa">agcih.africa</a></span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="article-wrap">
+
+      <a class="back-link" href="/articles">Back to Articles</a>
+
+      <section class="opening">
+        <p>Africa is in the midst of an infrastructure moment. Cloud environments, AI-enabled telecom products, sovereign cloud architectures, and government-facing digital platforms are being developed, procured, and deployed at increasing speed across the continent. This is an important development and one that this paper welcomes. But the governance conversation has not kept pace with the infrastructure conversation, and the gap between them carries institutional consequences.</p>
+        <p>This paper introduces a governance framework organised around three propositions. First, the expansion of digital infrastructure in African public institutions generates a distinct category of exposure called administrative risk. Second, institutional absorption, understood as the capacity of a public body to integrate new digital systems without losing administrative coherence, accountability, or continuity of authority, is one of the central governance challenges of the present moment. Third, pro-governability, the institutional posture that insists digital transformation must remain governable throughout its lifecycle, is the appropriate response to both.</p>
+        <p>The paper is written in a moment in which the infrastructure question has become more concrete. Zimbabwe has formally launched its National AI Strategy. The wider continental conversation has also moved further into questions of sovereign AI capacity, digital infrastructure, and public-sector deployment. These developments do not reduce the need for governance design. They make it more urgent.</p>
+      </section>
+
+      <div class="download-paper">
+        <a href="https://agcih.africa/assets/pdfs/AGCIH_WP-2026-01_Administrative_Risk.pdf" target="_blank" rel="noopener">
+          Download Full Working Paper (PDF)
+        </a>
+      </div>
+
+      <div class="part-divider">
+        <div class="part-label">Part One</div>
+        <h2>Administrative Risk: Naming the Governance Problem</h2>
+      </div>
+
+      <div class="body-text">
+        <h3 class="section-head">A distinct category of exposure</h3>
+        <p>The word risk is used loosely in many discussions of AI and digital systems. It appears in relation to cyber risk, ethical risk, financial risk, and operational risk. Yet the risk this paper names is different. Administrative risk is the risk that a public institution loses its capacity to govern itself in the presence of a digital system. It concerns the institution’s ability to exercise authority, maintain records, assign accountability, supervise outputs, and remain intelligible to itself and to the public after digital transition.</p>
+        <p>This is not cyber risk, though cybersecurity remains important. It is not simply reputational risk, though reputational damage may follow. It is not reducible to ethical AI concerns, though ethical issues may form part of the picture. Administrative risk is structural. It arises not from dramatic system failure alone, but from the normal and intended operation of a digital system that has been insufficiently integrated into an institution’s governance architecture.</p>
+      </div>
+
+      <div class="pull-quote">
+        <div class="bar"></div>
+        <div class="content">
+          <p>Administrative risk is not a failure state. It is a governance gap.</p>
+        </div>
+      </div>
+
+      <div class="body-text">
+        <p>It is cumulative rather than episodic. It builds as operational dependence deepens, as accountability chains lengthen, as vendor-managed logic becomes load-bearing, and as the institution’s own operational understanding weakens. By the time it becomes visible, it has often been developing for years.</p>
+
+        <h3 class="section-head">More than change management</h3>
+        <p>One possible objection is that this is merely a version of change management. Every major technology adoption involves adjustment, retraining, and procedural adaptation. But that objection does not hold. Change management concerns the transitional difficulty of introducing a new tool or process. Administrative risk concerns the structural condition that persists after implementation and often grows precisely when adoption is deemed successful. It is not about the discomfort of transition. It is about the governance consequences of settled dependence.</p>
+      </div>
+
+      <div class="part-divider">
+        <div class="part-label">Part Two</div>
+        <h2>Institutional Absorption and Its Conditions</h2>
+      </div>
+
+      <div class="body-text">
+        <h3 class="section-head">The central governance challenge</h3>
+        <p>Where administrative risk names the problem, institutional absorption names the capacity required to address it. Institutional absorption is the capacity of a public institution to integrate new digital systems without losing administrative coherence, accountability, or continuity of authority. An institution with strong absorption capacity can adopt complex new systems while remaining, in governance terms, itself. An institution with weak absorption capacity may appear digitally advanced while quietly losing the conditions required to govern what it has acquired.</p>
+        <p>Institutional absorption is not a technical capacity. It is a governance capacity. It depends on several conditions: decision-rights clarity, accountability architecture, hosting governance, operational knowledge retention, and continuity planning. Without these conditions, digital transformation may advance on the surface while administrative control recedes underneath it.</p>
+
+        <div class="note-box">
+          Governance readiness is not separate from digital transformation. It is part of what determines whether transformation remains institutionally usable over time.
+        </div>
+
+        <h3 class="section-head">The capacity objection</h3>
+        <p>A serious objection is that many African public institutions operate within real capacity constraints. Technical expertise may be thin, procurement frameworks may be uneven, and accountability institutions may still be maturing. But capacity constraints are not a reason to lower the governance standard. They are a reason to build the standard deliberately and early, before institutional dependence hardens around systems whose implications were not fully understood at acquisition.</p>
+      </div>
+
+      <div class="part-divider">
+        <div class="part-label">Part Three</div>
+        <h2>Sovereignty in Infrastructure Is Not Sovereignty in Control</h2>
+      </div>
+
+      <div class="body-text">
+        <h3 class="section-head">An increasingly important distinction</h3>
+        <p>One of the most important clarifications this paper makes concerns the relationship between infrastructure sovereignty and institutional control. These are not the same thing. A state may host data locally, negotiate domestic cloud arrangements, or celebrate sovereign infrastructure capacity and still remain administratively dependent if public institutions lack the governance architecture required to supervise, justify, and remain accountable for what such infrastructure enables.</p>
+        <p>Infrastructure sovereignty refers to the location, ownership, and operational control of digital infrastructure. These are meaningful gains. But they do not, by themselves, answer the institutional questions that matter inside public administration. Who authorises deployment? Who supervises consequential outputs? How are records and reasons preserved? What access rights are retained by the institution itself? What happens if the contract ends, the vendor exits, or the system changes in ways the institution did not foresee?</p>
+      </div>
+
+      <div class="pull-quote">
+        <div class="bar"></div>
+        <div class="content">
+          <p>The cloud can be local while the governance remains hollow.</p>
+        </div>
+      </div>
+
+      <div class="body-text">
+        <p>That distinction has become more salient in the present moment. As sovereign cloud narratives, AI infrastructure announcements, and public-sector digital ambitions expand across the continent, the temptation is to treat infrastructure capacity as if it were already the same as institutional command. It is not. Sovereignty in infrastructure is the beginning of the answer, not the whole of it.</p>
+      </div>
+
+      <div class="part-divider">
+        <div class="part-label">Part Four</div>
+        <h2>Pro-Governability as an Institutional Posture</h2>
+      </div>
+
+      <div class="body-text">
+        <h3 class="section-head">Not anti-technology, but institutionally serious</h3>
+        <p>The appropriate response to the present moment is what this paper calls pro-governability. This is not a policy slogan. It is an institutional posture. It is the commitment that digital transformation must remain governable throughout its lifecycle, and that no system should be acquired, deployed, or scaled in a way that undermines a public institution’s capacity to exercise authority over it, maintain accountability for its consequences, or transition away from it in an orderly manner.</p>
+        <p>Pro-governability does not oppose digital transformation. It insists on a specific quality of transformation. Innovation that cannot be governed is not, from an institutional perspective, a gain. It is a transfer of authority dressed in the language of progress.</p>
+
+        <h3 class="section-head">The speed objection</h3>
+        <p>It is sometimes argued that governance requirements slow digital transformation at a moment when African states need to move quickly. That concern reflects a real strategic tension, but it also rests on a false trade-off. Governance readiness does not require transformation to stop. It requires governance to be built alongside transformation, as a parallel investment. Ungoverned speed is not simply fast progress. It is accelerated accumulation of administrative risk.</p>
+      </div>
+
+      <div class="part-divider">
+        <div class="part-label">Part Five</div>
+        <h2>The Five Questions of Governance Readiness</h2>
+      </div>
+
+      <div class="body-text">
+        <p>This framework specifies a practical test. The test of governance readiness is whether a public institution can answer five questions about any AI-enabled or digital system it is acquiring, operating, or evaluating for renewal.</p>
+
+        <p class="sub-head">Question 1</p>
+        <p>Who authorises the system’s use?</p>
+
+        <p class="sub-head">Question 2</p>
+        <p>Who supervises the system’s outputs?</p>
+
+        <p class="sub-head">Question 3</p>
+        <p>Who is accountable for consequential outcomes?</p>
+
+        <p class="sub-head">Question 4</p>
+        <p>How are records and reasons preserved?</p>
+
+        <p class="sub-head">Question 5</p>
+        <p>How is continuity maintained if the system fails, changes, or exits?</p>
+
+        <p>These are not checklist questions in a narrow compliance sense. They are institutional questions. Where they cannot be answered, infrastructure may still function technically, but it does not yet sit on secure governance foundations.</p>
+      </div>
+
+      <div class="part-divider">
+        <div class="part-label">Part Six</div>
+        <h2>Implications for Institutional Design</h2>
+      </div>
+
+      <div class="body-text">
+        <h3 class="section-head">Governance design as a first-order investment</h3>
+        <p>The most important implication of this framework is that governance design must be treated as a first-order investment. Ministries, regulators, and public agencies engaged in digital transformation must have access to the expertise required to design decision-rights frameworks, accountability architectures, hosting-governance terms, procurement conditions, and continuity plans.</p>
+
+        <h3 class="section-head">Procurement as a governance gateway</h3>
+        <p>Procurement must also be treated differently. AI rarely enters the state through abstract policy debate alone. It enters through contracts, managed services, cloud arrangements, digital platforms, and enterprise systems. Procurement is the point at which technical capability becomes institutional fact. If that point is weakly governed, the consequences may become visible only after the arrangement is already operational and difficult to reverse.</p>
+        <p>That means procurement must ask more than whether a system works and whether the price is acceptable. It must also ask about audit rights, continuity obligations, exit pathways, access to records, hosting terms, and the preservation of institutional control.</p>
+      </div>
+
+      <div class="conclusion-divider">
+        <div class="part-label">Conclusion</div>
+        <h2>Africa Needs Governable Infrastructure</h2>
+      </div>
+
+      <div class="body-text">
+        <p>Africa is in an infrastructure moment, and that moment should be welcomed with seriousness and confidence. But infrastructure without governance architecture generates administrative risk. The real test of digital maturity will not be whether institutions can announce new systems. It will be whether they remain able to direct, supervise, explain, and lawfully own the consequences of what they adopt.</p>
+        <p>The central governance challenge is institutional absorption. The appropriate response is pro-governability. Sovereignty in infrastructure is necessary, but it is not sufficient. The task is not merely to host more systems locally. It is to ensure that public institutions retain real authority over the systems they host, deploy, and depend upon.</p>
+        <p>Africa does not need infrastructure alone. It needs governable infrastructure. And the institutions that build governability into the foundations of their digital transformation, rather than trying to retrofit it after the fact, will be the ones best positioned to carry public authority with integrity into the digital future.</p>
+      </div>
+
+      <section class="bibliography">
+        <h3>Selected References</h3>
+        <ul>
+          <li>Africa Governance and Civic Innovation Hub (2026). <em>Administrative Risk: A Governance Framework for AI Infrastructure in Africa</em>. AGCIH Working Paper WP-2026-01.</li>
+          <li>African Union Commission (2024). <em>A United Africa in the Age of Artificial Intelligence: The African Union Artificial Intelligence Continental Strategy for Africa 2024 to 2034</em>.</li>
+          <li>UNESCO (2021). <em>Recommendation on the Ethics of Artificial Intelligence</em>.</li>
+          <li>Zimbabwe (2026). <em>National Artificial Intelligence Strategy</em>.</li>
+          <li>OECD (2019). <em>Recommendation of the Council on Artificial Intelligence</em>.</li>
+          <li>Bovens, Schillemans and Goodin (eds) (2014). <em>The Oxford Handbook of Public Accountability</em>.</li>
+          <li>Pasquale, Frank (2015). <em>The Black Box Society</em>.</li>
+          <li>Pohle, Julia and Thiel, Thorsten (2020). “Digital sovereignty”, <em>Internet Policy Review</em>, 9(4).</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="article-footer">
+    <div class="footer-brand">Africa Governance &amp; Civic Innovation Hub (AGCIH)</div>
+    <div class="footer-sub"><a href="https://agcih.africa">agcih.africa</a> · Harare, Zimbabwe · Governance before technology</div>
+  </footer>
+
+</body>
+</html>
