@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Infrastructuralisation of Legal Judgment | AGCIH</title>
+  <meta name="description" content="From Workflow Integration to the Governance of Legal Authority. By Danai Hazel Kudya, Africa Governance & Civic Innovation Hub." />
+  <meta name="author" content="Danai Hazel Kudya" />
+  <meta property="og:title" content="The Infrastructuralisation of Legal Judgment" />
+  <meta property="og:description" content="From Workflow Integration to the Governance of Legal Authority — AGCIH" />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap" />
+
+  <style>
+    :root {
+      --navy:        #1C2B6E;
+      --navy-deep:   #111D52;
+      --navy-light:  #2A3D8F;
+      --purple:      #6B2D8F;
+      --purple-light:#8B44B2;
+      --ink:         #1A1A2E;
+      --mid:         #4A4A6A;
+      --muted:       #7A7A9A;
+      --rule:        #D4D4E8;
+      --bg:          #FAFAFA;
+      --paper:       #FFFFFF;
+      --accent-bg:   #F4F2F9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 18px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── MASTHEAD ─────────────────────────────────────────────── */
+    .masthead {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .masthead-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+    }
+
+    .masthead-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .masthead-link:hover { color: rgba(255,255,255,0.9); }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      background: var(--navy-deep);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(107,45,143,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 30%, rgba(42,61,143,0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
+
+    .hero-label {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 0.3rem 0.85rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2.5rem;
+      line-height: 1.4;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em;
+    }
+
+    .hero-divider {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+    }
+
+    .hero-inst {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── LAYOUT ───────────────────────────────────────────────── */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ── ARTICLE META BAR ─────────────────────────────────────── */
+    .meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .meta-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--purple);
+    }
+
+    .meta-date {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── BODY TEXT ────────────────────────────────────────────── */
+    .article-body p {
+      font-size: 1rem;
+      line-height: 1.82;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .article-body p:first-child::first-letter {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.6rem;
+      font-weight: 600;
+      float: left;
+      line-height: 0.78;
+      margin-right: 0.08em;
+      margin-top: 0.1em;
+      color: var(--navy);
+    }
+
+    /* ── SECTION HEADINGS ─────────────────────────────────────── */
+    .section-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 3.5rem 0 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--navy);
+      line-height: 1.25;
+    }
+
+    /* ── PULL QUOTE — none in main article, but present in commentary ── */
+    .pullquote {
+      border-left: 4px solid var(--purple);
+      margin: 2.5rem 0;
+      padding: 0.75rem 0 0.75rem 1.75rem;
+    }
+
+    .pullquote p {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem !important;
+      font-style: italic;
+      color: var(--purple) !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+    }
+
+    /* ── SUPERSCRIPT NOTES ────────────────────────────────────── */
+    sup {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      color: var(--purple);
+      vertical-align: super;
+      margin-left: 1px;
+    }
+
+    sup a {
+      color: inherit;
+      text-decoration: none;
+    }
+    sup a:hover { text-decoration: underline; }
+
+    /* ── DIVIDER ──────────────────────────────────────────────── */
+    .article-rule {
+      border: none;
+      border-top: 3px solid var(--navy);
+      margin: 4rem 0 2rem;
+    }
+
+    /* ── AUTHOR BLOCK ─────────────────────────────────────────── */
+    .author-block {
+      padding: 2rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 3rem;
+    }
+
+    .author-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .author-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--mid);
+      margin-bottom: 0.2rem;
+    }
+
+    .author-inst {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .author-inst a {
+      color: var(--purple);
+      text-decoration: none;
+    }
+    .author-inst a:hover { text-decoration: underline; }
+
+    /* ── NOTES ────────────────────────────────────────────────── */
+    .notes-heading {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .notes-list {
+      list-style: none;
+      counter-reset: notes;
+    }
+
+    .notes-list li {
+      counter-increment: notes;
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--mid);
+    }
+
+    .notes-list li::before {
+      content: counter(notes) ".";
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--purple);
+      min-width: 1.2rem;
+      padding-top: 0.05rem;
+    }
+
+    .notes-list li em {
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-deep);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-link {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    .footer-link:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .page { padding: 0 1.25rem 4rem; }
+      .masthead { padding: 0 1.25rem; }
+    }
+
+    /* ── FADE IN ──────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner { animation: fadeUp 0.7s ease both; }
+    .meta-bar   { animation: fadeUp 0.7s 0.15s ease both; }
+    .article-body { animation: fadeUp 0.7s 0.25s ease both; }
+  </style>
+</head>
+
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="https://agcih.africa" class="masthead-brand">AGCIH</a>
+    <a href="https://agcih.africa" class="masthead-link">agcih.africa</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-label">AGCIH Article &nbsp;·&nbsp; Governance &amp; AI in Law</span>
+      <h1 class="hero-title">The Infrastructuralisation<br>of Legal Judgment</h1>
+      <p class="hero-subtitle">From Workflow Integration to the Governance of Legal Authority</p>
+      <div class="hero-meta">
+        <span class="hero-author">Danai Hazel Kudya</span>
+        <span class="hero-divider"></span>
+        <span class="hero-inst">Africa Governance &amp; Civic Innovation Hub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="page">
+
+    <div class="meta-bar">
+      <span class="meta-tag">Governance &nbsp;·&nbsp; AI and the Legal Profession &nbsp;·&nbsp; Africa</span>
+      <span class="meta-date">May 2026 &nbsp;·&nbsp; agcih.africa</span>
+    </div>
+
+    <article class="article-body">
+
+      <p>Legal practice is entering a phase for which the profession still lacks settled language. Artificial intelligence is no longer peripheral to legal work. It is becoming formative of the conditions within which legal reasoning is structured, sequenced, exercised, and reviewed. The significance of that transition does not lie in integration alone. It lies in the possibility that legal judgment is being infrastructuralised before the profession has built the doctrine, the safeguards, and the governance architecture required to contain that shift. The prevailing LegalTech account captures the operational dimension of this transition. It does not yet adequately capture the legal one.</p>
+
+      <p>The dominant narrative is now familiar. Firms are said to be moving beyond isolated tools toward embedded systems, coordinated workflows, and infrastructure-like operational dependence. The identified problem is fragmentation. The preferred solution is orchestration. Tools must be connected, handovers eliminated, lawyers moved from prompts to outcomes. This description is not wrong. It is inadequate. What is taking shape is not merely a more efficient legal workflow. It is the early infrastructuralisation of legal judgment: a condition in which AI systems begin to shape the practical environment within which legal reasoning is formed, carried, reviewed, and relied upon. Once that happens, the central question is no longer how well tools connect. It is whether legal institutions remain in command of what those systems are reorganising. The profession is still using vocabulary shaped by discrete tools, even as the operating conditions of legal judgment are being reorganised through integrated systems. That is the deeper problem the current conversation is not yet equipped to see.</p>
+
+      <h2 class="section-heading">Infrastructure in Law Is an Analytical Category, Not a Metaphor</h2>
+
+      <p>The concept of infrastructure matters here with precision, not merely as an evocative description of deep integration. Infrastructure in any domain carries specific properties: it becomes invisible through use, shaping conditions prior to explicit decision-making; it is difficult to interrogate or override once embedded; it migrates from optional enhancement to structural dependency; and it reorganises what counts as normal before institutions have formally consented to that reorganisation. These properties are significant in every sector. In law, they are legally consequential in ways that distinguish legal AI from AI in medicine, actuarial practice, or logistics.</p>
+
+      <p>In law, professional duties are not merely best-practice obligations. They are organised around specific structural requirements: an adversarial process whose integrity depends on each party being genuinely and independently represented; a duty to the court that overrides the duty to the client; constitutional foundations of due process that require reasoning to be attributable, intelligible, and reviewable; and the rule of law as the basis upon which public authority claims legitimacy. Once the infrastructure shaping legal work becomes invisible, difficult to interrogate, and structurally normal, these requirements face a new category of risk — not the risk of a bad decision, but the risk of systematic erosion in the conditions under which legal reasoning remains genuinely independent, genuinely attributable, and genuinely accountable. That is why infrastructuralisation in law is an analytical problem before it is an operational one.</p>
+
+      <h2 class="section-heading">The Profession Is Naming the Wrong Transition</h2>
+
+      <p>The workflow discussion is correct that the next stage of legal AI is not about accumulating tools. Legal work is moving away from the novelty phase in which adoption was measured by access and experimentation. Daily use, embeddedness, and executed outcomes now define the frontier. But fragmentation is not the deepest problem. The deeper problem begins once AI becomes sufficiently integrated to organise legal workflow at scale.</p>
+
+      <p>At that point, systems do not merely assist tasks. They begin to shape what is surfaced, what is prioritised, what is drafted first, what is treated as relevant, what is omitted, what is standardised, what requires escalation, and what becomes professionally normal. That is a shift in the operating conditions of legal work itself. The real transition is therefore not from tools to infrastructure. It is from visible assistance to system-shaped professional conditions — and the distinction matters because the second transition occurs upstream of explicit human reasoning, in ways the profession's current vocabulary does not adequately describe.</p>
+
+      <h2 class="section-heading">What Orchestration Conceals</h2>
+
+      <p>Orchestration is the preferred solution in the current framing. It promises continuity, reduced duplication, cleaner execution, and more coordinated results. Operationally, this is attractive. Legally, it is incomplete. Orchestration does not simply connect tasks. It allocates sequence, organises dependence, shapes what becomes visible, and determines where practical control sits.</p>
+
+      <p>In legal work, the profession is not organised around efficiency alone. It is organised around duties that attach personally to the lawyer and to the integrity of the legal process. Where systems begin to structure visibility, sequencing, and reliance, they do not merely alter workflow. They alter the conditions under which confidentiality, verification, supervision, candour, fidelity to the client, and responsibility to the court must be exercised. The more central the orchestration layer becomes, the more necessary it is to ask: who governs it, what remains visible to the lawyer, what can be interrogated, what can be overridden, and whether the institution using it still retains meaningful command over the work conducted in its name. What appears as coordination may also be a reallocation of practical authority. What appears as flow may be the early formation of dependency.</p>
+
+      <h2 class="section-heading">Professional Hosting Capacity: Not Adoption, But Governability</h2>
+
+      <p>AGCIH's work on legal practice has argued that the profession's next challenge is not adoption alone, but governability. Lawyers, firms, chambers, legal aid organisations, and professional bodies must be able to absorb AI without weakening confidentiality, verification, supervision, attributable professional judgment, or public trust. That is the logic behind Professional Hosting Capacity, Attributable Professional Judgment, Continuous Administration, and the Governability Gap.<sup><a href="#note-1" id="ref-1">1</a></sup> That argument becomes more urgent, not less, once AI becomes infrastructural.</p>
+
+      <p>A firm may integrate AI deeply and still not meaningfully host it. It may not fully know what dependencies have formed, what data or model constraints shape outputs, what review burdens have shifted, how junior lawyers are being habituated by the system, what audit trails are available, or how far legal work has been reorganised upstream of explicit human reasoning. Integration does not answer these questions. It makes them harder to postpone. Operational dependence on AI systems should not be mistaken for institutional maturity, because dependence may form before the profession has established the safeguards needed to govern it. The danger is not only unregulated use. It is professionally normalised use under conditions of institutional unreadiness.</p>
+
+      <h2 class="section-heading">The Thinning of Attributable Judgment</h2>
+
+      <p>The decisive weakness in the workflow narrative is that it treats execution as professionally low-significance labour. In law, execution is not low-significance. The ordering of authorities in a brief is itself a form of legal argument. The compression of a client's situation into the categories a court will recognise is already advocacy. The structuring of facts in a pleading shapes what the court receives as the legal reality of the matter. Drafting sequence, the handling of uncertainty, the shaping of omission, and the selection of emphasis all influence the legal product before final review occurs. Execution in law is often already saturated with judgment.</p>
+
+      <p>That is why Attributable Professional Judgment is not a compliance formality. It is a threshold condition of professional legality. A lawyer may use AI-assisted systems. But the review, reasoning, and ownership of the work must remain genuinely traceable to the lawyer — not merely in signature form, but in substance. The profession does not lose authority only when it openly delegates judgment to machines. The most consequential shifts may occur earlier — through workflow dependence, ranked relevance, compressed review, default structuring, and the gradual expansion of reliance under conditions that still preserve the outward appearance of human control.</p>
+
+      <h2 class="section-heading">Dependency Before Doctrine</h2>
+
+      <p>The profession now faces the risk of dependency before doctrine: systems becoming central to daily legal work before the profession has settled, with sufficient clarity, what must remain humanly exercised, what may be assisted, what must be disclosed, and what constitutes professional failure in AI-mediated conditions. This is not simply regulatory lag. It is professional instability masked by operational fluency.</p>
+
+      <p>AGCIH has described the Governability Gap as the distance between AI already being used across the profession and the profession's actual capacity to supervise and control that use responsibly.<sup><a href="#note-2" id="ref-2">2</a></sup> Once AI becomes infrastructural, that gap becomes harder to ignore and harder to close. What begins as convenience may settle into dependence, and dependence may in turn become normalised professional habit before the profession has adequately reflected on its implications. This moment should not be mistaken for maturity. It is better understood as a phase change — and phase changes, once complete, are rarely reversible through professional consensus alone.</p>
+
+      <h2 class="section-heading">No Infrastructural Logic Remains Confined to Firms for Long</h2>
+
+      <p>The private-sector LegalTech discussion consistently underestimates this point. Infrastructural logic does not remain confined to firms. Once normalised in private legal practice, it migrates outward through several identifiable channels. Judicial expectations of pleading quality are shaped over time by what AI-assisted firms produce, creating standards that progressively apply to the whole profession. Courts and registries acquire legal AI tools through procurement processes that typically precede governance frameworks. A dual-tier bar begins to form in which AI-assisted representation consistently outperforms unassisted representation until courts adjust their expectations of what constitutes adequate preparation. What appears first in firms as workflow infrastructure appears later in courts, tribunals, registries, and public legal departments as authority infrastructure.</p>
+
+      <p>Once that migration occurs, the character of the issue changes. It is no longer about how legal work is conducted. It becomes a question of the rule of law, reviewability, attributable public authority, and the institutional conditions under which judgment retains legitimacy. AGCIH's judicial work has argued that AI in courts is not first a technical modernisation question. It is a governance question — and it introduced a connected framework of concepts explaining how authority may begin to shift once AI enters judicial work without adequate institutional architecture.<sup><a href="#note-2">2</a></sup> The private legal workflow story and the judicial governance story are not separate accounts. They are sequential stages of the same institutional transition.</p>
+
+      <h2 class="section-heading">What Governance Absence Looks Like in a Courtroom</h2>
+
+      <p>In April 2026, the High Court of Kenya at Nairobi delivered a ruling on AI-assisted pleadings that matters not for what it settles but for what it reveals.<sup><a href="#note-3" id="ref-3">3</a></sup> A self-represented respondent admitted using digital tools to assist in drafting, maintained personal responsibility for all sworn facts and cited authorities, and was not shown to have produced fabricated case law or false citations. The court nonetheless set aside the judgment in his favour, treating undisclosed AI tool use as an abuse of court process, reasoning that the Civil Procedure Rules made no provision for such tools and that their use conferred an unfair advantage in adversarial proceedings. In its reasoning, the court conflated three things that governance doctrine must hold apart: assistance and substitution, the absence of regulatory provision and illegality, and institutional uncertainty about what tools were used and proof of procedural unfairness. These conflations are not judicial errors. They are the predictable institutional consequences of governance absence — what courts produce when they encounter AI-mediated legal practice before disclosure standards, evidentiary thresholds, and assistance/substitution criteria have been settled. The court acknowledged the gap directly, inviting the Rules Committee to consider amending the Civil Procedure Rules. That invitation is the clearest possible statement of where governance architecture must be built — before courts encounter the practice, not as a consequence of having encountered it. This is AGCIH's concept of Institutional Friction made visible: a court meeting an infrastructural shift mid-arrival, without the doctrine required to meet it with coherence.</p>
+
+      <h2 class="section-heading">Five Institutional Elisions</h2>
+
+      <p>Five elisions continue to weaken the present discussion and deserve to be named as governance deficits rather than analytical oversights.</p>
+
+      <p>The first is the elision of integration with governability. A system may be fully integrated and remain ungoverned by the institution that depends upon it. The second is the elision of orchestration with neutrality. In legal work, orchestration is a site through which sequence, visibility, dependence, and practical control are actively allocated — it is not a neutral coordination layer. The third is the elision of execution with low-significance labour. Structuring, drafting, omission, and sequencing carry professional and legal weight; they are already forms of judgment. The fourth is the elision of daily dependency with institutional maturity. A platform embedded in the working day may indicate successful adoption. It does not prove the profession has settled the terms on which that dependence is acceptable. The fifth — and perhaps most consequential — is the elision of the absence of visible failure with the presence of adequate governance. By the time visible failure appears, professional habits and institutional conditions may already have been reorganised in ways that are difficult to reverse. Governance failures in this domain tend to be slow, structural, and invisible before they become acute.</p>
+
+      <h2 class="section-heading">The Governance Inequality the Profession Is Not Yet Measuring</h2>
+
+      <p>The next divide in legal AI may not be access to tools. It may be governability. This problem is not evenly distributed, and its stakes are especially high in African legal systems. Large, well-resourced firms may be positioned to acquire enterprise platforms, negotiate use conditions, structure internal oversight, and absorb workflow redesign. Smaller firms, sole practitioners, legal aid actors, and under-resourced public legal institutions may face a different reality: pressure to use increasingly embedded systems without equivalent hosting capacity, policy infrastructure, or governance support.</p>
+
+      <p>This inequality is sharpest in African legal systems, and that is not incidental. Across much of Africa, infrastructure typically precedes governance — procurement, deployment, and operational normalisation routinely occur before regulatory frameworks, professional standards, or institutional doctrine have been developed to govern them. Legal aid is fragile and unevenly distributed. Courts are under-resourced in ways that make them particularly susceptible to AI tools that promise efficiency before governance conditions are in place. The professional bar in many jurisdictions lacks the regulatory architecture to set and enforce standards for AI-mediated practice before the practice becomes normalised. If the profession globally is already experiencing a Governability Gap, African legal systems are experiencing that gap under conditions that make it structurally harder to close and the consequences structurally harder to reverse. This is the dimension of the legal AI governance debate that global commentary has not yet adequately confronted.</p>
+
+      <h2 class="section-heading">The Frontier Beyond Workflow</h2>
+
+      <p>The present debate is not only about current law-firm operations. It is the early legal form of a broader institutional challenge. What appears today as workflow coordination may, under more capable and agentic systems, become a question of delegated machine action within professional environments whose doctrine was designed for assistance, not semi-autonomous execution. Once systems move from helping lawyers perform tasks to managing multi-step legal workflows, coordinating information dependencies, and shaping execution pathways with increasing independence, the profession will no longer be able to rely on vocabulary designed for discrete tools. The governance burden will deepen. The field has named the operational shift. It has not yet named the governance problem ahead with the seriousness that problem deserves.</p>
+
+      <h2 class="section-heading">Conclusion</h2>
+
+      <p>Legal AI is becoming infrastructural. But infrastructure is not the end of the analysis. It is the point at which the real analysis begins. The significance of this shift lies not in better workflow or cleaner execution. It lies in the possibility that practical control, professional weight, and institutional dependency are being reorganised before the profession has settled the legal and governance terms under which that reorganisation can be justified.</p>
+
+      <p>What this moment requires is not regulatory catch-up alone, but governance architecture built before dependency normalises. That means professional bodies establishing hosting capacity standards before embeddedness becomes irreversible. It means disclosure frameworks, audit requirements, and assistance/substitution criteria developed before courts encounter the gap. It means institutional doctrine — on what AI may assist, what it may structure, and what must remain irreducibly attributable to the lawyer — settled before workflow dependence forecloses the possibility of settling it at all. These are not aspirational standards. They are the minimum conditions under which the profession retains genuine command over the work conducted in its name.</p>
+
+      <p>The decisive question is no longer whether lawyers use AI. It is whether judgment remains genuinely theirs once legal work is rebuilt under conditions they did not design and may not fully see. And once those same conditions migrate into courts and public institutions — as they will — the question deepens: whether law itself remains in command of the authority exercised in its name. That is the question the present conversation has not yet named with sufficient seriousness. And it is the question on which governance architecture, not workflow optimisation, is the only adequate response.</p>
+
+    </article>
+
+    <hr class="article-rule" />
+
+    <!-- AUTHOR -->
+    <div class="author-block">
+      <p class="author-name">Danai Hazel Kudya</p>
+      <p class="author-title">Founder and Executive Director</p>
+      <p class="author-inst">Africa Governance &amp; Civic Innovation Hub (AGCIH) &nbsp;·&nbsp; Harare, Zimbabwe &nbsp;·&nbsp; <a href="https://agcih.africa">agcih.africa</a></p>
+    </div>
+
+    <!-- NOTES -->
+    <section aria-label="Notes">
+      <p class="notes-heading">Notes</p>
+      <ol class="notes-list">
+        <li id="note-1">The concepts of Professional Hosting Capacity, Attributable Professional Judgment, Continuous Administration, and the Governability Gap are developed across AGCIH's legal practice work, including: Danai Hazel Kudya, <em>Hosting AI in Legal Practice: Why the Next Challenge for the Legal Profession Is Governance, Not Adoption</em> (Africa Governance &amp; Civic Innovation Hub, 2026), agcih.africa. <a href="#ref-1" aria-label="Return to text">↩</a></li>
+        <li id="note-2">The framework of Functional Drift, Relocation of Judgment, Administrative Hosting Capacity, Institutional Friction, and Governance Readiness as applied to courts and public institutions is developed in: Danai Hazel Kudya, <em>AI in Courts and the Rule of Law</em>, AGCIH Working Paper 004 (Africa Governance &amp; Civic Innovation Hub, 2026), agcih.africa. <a href="#ref-2" aria-label="Return to text">↩</a></li>
+        <li id="note-3">Commission on Administrative Justice v [Ex Parte Applicant], HCJRMISC/E120/2025, High Court of Kenya at Nairobi (Milimani High Court), Justice J. Chigiti SC, Ruling of 16 April 2026. The full respondent name does not appear in the published ruling. For the comparative professional responsibility framework invoked in the ruling, see also <em>Park v Kim</em>, 91 F.4th 610 (2d Cir. 2024). A full analytical treatment of this ruling is available in the AGCIH Policy Commentary: Danai Hazel Kudya, <em>When Courts Encounter AI Before Governance Is Ready</em> (Africa Governance &amp; Civic Innovation Hub, 2026), agcih.africa. <a href="#ref-3" aria-label="Return to text">↩</a></li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer-brand">Africa Governance &amp; Civic Innovation Hub</p>
+    <a href="https://agcih.africa" class="footer-link">agcih.africa</a>
+  </footer>
+
+</body>
+</html>
