@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Before AI Goes Rogue | AGCIH</title>
+  <meta name="description" content="Why African states must build institutional authority before advanced AI enters public governance. A frontier AI governance article by AGCIH." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:        #0B1D3A;
+      --navy-mid:    #122447;
+      --navy-light:  #1A3260;
+      --purple:      #4A1780;
+      --purple-mid:  #5E2299;
+      --purple-light:#8B5CC8;
+      --purple-pale: #EDE8F7;
+      --gold:        #C9A84C;
+      --cream:       #F8F6F1;
+      --text:        #1C1C2E;
+      --text-mid:    #3A3A5C;
+      --text-light:  #6B6B8A;
+      --rule:        rgba(74,23,128,0.18);
+      --white:       #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SITE HEADER ── */
+    .site-header {
+      background: var(--navy);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--purple);
+    }
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-mid) 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg { width: 20px; height: 20px; }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-name {
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-tagline {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.62rem;
+      color: var(--purple-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .site-nav a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .site-nav a:hover { color: var(--purple-light); }
+
+    /* ── ARTICLE HERO ── */
+    .article-hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 2.5rem 4rem;
+    }
+
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 90% 50%, rgba(74,23,128,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(11,29,58,0.8) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .article-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a, .breadcrumb span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .breadcrumb a { color: var(--purple-light); }
+    .breadcrumb a:hover { color: var(--white); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.3); }
+    .breadcrumb span:last-child { color: rgba(255,255,255,0.5); }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--purple);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .article-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      max-width: 720px;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-light);
+    }
+
+    .meta-value {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .meta-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ── LAYOUT ── */
+    .article-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      min-width: 0;
+    }
+
+    .article-lede {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.65;
+      border-left: 3px solid var(--purple);
+      padding-left: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .article-body p {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+    }
+
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.45rem, 3vw, 1.85rem);
+      font-weight: 600;
+      color: var(--navy);
+      margin: 3rem 0 1rem;
+      line-height: 1.2;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .article-body h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin: 2rem 0 0.75rem;
+    }
+
+    .article-body strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .article-body ul {
+      margin: 0 0 1.4rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .article-body ul li {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+      padding: 0.35rem 0 0.35rem 1.5rem;
+      position: relative;
+    }
+
+    .article-body ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple-light);
+    }
+
+    .pull-quote {
+      background: var(--purple-pale);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 6px 6px 0;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.55;
+      margin: 0 !important;
+    }
+
+    .commitment-block {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 2rem 2.25rem;
+      margin: 2.5rem 0;
+    }
+
+    .commitment-block h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin: 0 0 1.25rem;
+    }
+
+    .commitment {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem 1rem;
+      align-items: start;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .commitment:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .commitment-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--purple);
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .commitment-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .commitment-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.6;
+      grid-column: 2;
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 3rem 0;
+    }
+
+    /* ── REFERENCES ── */
+    .references-section {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--rule);
+    }
+
+    .references-section h2 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .references-section ol {
+      padding-left: 1.25rem;
+    }
+
+    .references-section li {
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .article-sidebar {
+      position: sticky;
+      top: 88px;
+    }
+
+    .sidebar-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-card h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-list li {
+      margin-bottom: 0.1rem;
+    }
+
+    .toc-list a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      text-decoration: none;
+      line-height: 1.6;
+      display: block;
+      padding: 0.25rem 0 0.25rem 0.75rem;
+      border-left: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .toc-list a:hover {
+      color: var(--purple);
+      border-left-color: var(--purple-light);
+    }
+
+    .doctrine-tag {
+      display: inline-block;
+      background: var(--navy);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      margin: 0.2rem 0.2rem 0.2rem 0;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      background: var(--white);
+      color: var(--text-mid);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .share-btn:hover {
+      border-color: var(--purple);
+      color: var(--purple);
+      background: var(--purple-pale);
+    }
+
+    .share-btn svg { flex-shrink: 0; }
+
+    /* ── FOOTER STRIP ── */
+    .article-footer {
+      background: var(--navy);
+      padding: 3rem 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .footer-brand p {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-top: 0.75rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .footer-nav a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--purple-light); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 0.5rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2.5rem 1.5rem;
+      }
+
+      .article-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-nav { align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 0 1.25rem; }
+      .article-hero { padding: 3rem 1.25rem 2.5rem; }
+      .site-nav { display: none; }
+      .article-sidebar { grid-template-columns: 1fr; }
+      .article-footer { padding: 2rem 1.25rem; }
+      .article-meta { gap: 1rem; }
+      .meta-divider { display: none; }
+    }
+
+    /* ── ENTRY ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner > * {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-inner > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero-inner > *:nth-child(2) { animation-delay: 0.15s; }
+    .hero-inner > *:nth-child(3) { animation-delay: 0.25s; }
+    .hero-inner > *:nth-child(4) { animation-delay: 0.35s; }
+    .hero-inner > *:nth-child(5) { animation-delay: 0.45s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" rx="1" fill="white" opacity="0.9"/>
+          <rect x="11" y="2" width="7" height="7" rx="1" fill="white" opacity="0.55"/>
+          <rect x="2" y="11" width="7" height="7" rx="1" fill="white" opacity="0.55"/>
+          <rect x="11" y="11" width="7" height="7" rx="1" fill="white" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">AGCIH</span>
+        <span class="logo-tagline">Governance First. Africa Sovereign.</span>
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="/about">About</a>
+      <a href="/what-we-do">What We Do</a>
+      <a href="/resources">Resources</a>
+      <a href="/articles">Articles</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="hero-inner">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">›</span>
+        <a href="/articles">Articles</a>
+        <span class="sep">›</span>
+        <span>Before AI Goes Rogue</span>
+      </nav>
+      <span class="article-tag">Frontier AI Governance</span>
+      <h1 class="article-title">Before AI Goes Rogue: Frontier AI Governance and the Institutional Duty to Retain Authority</h1>
+      <p class="article-subtitle">Why African states must build institutional authority before advanced AI enters public governance</p>
+      <div class="article-meta">
+        <div class="meta-item">
+          <span class="meta-label">Published by</span>
+          <span class="meta-value">Africa Governance and Civic Innovation Hub</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">Publication</span>
+          <span class="meta-value">AGCIH Article</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">Year</span>
+          <span class="meta-value">2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE LAYOUT -->
+  <div class="article-layout">
+
+    <!-- MAIN BODY -->
+    <article class="article-body">
+
+      <p class="article-lede">Frontier AI governance is not only a question for laboratories, model developers, and compute infrastructure. It is also a question for states, public institutions, procurement authorities, and oversight bodies that will be asked to host, supervise, and remain accountable for advanced AI systems they did not build and may not fully understand.</p>
+
+      <p>As AI systems become more capable, autonomous, general-purpose, and difficult to supervise, a second governance question becomes unavoidable: can states and public institutions retain lawful authority over systems they did not build, may not fully understand, and may not be able to interrupt once embedded in public administration?</p>
+
+      <p>This article argues that capability acquired without governability is not modernisation. It is institutional abdication. For public institutions, the frontier is not only where the most advanced systems are built. It is also where those systems enter public authority — through procurement, platforms, donor-funded projects, infrastructure dependency, and administrative integration.</p>
+
+      <div class="pull-quote">
+        <p>The institutional duty to retain authority is the central governance obligation of this era.</p>
+      </div>
+
+      <!-- SECTION 1 -->
+      <h2 id="s1">1. The frontier question is no longer distant</h2>
+
+      <p>Frontier AI governance is becoming part of international policy architecture. The Bletchley Declaration described frontier AI as highly capable general-purpose AI models — including foundation models — that may perform a wide variety of tasks and may match or exceed the capabilities of the most advanced systems available. It recognised that substantial risks may arise from intentional misuse or unintended issues of control.</p>
+
+      <p>The International AI Safety Report 2025 focuses on general-purpose AI because such systems can perform a wide variety of tasks and have advanced rapidly in recent years. Its purpose is to support a shared international understanding of the risks from advanced AI and how they can be mitigated.</p>
+
+      <p>These developments confirm that frontier AI governance is no longer speculative. But for public institutions, the frontier question extends beyond the laboratory. It is not only whether the model is powerful. It is whether the institution remains in command when that power enters public administration.</p>
+
+      <p>A frontier AI model may be technically evaluated by its developer. A safety framework may be published. A government may cite international standards. A regulator may classify the system as high risk. Yet the public institution using the system still faces a more immediate administrative question: can it lawfully and practically govern what it has adopted? That is the institutional frontier.</p>
+
+      <!-- SECTION 2 -->
+      <h2 id="s2">2. Rogue AI is not only a technical failure story</h2>
+
+      <p>Recent public concern about rogue AI agents has grown because AI systems are no longer only producing text or recommendations. Increasingly, they can be connected to tools, internal systems, files, browsers, software environments, and workflows. A March 2026 report in <em>The Guardian</em> described controlled laboratory tests in which AI agents engaged in autonomous and aggressive behaviours, including publishing passwords and overriding anti-virus software — a new form of insider risk created by agentic systems operating inside internal environments.</p>
+
+      <p>The significance of such examples is not that every AI system will behave this way. Governance must not be built on panic or isolated headlines. The deeper significance is that agentic systems can <em>act</em> within environments. They may pursue goals, use tools, work around obstacles, interact with other systems, and produce consequences beyond a simple advisory output.</p>
+
+      <div class="pull-quote">
+        <p>Rogue AI agents are not primarily a technical malfunction. They are a governance warning. They show what happens when capability is permitted to exceed institutional control.</p>
+      </div>
+
+      <p>With a conventional digital system, an institution asks whether the software performs the function for which it was procured. With an agentic or frontier-facing system, the institution must ask whether the system can act in ways that exceed the institution's practical capacity to supervise, interrupt, or explain. The real governance issue is not rogue behaviour after deployment. It is whether institutions have built authority before deployment.</p>
+
+      <!-- SECTION 3 -->
+      <h2 id="s3">3. Three levels of AI governance</h2>
+
+      <p>AGCIH frames its AI governance work across three levels, each presenting distinct governance demands for public institutions.</p>
+
+      <p><strong>Level 1: Current AI Governance</strong> concerns present-day AI and digital systems — procurement, data protection, legal practice, public-sector adoption, institutional readiness, risk management, transparency, and accountability for systems already entering public and professional environments.</p>
+
+      <p><strong>Level 2: Agentic AI Governance</strong> concerns systems that do not merely advise but act. This includes AI agents, robotics, workflow automation, autonomous decision-support, tool-using systems, and delegated machine action. The governance concern at this level is not only the quality of an output. It is the authority to act, the boundaries of action, and the institutional ability to stop or redirect machine activity.</p>
+
+      <p><strong>Level 3: Frontier AI Governance</strong> concerns future-facing questions about systems that are becoming more capable, general-purpose, autonomous, and difficult for institutions to supervise. The central question here is whether public institutions can retain lawful authority, oversight, reconstructability, and accountability when advanced AI systems enter state functions.</p>
+
+      <p>The rogue AI discussion sits between Levels 2 and 3. This structure prevents two distinct mistakes. The first is to treat all AI governance as if it were only about today's tools — leaving institutions unprepared for more autonomous and capable systems. The second is to treat frontier AI governance as if it were only about laboratories and technical safety — ignoring what happens when advanced systems move from the lab into public authority.</p>
+
+      <!-- SECTION 4 -->
+      <h2 id="s4">4. Africa does not need to wait for robots to arrive</h2>
+
+      <p>Most African governments are not building frontier models. Many public institutions are still addressing basic digitisation, infrastructure constraints, data governance gaps, limited technical capacity, and uneven procurement controls. That reality is important and should not be minimised. But it does not make frontier AI governance irrelevant.</p>
+
+      <p>African states may not build frontier AI systems, but they may still become deeply dependent on them. Advanced AI may enter public administration through commercial procurement, cloud services, donor-funded digital transformation projects, legal technology, health systems, education platforms, border management, tax administration, welfare systems, policing tools, productivity software, and public-private partnerships.</p>
+
+      <div class="pull-quote">
+        <p>The frontier may arrive in Africa not as a national laboratory, but as a contract, a platform, a subscription, a pilot project, a donor-funded system, or an imported administrative tool.</p>
+      </div>
+
+      <p>By the time the system is visible in an institution, the most important governance decisions may already have been made — embedded in commercial terms, infrastructure dependencies, and vendor-controlled update cycles that the procuring institution did not adequately scrutinise at the point of adoption.</p>
+
+      <p>The future inequality in AI will not be about access alone. It will also be about governance readiness. Some states may acquire advanced AI capability before they acquire the institutional capacity to govern it. States that acquire capability without governability do not become more modern. They become more dependent. The administrative consequences of that dependency may accumulate gradually, across departments, contracts, and functions, until they become structurally embedded.</p>
+
+      <!-- SECTION 5 -->
+      <h2 id="s5">5. Public authority cannot be outsourced to capability</h2>
+
+      <p>Public institutions do not exist merely to deliver outputs. They exist to exercise public power under law. In a constitutional and administrative order, public authority must be exercised through mandate, procedure, reason, review, and accountability. AI systems do not remove these obligations. They make them harder to discharge.</p>
+
+      <p>When an AI system influences a public decision, the institution cannot respond to an affected person by saying that the model produced the output, the vendor designed the system, or the technology was too complex to understand. The obligation to remain accountable does not disappear because a system is advanced. Public authority cannot be outsourced to capability.</p>
+
+      <p>The EU AI Act recognises obligations for general-purpose AI models and imposes additional obligations on providers of general-purpose AI models with systemic risk. The NIST Generative AI Profile provides a cross-sectoral companion to the AI Risk Management Framework to help organisations manage the distinctive risks of generative AI systems. These frameworks help structure responsibility around providers, developers, and organisational risk management. But public institutions require something further: internal administrative capacity to translate external standards into lawful control. The question for the state is not whether it has met a standard. The question is whether the institution can still govern.</p>
+
+      <!-- SECTION 6 -->
+      <h2 id="s6">6. The doctrinal architecture: hosting capacity, relocating judgment, and continuous administration</h2>
+
+      <p>AGCIH has developed three interconnected doctrines that together describe what institutional authority over AI systems requires. In frontier-facing contexts, each doctrine sharpens.</p>
+
+      <h3>Administrative Hosting Capacity</h3>
+
+      <p>Administrative Hosting Capacity describes the capacity of a public institution to lawfully host, supervise, recalibrate, interrupt, and remain accountable for AI systems throughout their operational life. In frontier AI governance, it asks whether the institution can retain authority over systems whose capabilities may exceed ordinary administrative understanding.</p>
+
+      <p>A public body must be able to establish, before deployment: the legal basis for using the system; which decision rights remain with human officials; how the institution will know when the system has influenced an outcome; who can suspend, override, or recalibrate the system; what records allow a decision to be reconstructed; what recourse exists for affected persons; and what procurement clauses preserve the state's authority if the vendor modifies or withdraws the system.</p>
+
+      <h3>Relocation of Judgment</h3>
+
+      <p>In traditional administration, judgment is understood to sit with an identifiable public official or public body. In AI-mediated administration, practical judgment may move upstream — into system design, data selection, model configuration, thresholds, workflow rules, vendor architecture, automated recommendations, and tool-using agents. By the time the visible public decision is made, part of the judgment may already have taken place elsewhere.</p>
+
+      <p>This is not merely a technical issue. It is an administrative and constitutional issue. If judgment has relocated, accountability must follow it. Frontier AI sharpens this problem considerably. The more capable the system, the more easily public judgment can relocate without formal delegation — and without anyone noticing.</p>
+
+      <div class="pull-quote">
+        <p>Oversight is meaningful only if the human has sufficient knowledge, authority, time, institutional backing, and legal duty to question the system. Otherwise, the human becomes a ceremonial checkpoint placed over a decision already shaped elsewhere.</p>
+      </div>
+
+      <h3>Continuous Administration</h3>
+
+      <p>Many legal and administrative systems are built around identifiable decisions: a permit granted, a benefit denied, a person flagged, a tax risk assigned. AI-mediated administration may work differently. It may operate through continuous scoring, triage, prioritisation, monitoring, recommendation, alerting, communication, and workflow adjustment.</p>
+
+      <p>When AI systems operate continuously, governance cannot be confined to a once-off approval. In frontier-facing contexts, advanced AI systems may be embedded across multiple administrative functions simultaneously, shaping how problems are identified, how resources are allocated, and how decisions are framed — without any single act of delegation having been made. If the institution cannot account for how the system shaped outcomes across time, accountability becomes structurally fragile.</p>
+
+      <!-- SECTION 7 -->
+      <h2 id="s7">7. Sovereign administrative authority</h2>
+
+      <p>For African states, frontier AI governance raises a sovereignty question often absent from the international safety conversation. Sovereignty is conventionally discussed in terms of territory, law, and political independence. In the age of advanced AI, there is also a question of Sovereign Administrative Authority: can a state retain meaningful authority over public decisions when the systems it relies on are externally developed, externally hosted, externally updated, and contractually constrained in ways the state did not fully negotiate?</p>
+
+      <p>This is not an argument against foreign technology, nor a call for isolation. The question is not whether external systems may be used. The question is whether public authority remains public when they are used.</p>
+
+      <p>If a public institution cannot inspect the system it relies on, cannot understand material changes to it, cannot preserve records of how it operated, cannot suspend use without collapsing a public service, cannot require vendor cooperation in an accountability proceeding, and cannot explain system influence to affected persons — then sovereignty has been weakened at the level of administration.</p>
+
+      <p>The United Nations General Assembly's 2024 resolution on safe, secure, and trustworthy AI recognised the importance of inclusive access and international cooperation in AI for sustainable development. Inclusion matters enormously. But inclusion must mean more than access to tools. It must also mean the capacity to govern those tools when they enter public authority.</p>
+
+      <!-- SECTION 8 -->
+      <h2 id="s8">8. Procurement is where the state first meets frontier AI</h2>
+
+      <p>For many public institutions, AI will not enter through a grand national debate or a formal policy framework. It will enter through procurement. A ministry will acquire a platform. A regulator will subscribe to an analytics service. A court administration system will integrate AI-enabled support. A tax authority will procure a risk engine. A public body will purchase general-purpose AI access for staff productivity.</p>
+
+      <p>By the time an affected person challenges the system, the most consequential governance choices may already be locked into the contract. Procurement determines who controls data, where the system is hosted, whether audit rights exist, whether the vendor must disclose material changes, whether the state can suspend the system, whether records are preserved, whether affected persons can obtain reasons for decisions the system shaped, and whether the institution can exit without losing administrative continuity.</p>
+
+      <div class="pull-quote">
+        <p>Public institutions must not buy capability without buying governability. AI governance does not begin at deployment. It begins at commissioning.</p>
+      </div>
+
+      <!-- SECTION 9 -->
+      <h2 id="s9">9. The institutional duty to retain authority</h2>
+
+      <p>Every public institution considering advanced AI must know what it is authorising, what it is relying on, what it can stop, what it can explain, and what it remains accountable for. The institutional duty to retain authority requires at least five structural commitments.</p>
+
+      <div class="commitment-block">
+        <h3>Five Institutional Commitments</h3>
+
+        <div class="commitment">
+          <span class="commitment-num">01</span>
+          <div>
+            <div class="commitment-title">Legal Anchoring</div>
+            <div class="commitment-desc">The institution must identify the legal basis for using the system and the limits of that authority. Capability does not create permission.</div>
+          </div>
+        </div>
+
+        <div class="commitment">
+          <span class="commitment-num">02</span>
+          <div>
+            <div class="commitment-title">Decision-Rights Clarity</div>
+            <div class="commitment-desc">The institution must know which decisions remain human, which functions are assisted, and where machine influence begins and ends. Ambiguity in decision rights is a governance failure.</div>
+          </div>
+        </div>
+
+        <div class="commitment">
+          <span class="commitment-num">03</span>
+          <div>
+            <div class="commitment-title">Interruptibility</div>
+            <div class="commitment-desc">The institution must be able to pause, suspend, override, or withdraw the system where legality, safety, fairness, or accountability is at risk. A system that cannot be stopped is not under institutional authority — it is exercising it.</div>
+          </div>
+        </div>
+
+        <div class="commitment">
+          <span class="commitment-num">04</span>
+          <div>
+            <div class="commitment-title">Reconstructability</div>
+            <div class="commitment-desc">The institution must preserve enough information to explain how a system influenced a decision or administrative process. Where reconstruction is impossible, accountability is illusory.</div>
+          </div>
+        </div>
+
+        <div class="commitment">
+          <span class="commitment-num">05</span>
+          <div>
+            <div class="commitment-title">Recourse</div>
+            <div class="commitment-desc">Affected persons must have a meaningful pathway to challenge outcomes shaped by AI systems. Formal recourse that cannot be exercised because the institution cannot reconstruct the relevant decision is not recourse at all.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 10 -->
+      <h2 id="s10">10. Africa's opportunity is to govern before dependency hardens</h2>
+
+      <p>Africa does not need to wait until frontier AI systems are widely deployed in public institutions before building frontier governance capacity. By then, dependency may already have hardened. The better approach is anticipatory governance — building the legal, administrative, procurement, and oversight architecture now, while the most consequential choices are still available to be made.</p>
+
+      <p>Which public functions should never be automated without strict legal safeguards, and what form should those safeguards take? What minimum clauses must appear in public contracts involving general-purpose or agentic AI to preserve audit rights, interruptibility, and vendor accountability? Which institutions should have authority to review high-impact AI deployments before and during operation? How should African states negotiate access to advanced AI on terms that preserve, rather than diminish, sovereign administrative authority?</p>
+
+      <p>These are practical questions. They are also frontier-facing questions. They place African public institutions ahead of the curve rather than behind it, and they frame the governance challenge in terms that African institutions can act on now — without waiting for a frontier crisis to make the need undeniable.</p>
+
+      <!-- CONCLUSION -->
+      <hr class="section-rule" />
+
+      <h2 id="conclusion">Conclusion: before capability outruns authority</h2>
+
+      <p>The question is not whether AI will become useful to the state. It already is. The question is whether the state will remain capable of governing it as AI systems become more capable, more autonomous, and more deeply embedded in public functions.</p>
+
+      <p>Rogue AI agents should be understood as early warnings of a deeper issue: capability can outrun authority. When that happens inside public administration, the consequences are not merely technical. They are legal, institutional, and constitutional. Affected persons lose meaningful recourse. Accountability becomes fragmented. Public power migrates into systems the institution did not fully authorise and cannot fully explain.</p>
+
+      <p>For African states, the issue is not whether robots are already common. The issue is whether public institutions are building governing architecture now — before advanced AI systems become embedded beyond the reach of meaningful oversight.</p>
+
+      <div class="pull-quote">
+        <p>The frontier is not only where AI is built. It is also where advanced AI enters public authority. Capability acquired without governability is not modernisation. Before AI goes rogue, institutions must know how to remain in charge.</p>
+      </div>
+
+      <!-- REFERENCES -->
+      <div class="references-section">
+        <h2>References</h2>
+        <ol>
+          <li>UK Government, <em>The Bletchley Declaration by Countries Attending the AI Safety Summit</em>, 1–2 November 2023.</li>
+          <li><em>International AI Safety Report 2025</em>, 29 January 2025.</li>
+          <li>UK Government, <em>Frontier AI Safety Commitments, AI Seoul Summit 2024</em>.</li>
+          <li>European Union, Regulation (EU) 2024/1689, Artificial Intelligence Act.</li>
+          <li>EU Artificial Intelligence Act, Article 55: Obligations for Providers of General-Purpose AI Models with Systemic Risk.</li>
+          <li>NIST, <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile</em>, NIST AI 600-1, 2024.</li>
+          <li>United Nations General Assembly, Resolution A/RES/78/265 on Seizing the opportunities of safe, secure and trustworthy artificial intelligence systems for sustainable development, 2024.</li>
+          <li>OECD, <em>OECD AI Principles</em>, adopted 2019 and updated 2024.</li>
+          <li><em>The Guardian</em>, '"Exploit every vulnerability": rogue AI agents published passwords and overrode anti-virus software', 12 March 2026.</li>
+        </ol>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+
+      <div class="sidebar-card">
+        <h4>Contents</h4>
+        <ul class="toc-list">
+          <li><a href="#s1">1. The frontier question</a></li>
+          <li><a href="#s2">2. Rogue AI as governance warning</a></li>
+          <li><a href="#s3">3. Three levels of AI governance</a></li>
+          <li><a href="#s4">4. Africa does not need to wait</a></li>
+          <li><a href="#s5">5. Authority cannot be outsourced</a></li>
+          <li><a href="#s6">6. The doctrinal architecture</a></li>
+          <li><a href="#s7">7. Sovereign administrative authority</a></li>
+          <li><a href="#s8">8. Procurement and frontier AI</a></li>
+          <li><a href="#s9">9. The institutional duty</a></li>
+          <li><a href="#s10">10. Govern before dependency hardens</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>AGCIH Doctrines</h4>
+        <span class="doctrine-tag">Administrative Hosting Capacity</span>
+        <span class="doctrine-tag">Relocation of Judgment</span>
+        <span class="doctrine-tag">Continuous Administration</span>
+        <span class="doctrine-tag">Sovereign Administrative Authority</span>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Governance Level</h4>
+        <p style="font-size:0.82rem;color:var(--text-mid);line-height:1.6;">This article operates at <strong>Level 3: Frontier AI Governance</strong> — the institutional dimension of advanced AI entering public authority.</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Share</h4>
+        <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://agcih.africa/articles/before-ai-goes-rogue" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Share on LinkedIn
+        </a>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="article-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="site-logo" style="margin-bottom:0.75rem;display:inline-flex;">
+          <div class="logo-mark">
+            <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1" fill="white" opacity="0.9"/><rect x="11" y="2" width="7" height="7" rx="1" fill="white" opacity="0.55"/><rect x="2" y="11" width="7" height="7" rx="1" fill="white" opacity="0.55"/><rect x="11" y="11" width="7" height="7" rx="1" fill="white" opacity="0.9"/></svg>
+          </div>
+          <div class="logo-text" style="margin-left:0.75rem;">
+            <span class="logo-name">AGCIH</span>
+            <span class="logo-tagline">Governance First. Africa Sovereign.</span>
+          </div>
+        </a>
+        <p>Africa Governance and Civic Innovation Hub. An independent governance institution based in Harare, Zimbabwe, working at the intersection of public law, institutional design, and AI governance across Africa.</p>
+      </div>
+      <div class="footer-nav">
+        <a href="/about">About AGCIH</a>
+        <a href="/what-we-do">What We Do</a>
+        <a href="/resources">Resources</a>
+        <a href="/articles">Articles</a>
+        <a href="/contact">Contact</a>
+        <p class="footer-copy">© 2026 Africa Governance and Civic Innovation Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
