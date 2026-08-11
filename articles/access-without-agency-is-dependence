@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access Without Agency Is Dependence | AGCIH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AGCIH examines the institutional conditions that allow African access to artificial intelligence to strengthen public authority, civic agency and the freedom to govern.">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 1000;
+      padding: 0.7rem 1rem;
+      border-radius: 0.65rem;
+      background: #ffffff;
+      color: var(--brand);
+      font-weight: 700;
+      box-shadow: var(--card-shadow);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4.5rem 0 3.75rem;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255,255,255,0.14), transparent 34%),
+        linear-gradient(135deg, var(--brand) 0%, #352365 48%, var(--navy) 100%);
+      color: #ffffff;
+    }
+
+    .article-hero::after {
+      content: "";
+      position: absolute;
+      right: -9rem;
+      bottom: -12rem;
+      width: 28rem;
+      height: 28rem;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 4rem rgba(255,255,255,0.035),
+        0 0 0 8rem rgba(255,255,255,0.025);
+      pointer-events: none;
+    }
+
+    .article-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+    }
+
+    .article-kicker {
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 900px;
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2.35rem, 5vw, 4.3rem);
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+    }
+
+    .article-subtitle {
+      max-width: 790px;
+      margin: 1.2rem 0 0;
+      color: rgba(255,255,255,0.91);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.5;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin: 1.45rem 0 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.92rem;
+    }
+
+    .article-section {
+      padding: 3.75rem 0 1rem;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 4.25rem;
+      align-items: start;
+      max-width: 1080px;
+    }
+
+    .article-content {
+      min-width: 0;
+      max-width: 780px;
+    }
+
+    .article-content p {
+      margin: 0 0 1.35rem;
+      color: #2f3a4d;
+      font-size: 1.055rem;
+      line-height: 1.82;
+    }
+
+    .article-content .article-lead {
+      margin-bottom: 1.55rem;
+      color: var(--ink);
+      font-size: 1.18rem;
+      line-height: 1.78;
+    }
+
+    .article-content h2 {
+      margin: 3.2rem 0 1.2rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid rgba(43,31,85,0.22);
+      color: var(--navy);
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    .article-content sup {
+      position: relative;
+      top: -0.12em;
+      margin-left: 0.08rem;
+      font-size: 0.68em;
+      font-weight: 700;
+    }
+
+    .article-content sup a {
+      text-decoration: none;
+    }
+
+    .article-content sup a:hover {
+      text-decoration: underline;
+    }
+
+    .article-nav {
+      position: sticky;
+      top: 1.5rem;
+      padding: 1.15rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-soft);
+    }
+
+    .article-nav p {
+      margin: 0 0 0.55rem;
+      color: var(--navy);
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .article-nav ol {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .article-nav li {
+      margin: 0.5rem 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .article-nav a {
+      color: var(--text);
+    }
+
+    .article-nav a:hover {
+      color: var(--brand);
+    }
+
+    .article-rule {
+      height: 3px;
+      margin: 3.4rem 0 2.8rem;
+      border: 0;
+      background: linear-gradient(to right, var(--navy), var(--brand), transparent);
+    }
+
+    .references-list {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .references-list li {
+      margin: 0 0 1.15rem;
+      padding-left: 0.3rem;
+      color: #3f4a5d;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .references-list a {
+      font-weight: 650;
+    }
+
+    .provenance-note {
+      margin-top: 1.3rem;
+      padding: 1.35rem 1.45rem;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: var(--bg-soft);
+    }
+
+    .provenance-note h2 {
+      margin-top: 0;
+      padding: 0;
+      border: 0;
+      font-size: 1.45rem;
+    }
+
+    .provenance-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-signature {
+      margin-top: 2.6rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .article-signature strong {
+      display: block;
+      color: var(--brand);
+      font-size: 1rem;
+    }
+
+    .article-signature span {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .article-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+    }
+
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .article-nav {
+        position: static;
+        grid-row: 1;
+      }
+
+      .article-content {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero {
+        padding: 3.35rem 0 2.8rem;
+      }
+
+      .article-section {
+        padding-top: 2.5rem;
+      }
+
+      .article-content p,
+      .article-content .article-lead {
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .article-content h2 {
+        margin-top: 2.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#article-content">Skip to article</a>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <img src="../logo.png" alt="Africa Governance and Civic Innovation Hub logo" style="height:60px;">
+      <div class="logo-text">
+        <strong>AGCIH</strong>
+        <span>Africa Governance &amp; Civic Innovation Hub</span>
+      </div>
+    </div>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../whatwedo.html">What We Do</a></li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../articles/" class="active" aria-current="page">Articles</a></li>
+        <li><a href="../frameworks.html">Frameworks</a></li>
+        <li><a href="../workwithus.html">Work With Us</a></li>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../governance.html">Governance</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/company/africa-governance-and-civic-innovation-hub/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="article-hero" aria-labelledby="article-title">
+    <div class="container article-hero-inner">
+      <p class="article-kicker">AGCIH Geneva Governance Series</p>
+      <h1 id="article-title">Access Without Agency Is Dependence</h1>
+      <p class="article-subtitle">From African participation to institutional power in global AI governance</p>
+      <p class="article-meta">
+        <span>August 2026</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>Danai H. Kudya</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="container article-layout">
+
+      <article class="article-content" id="article-content">
+        <p class="article-lead">
+          Africa's presence at the inaugural United Nations Global Dialogue on Artificial Intelligence (AI) Governance was significant because the international architecture for AI governance is still being formed. African ministers and representatives engaged questions of infrastructure, skills, finance, standards, regional cooperation, language, data and technological sovereignty at a moment when the assumptions embedded in global frameworks may shape national choices for years to come. Their participation confirmed that Africa cannot be treated only as a destination for technologies and policies developed elsewhere; African states entered the process as political actors with distinct development priorities and institutional concerns.<sup><a href="#ref1" aria-label="Reference 1">1</a></sup>
+        </p>
+
+        <p>
+          The value of that participation, however, cannot be assessed only by the number or visibility of African voices. Representation matters, but it does not establish whether states can influence the standards that follow, independently assess the systems entering their institutions or retain authority over the terms of adoption. A country may be present in an international process and still have limited influence over how the problem is framed. It may gain access to advanced systems while depending on external actors to explain their performance, specify acceptable safeguards and respond when they fail.
+        </p>
+
+        <p>
+          This article examines the distinction between access and agency. Its concern is not whether Africa should receive greater access to AI, a proposition that is already widely accepted, but what institutional conditions allow access to strengthen rather than substitute for public authority. It argues that participation in global governance, technological partnerships and capacity building programmes strengthen sovereignty only where they enlarge the institutional freedom to define problems, evaluate evidence, negotiate conditions, supervise systems, involve citizens and refuse arrangements that do not serve the public interest.
+        </p>
+
+        <p>
+          Throughout this article, access refers to the practical ability of a state, public institution or community to obtain and use the resources on which AI adoption depends, including systems, infrastructure, data, computing capacity, finance and expertise. Agency refers to the authority and capability to make consequential decisions about that use: to define the problem, determine whether AI is appropriate, negotiate the conditions of adoption, independently assess claims, supervise deployment, respond to failure and suspend or reject a system where the public interest requires it. When exercised by public bodies, this is institutional agency; when exercised by citizens and communities through meaningful influence over public decisions, it is civic agency. Access therefore concerns the ability to obtain and use AI related resources, while agency concerns the ability to govern the terms, consequences and continuation of that use.
+        </p>
+
+        <p>
+          The distinction was sharpened in Geneva when Icelandic President Halla Tómasdóttir observed, “Access without agency is not inclusion.” This article develops that observation from the perspective of institutional governability. Where access does not enlarge the capacity to make, supervise and contest consequential decisions, it may reproduce rather than reduce dependence.<sup><a href="#ref2" aria-label="Reference 2">2</a></sup>
+        </p>
+
+        <h2 id="beyond-access">Beyond access and representation</h2>
+
+        <p>
+          The case for expanding access remains compelling. Constraints in connectivity, computing infrastructure, research finance, technical expertise, data and investment affect who can develop AI, adapt it to local needs and benefit from its use. The Preliminary Report of the Independent International Scientific Panel on AI likewise shows that AI development and its enabling conditions remain uneven, and that institutions, workflows and trust mediate whether access translates into meaningful outcomes. Yet greater availability of technology does not by itself settle the question of authority. A ministry may acquire an AI system without obtaining the technical information required to examine it. A regulator may carry responsibility for oversight without having independent evidence against which to test a provider's claims. A government may enter a partnership without retaining meaningful control over data, system updates, contractual exit or long term maintenance. In each instance, the institution has acquired a resource but may still lack the capacity to act independently on the basis of informed judgment.<sup><a href="#ref3" aria-label="Reference 3">3</a></sup>
+        </p>
+
+        <p>
+          These concepts sit within a wider governance continuum. Representation concerns whether a country, institution or community is present in the forums where governance questions are discussed, while influence concerns whether it can shape the framing of those questions, the evidence treated as authoritative and the standards that emerge. Access, representation and influence may all contribute to agency, but none guarantees it. A country can be represented without exercising substantial influence, and it can gain access to technology without developing the authority and capability required to govern what it has received. The progression is therefore neither linear nor automatic.
+        </p>
+
+        <p>
+          The distinction becomes particularly important in global standard setting and policy development. A delegation may speak after the central problem has already been defined, a country may respond to a draft standard whose categories were developed elsewhere, and civil society organisations may be consulted after the principal institutional choices have narrowed. Such processes may be inclusive in composition while remaining unequal in agenda setting power. Meaningful influence begins earlier, with the ability to contribute evidence before the terms of debate are fixed and to challenge assumptions drawn from highly resourced technological environments. Institutional agency goes further because it requires states to carry international commitments into domestic law and administration without surrendering the authority to interpret, adapt and enforce them. The unresolved issue is not simply whether African countries have seats at the table, but whether the institutions represented there can exercise power once they return home.
+        </p>
+
+        <h2 id="freedom-to-govern">The freedom to govern</h2>
+
+        <p>
+          The establishment of the World Artificial Intelligence Cooperation Organization (WAICO) in July 2026 as an independent intergovernmental organisation has further sharpened the relationship between access, partnership and dependence. Additional institutions may create opportunities for technical assistance, research, capacity building and development oriented cooperation. They may also give developing countries more than one forum through which to engage, thereby reducing reliance on a single centre of technological authority. That plurality can be valuable, particularly where it allows states to compare proposals, diversify partnerships and avoid being drawn into one exclusive political or technical ecosystem. Yet the multiplication of institutions does not, by itself, create agency, because dependence is not eliminated merely by changing its source.<sup><a href="#ref4" aria-label="Reference 4">4</a></sup>
+        </p>
+
+        <p>
+          A country may move from reliance on one external provider to reliance on another, receive open technologies while remaining dependent on external infrastructure or maintenance, or gain training that ties institutional expertise to a particular model family or technical platform. It may belong to several organisations while having limited influence over the priorities, funding decisions and delivery arrangements of any of them. The relevant test is therefore whether participation expands the country's freedom to govern. This includes the ability to compare competing offers, determine which systems fit domestic public needs, retain authority over procurement and data, cooperate across several arrangements and refuse conditions that weaken domestic control. Multi alignment may increase bargaining power, but it may also distribute dependence across several relationships without altering its underlying structure.
+        </p>
+
+        <p>
+          This is not an argument for technological isolation or complete national self sufficiency. African states will continue to rely on international cooperation, private investment, shared infrastructure, external research and regional partnerships, as do states in every other region. The governance question is whether those relationships strengthen the receiving institution's future ability to make decisions without permanent external substitution. Technical assistance should leave behind procedures, expertise and decision making capacity. Infrastructure partnerships should preserve public leverage, while regional arrangements should extend national capability without obscuring national accountability. A useful partnership should make the institution more capable of defining its needs, evaluating alternatives and acting independently over time. Where the institution remains unable to proceed without the external partner, dependency has not been resolved; it has merely been administered.
+        </p>
+
+        <h2 id="institutional-agency">Institutional agency inside the state</h2>
+
+        <p>
+          For public institutions, agency begins before an AI system is purchased. It begins with the capacity to define the public problem and to determine whether AI is necessary at all. Technology programmes often begin in the opposite order: a tool becomes available, a partnership is proposed or a demonstration appears promising, after which the institution is invited to identify a problem to which the technology can be applied. This sequence matters because, when the technology arrives before the problem has been properly defined, the institution may inherit the assumptions of the provider. The system's capabilities then begin to shape the administrative need, rather than the need determining whether the system is appropriate. Responsible governance must preserve the option of addressing a problem through better staffing, improved records, clearer procedures, stronger coordination or a simpler digital system.
+        </p>
+
+        <p>
+          The legitimate decision not to deploy an AI system is therefore part of institutional agency. Before approving a system, a public body should be able to assess whether the expected benefit justifies the new dependencies and whether it possesses the capacity to supervise the system after deployment, explain outcomes to affected people and intervene when performance changes. These are not expressions of resistance to innovation. They are ordinary requirements of public authority. An institution that can approve a system but cannot realistically refuse it, because of political pressure, contractual design, donor expectations or lack of alternatives, does not possess full agency over the decision.
+        </p>
+
+        <p>
+          Where an institution decides to proceed, procurement becomes the point at which many governing conditions are fixed. Contracts may determine access to technical information, responsibility for system updates, audit rights, data use, incident reporting, liability, termination and the institution's ability to continue operating after the relationship ends. These are not peripheral commercial matters. They determine whether the public body will remain capable of supervising a system for which it is legally and politically responsible. An institution may formally retain authority while becoming operationally dependent on the supplier, carrying responsibility for outcomes it cannot reconstruct, inspect or suspend without external assistance. Procurement is therefore not simply the route through which technology enters government; it is a point at which public authority may either be protected or weakened.
+        </p>
+
+        <p>
+          Independent verification is equally important because AI governance increasingly depends on claims about accuracy, safety, fairness, efficiency and public benefit. A public institution cannot exercise meaningful agency if it has no basis on which to assess those claims independently of the party seeking approval or payment. This does not require every ministry to establish its own technical laboratory. It requires a governance architecture through which relevant expertise is available in regulators, universities, standards bodies, public laboratories or trusted regional facilities. Without such capacity, compliance becomes documentary: the institution receives evidence from the provider, accepts the provider's interpretation of that evidence and returns to the provider when questions arise. Formal oversight remains, but independent judgment is absent.
+        </p>
+
+        <p>
+          The same distinction should guide capacity building programmes. Training, fellowships, technical exchanges and professional development can deepen expertise, but an individual may become highly knowledgeable while the institution in which that person works remains unable to act. The official may understand the risks but have no authority over procurement, the regulator may receive training but lack staff and access to evidence, and a ministry may send delegates to international meetings without establishing a process through which their knowledge informs domestic decisions. Expertise becomes governance capacity only when it is embedded in mandates, budgets, procedures and decision rights, and when institutional knowledge survives staff turnover and project closure. Africa does not only need more people who understand AI; it needs institutions able to use that understanding to exercise public authority.
+        </p>
+
+        <h2 id="civic-agency">Civic agency and citizen participation</h2>
+
+        <p>
+          Agency cannot be located only in governments. A state may develop greater technical and negotiating capability while citizens remain excluded from the decisions through which AI enters public life. This is particularly significant where systems affect access to services, welfare, employment, education, health, security or administrative review. The emerging Citizens Track on AI Governance, including its July 2026 white paper and subsequent discussions in which the author participated, brought the institutional character of this problem into clearer view. The purpose of citizen participation cannot be limited to collecting opinions or demonstrating that consultation occurred. The more demanding question is whether public judgment can travel into the institutions that make authoritative decisions and whether those institutions are required to explain what they did with the evidence received.<sup><a href="#ref5" aria-label="Reference 5">5</a></sup>
+        </p>
+
+        <p>
+          Civic agency therefore depends on an identifiable pathway between public participation and decision making. Communities should be able to influence how a public problem is defined, question whether AI is an appropriate response, examine the assumptions on which a proposed system is based and contribute evidence about likely or experienced consequences. Institutions should be able to show whether that evidence affected procurement, testing, deployment or oversight, and there should be a route back to the communities that participated. A consultation can be diverse and well attended while having little effect on the decision that follows. Where citizens are heard but cannot influence the problem definition, the choice of system or the conditions of deployment, participation increases visibility without redistributing power.
+        </p>
+
+        <p>
+          Civic agency also requires contestation and remedy after deployment. A person affected by an AI mediated decision should be able to identify the responsible institution, obtain sufficient information to understand the basis of the decision, challenge the outcome and receive a meaningful response. This democratic dimension qualifies any purely state centred account of technological sovereignty. A government does not exercise legitimate agency merely because it can negotiate effectively with a vendor or international partner. Its authority must remain connected to the people in whose name it acts. Citizen participation becomes institutionally meaningful when it has consequences for decisions and when those who participate can trace how their contribution entered the governance process.
+        </p>
+
+        <h2 id="institutional-power">From inclusion to institutional power</h2>
+
+        <p>
+          The next phase of Africa's participation in global AI governance should be assessed against a more demanding standard. Representation should lead to influence over problem framing, evidence and standards, while international cooperation should enlarge the range of choices available to states rather than narrow them through technical or contractual dependence. National strategies should be translated into institutions with clear authority, resources and decision rights. Public procurement should protect access to information, audit, data governance, suspension and exit, and independent verification should be available nationally or through trusted regional arrangements. Citizen participation should have a traceable route into authoritative decisions, and public institutions should retain the ability to determine that a proposed AI system is unnecessary, unsuitable or inconsistent with the public interest.
+        </p>
+
+        <p>
+          This standard does not require states to delay all adoption until every institutional condition is perfect. No governance system begins from complete readiness, and experimentation may itself generate valuable institutional knowledge. The concern is that technological entry should not be confused with institutional progress. A country can adopt quickly while becoming less able to govern, participate internationally while remaining dependent domestically, or establish strategies, councils and partnerships while leaving the core conditions of public authority unchanged. The stronger measure of progress is whether institutions become more capable of judgment: whether they can define problems, evaluate evidence, negotiate conditions, supervise systems, respond to failure and remain accountable across time.
+        </p>
+
+        <p>
+          Africa's presence in the inaugural Global Dialogue was important because the emerging international architecture cannot be legitimate if African states and communities remain objects of governance rather than participants in its formation. Inclusion, however, is only the beginning. The deeper work lies in converting participation into influence, influence into institutional capability and capability into durable public authority. Access should expand choice, cooperation should strengthen judgment, capacity building should alter institutions and citizen participation should affect decisions. Where these conditions are absent, access may still bring systems, infrastructure and investment, but it does not necessarily bring agency. In that sense, access without agency is dependence.
+        </p>
+
+        <hr class="article-rule">
+
+        <h2 id="references">References and acknowledgements</h2>
+
+        <ol class="references-list">
+          <li id="ref1">
+            United Nations. Global Dialogue on AI Governance. The Dialogue was established by UN General Assembly Resolution A/RES/79/325; the inaugural session was held in Geneva on 6 and 7 July 2026. <a href="https://www.un.org/global-dialogue-ai-governance/en" target="_blank" rel="noopener">View the United Nations source</a>.
+          </li>
+          <li id="ref2">
+            United Nations. Closing Sessions: Global Dialogue on Artificial Intelligence Governance: Day 2. Remarks of President Halla Tómasdóttir of Iceland, 7 July 2026. <a href="https://transcripts.un.org/en/asset/k1e/k1ejkb0bkv" target="_blank" rel="noopener">View the United Nations transcript</a>.
+          </li>
+          <li id="ref3">
+            Independent International Scientific Panel on AI. Preliminary Report: Evidence based assessment of opportunities, risks and impacts of artificial intelligence. United Nations, July 2026. <a href="https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report" target="_blank" rel="noopener">View the United Nations report</a>.
+          </li>
+          <li id="ref4">
+            State Council of the People's Republic of China / Xinhua. “29 countries sign agreement on establishing World AI Cooperation Organization,” 17 July 2026. <a href="https://english.www.gov.cn/news/202607/17/content_WS6a59a226c6d00ca5f9a0c432.html" target="_blank" rel="noopener">View the source</a>.
+          </li>
+          <li id="ref5">
+            Davies, T., Field Reid, O., Oman, S. &amp; Wilson, R. (2026). A Citizens Track on AI Governance: Alignment, Agency and Accountability. Iswe Foundation. <a href="https://doi.org/10.5281/zenodo.21157507" target="_blank" rel="noopener">View the publication</a>.
+          </li>
+        </ol>
+
+        <aside class="provenance-note" aria-labelledby="provenance-title">
+          <h2 id="provenance-title">Note on provenance</h2>
+          <p>
+            This article draws on the author's participation in the inaugural UN Global Dialogue on AI Governance and related Geneva discussions, subsequent participation in Citizens Track discussions, and AGCIH's continuing research on institutional governability. Where particular interventions, reports or external initiatives materially informed the analysis, they are acknowledged above. The interpretations and institutional propositions developed in this article are the author's own and do not imply endorsement by the organisations or participants referenced.
+          </p>
+        </aside>
+
+        <div class="article-signature">
+          <strong>Africa Governance and Civic Innovation Hub</strong>
+          <span>Institutional governability &middot; public authority &middot; civic agency</span>
+          <div class="article-actions">
+            <a class="btn btn-outline" href="./">Return to Articles</a>
+            <a class="btn btn-primary" href="https://www.agcih.africa">Visit AGCIH</a>
+          </div>
+        </div>
+      </article>
+
+      <aside class="article-nav" aria-label="Article contents">
+        <p>In this article</p>
+        <ol>
+          <li><a href="#beyond-access">Beyond access and representation</a></li>
+          <li><a href="#freedom-to-govern">The freedom to govern</a></li>
+          <li><a href="#institutional-agency">Institutional agency inside the state</a></li>
+          <li><a href="#civic-agency">Civic agency and citizen participation</a></li>
+          <li><a href="#institutional-power">From inclusion to institutional power</a></li>
+          <li><a href="#references">References and acknowledgements</a></li>
+        </ol>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>&copy; 2026 Africa Governance &amp; Civic Innovation Hub (AGCIH). All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../terms.html">Terms of Use</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../ip-policy.html">Intellectual Property Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/africa-governance-and-civic-innovation-hub/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
