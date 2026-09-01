@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Who Will Host the Framework? | AGCIH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AGCIH examines how Southern African public institutions can turn data governance frameworks into continuing administrative practice.">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      z-index: 1000;
+      padding: 0.7rem 1rem;
+      border-radius: 0.65rem;
+      background: #ffffff;
+      color: var(--brand);
+      font-weight: 700;
+      box-shadow: var(--card-shadow);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .article-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4.5rem 0 3.75rem;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255,255,255,0.14), transparent 34%),
+        linear-gradient(135deg, var(--brand) 0%, #352365 48%, var(--navy) 100%);
+      color: #ffffff;
+    }
+
+    .article-hero::after {
+      content: "";
+      position: absolute;
+      right: -9rem;
+      bottom: -12rem;
+      width: 28rem;
+      height: 28rem;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 4rem rgba(255,255,255,0.035),
+        0 0 0 8rem rgba(255,255,255,0.025);
+      pointer-events: none;
+    }
+
+    .article-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+    }
+
+    .article-kicker {
+      margin: 0 0 1rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 900px;
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(2.35rem, 5vw, 4.3rem);
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+    }
+
+    .article-subtitle {
+      max-width: 790px;
+      margin: 1.2rem 0 0;
+      color: rgba(255,255,255,0.91);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.5;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin: 1.45rem 0 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.92rem;
+    }
+
+    .article-section {
+      padding: 3.75rem 0 1rem;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 4.25rem;
+      align-items: start;
+      max-width: 1080px;
+    }
+
+    .article-content {
+      min-width: 0;
+      max-width: 780px;
+    }
+
+    .article-content p {
+      margin: 0 0 1.35rem;
+      color: #2f3a4d;
+      font-size: 1.055rem;
+      line-height: 1.82;
+    }
+
+    .article-content .article-lead {
+      margin-bottom: 1.55rem;
+      color: var(--ink);
+      font-size: 1.18rem;
+      line-height: 1.78;
+    }
+
+    .article-content h2 {
+      margin: 3.2rem 0 1.2rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid rgba(43,31,85,0.22);
+      color: var(--navy);
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    .article-content sup {
+      position: relative;
+      top: -0.12em;
+      margin-left: 0.08rem;
+      font-size: 0.68em;
+      font-weight: 700;
+    }
+
+    .article-content sup a {
+      text-decoration: none;
+    }
+
+    .article-content sup a:hover {
+      text-decoration: underline;
+    }
+
+    .article-nav {
+      position: sticky;
+      top: 1.5rem;
+      padding: 1.15rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-soft);
+    }
+
+    .article-nav p {
+      margin: 0 0 0.55rem;
+      color: var(--navy);
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .article-nav ol {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .article-nav li {
+      margin: 0.5rem 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .article-nav a {
+      color: var(--text);
+    }
+
+    .article-nav a:hover {
+      color: var(--brand);
+    }
+
+    .article-rule {
+      height: 3px;
+      margin: 3.4rem 0 2.8rem;
+      border: 0;
+      background: linear-gradient(to right, var(--navy), var(--brand), transparent);
+    }
+
+    .references-list {
+      margin: 0;
+      padding-left: 1.35rem;
+    }
+
+    .references-list li {
+      margin: 0 0 1.15rem;
+      padding-left: 0.3rem;
+      color: #3f4a5d;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .references-list a {
+      font-weight: 650;
+    }
+
+    .provenance-note {
+      margin-top: 1.3rem;
+      padding: 1.35rem 1.45rem;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: var(--bg-soft);
+    }
+
+    .provenance-note h2 {
+      margin-top: 0;
+      padding: 0;
+      border: 0;
+      font-size: 1.45rem;
+    }
+
+    .provenance-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-signature {
+      margin-top: 2.6rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .article-signature strong {
+      display: block;
+      color: var(--brand);
+      font-size: 1rem;
+    }
+
+    .article-signature span {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .article-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+    }
+
+
+    .article-figure {
+      margin: 1.9rem 0 2.2rem;
+    }
+
+    .article-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+    }
+
+    .article-figure figcaption {
+      margin-top: 0.65rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-style: italic;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .article-callout {
+      margin: 2rem 0;
+      padding: 1.2rem 1.35rem;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: #f4f0fb;
+    }
+
+    .article-callout p {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .governance-test,
+    .support-list {
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.4rem 0 1.7rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .governance-test li,
+    .support-list li {
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: var(--bg-soft);
+      color: #2f3a4d;
+      line-height: 1.65;
+    }
+
+    .governance-test strong,
+    .support-list strong {
+      color: var(--brand);
+    }
+
+    .article-table-wrap {
+      overflow-x: auto;
+      margin: 1.25rem 0 1.9rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(17, 32, 59, 0.07);
+    }
+
+    .article-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: #ffffff;
+    }
+
+    .article-table th,
+    .article-table td {
+      padding: 0.95rem 1rem;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: #2f3a4d;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .article-table th {
+      background: var(--brand);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .article-table th:last-child,
+    .article-table td:last-child {
+      border-right: 0;
+    }
+
+    .article-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .article-table td:first-child {
+      width: 20%;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .article-table td:nth-child(2) {
+      width: 54%;
+    }
+
+    .table-caption {
+      margin-bottom: 0.65rem !important;
+      color: var(--navy) !important;
+      font-size: 0.96rem !important;
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .author-profile {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 1.2rem;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-soft);
+    }
+
+    .author-profile img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0.8rem;
+    }
+
+    .author-profile p {
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .author-profile {
+        grid-template-columns: 1fr;
+      }
+
+      .author-profile img {
+        width: min(240px, 100%);
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .article-nav {
+        position: static;
+        grid-row: 1;
+      }
+
+      .article-content {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .article-hero {
+        padding: 3.35rem 0 2.8rem;
+      }
+
+      .article-section {
+        padding-top: 2.5rem;
+      }
+
+      .article-content p,
+      .article-content .article-lead {
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .article-content h2 {
+        margin-top: 2.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#article-content">Skip to article</a>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <img src="../logo.png" alt="Africa Governance and Civic Innovation Hub logo" style="height:60px;">
+      <div class="logo-text">
+        <strong>AGCIH</strong>
+        <span>Africa Governance &amp; Civic Innovation Hub</span>
+      </div>
+    </div>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../whatwedo.html">What We Do</a></li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../articles/" class="active" aria-current="page">Articles</a></li>
+        <li><a href="../frameworks.html">Frameworks</a></li>
+        <li><a href="../workwithus.html">Work With Us</a></li>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../governance.html">Governance</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/company/africa-governance-and-civic-innovation-hub/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="article-hero" aria-labelledby="article-title">
+    <div class="container article-hero-inner">
+      <p class="article-kicker">AGCIH Field Reflection | Data Governance</p>
+      <h1 id="article-title">Who Will Host the Framework?</h1>
+      <p class="article-subtitle">Turning data governance from policy into institutional practice in Southern Africa</p>
+      <p class="article-meta">
+        <span>September 2026</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>Danai Hazel Kudya</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="container article-layout">
+
+      <article class="article-content" id="article-content">
+        <figure class="article-figure">
+
+          <img src="../images/harare_peer_exchange.jpg" alt="Workshop participants during a regional peer exchange in Harare." width="1536" height="717" fetchpriority="high">
+
+          <figcaption>Regional peer exchange during the Harare workshop. Photograph: author&#x27;s collection.</figcaption>
+
+        </figure>
+
+        <p class="article-lead">
+          Southern Africa does not lack declarations about the value of data. The harder question is whether public institutions possess the mandates, roles, controls and continuity required to govern data from planning to disposal. The Harare workshop suggested that the region&#x27;s next frontier is institutional hosting; building organisations capable of carrying governance principles through daily administrative practice.
+        </p>
+
+        <h2 id="when_governance_became_concrete">When governance became concrete</h2>
+
+        <p>
+          The most revealing moments in Harare did not occur when data governance was described at a high level. They came when participants had to place actual institutions beside actual responsibilities. Who is accountable at the planning stage? Who must be consulted before data is collected? Who can authorise sharing? Who reviews the risks created by analysis? Who decides when data should be archived or securely destroyed? Once those questions became concrete, data governance stopped being a policy label and became what it has always needed to be; an architecture of public administration.
+        </p>
+
+        <p>
+          The Southern Africa Regional Workshop on Data Governance in the Digital Age: Data Policy Harmonisation took place at Rainbow Towers Hotel in Harare from 12 to 14 August 2026. It was jointly organised by the Smart Africa Secretariat and Smart Africa Digital Academy, UNESCO, and the Government of Zimbabwe through the Ministry of ICT, Postal and Courier Services and POTRAZ. Over three days, lectures, self assessments, stakeholder mapping, RACI exercises, lifecycle analysis, country exchanges and roadmap sequencing moved the discussion from broad ambition to implementation.
+        </p>
+
+        <p>
+          The workshop was organised around the UNESCO Data Governance Toolkit: Navigating Data in the Digital Age, developed through the Broadband Commission Working Group jointly chaired by UNESCO, UNDP, ITU and the African Union. Its structure is deceptively simple: WHY defines purpose; HOW identifies the principles that should govern decisions; WHO locates people, institutions and processes; and WHAT addresses practices across the data lifecycle. The value of that structure lies in the chain it creates. It prevents data policy from being treated as a technical document detached from public purpose, human rights and institutional responsibility.
+        </p>
+
+        <h2 id="chain_from_purpose_to_practice">The chain from purpose to practice</h2>
+
+        <p>
+          Each element depends on the others. Purpose without principles permits opportunistic uses of data. Principles without responsible people and processes remain aspirational. Roles without operating practices become ceremonial. Practices without a clear public purpose can produce technically compliant systems that generate little public value. The framework is therefore strongest when read as one institutional chain rather than four independent policy chapters.
+        </p>
+
+        <p>
+          In government, however, the links in that chain often sit in different bureaucratic rooms. A statistics office may own standards and classifications. An ICT ministry may lead infrastructure and interoperability. A data protection authority oversees privacy. Sector ministries determine use cases. Procurement officials negotiate contracts. National archives govern preservation and disposal. Local authorities and frontline institutions generate much of the data. Development partners and private vendors may design or operate the systems through which that data moves. The governance problem is not simply that these actors are numerous. It is that their mandates can overlap while responsibility for the whole chain remains unassigned.
+        </p>
+
+        <blockquote class="article-callout">
+
+          <p>The institutional silence in many data governance frameworks is not a lack of principles. It is the absence of a durable administrative host capable of carrying those principles across the full lifecycle.</p>
+
+        </blockquote>
+
+        <h2 id="institutional_silence">The institutional silence between policy and implementation</h2>
+
+        <p>
+          Many data strategies make an assumption they rarely test: that an institution already exists with the authority and capacity to convert the framework into continuing administrative conduct. The RACI exercise exposed this assumption. Assigning one accountable actor to a task sounds straightforward until several institutions claim partial authority, while none possesses the mandate, information, budget or leverage to control the outcome. In public administration, shared responsibility can easily become diffused accountability.
+        </p>
+
+        <p>
+          This is where the work of the Africa Governance and Civic Innovation Hub (AGCIH) on Institutional Governability and Administrative Hosting Capacity becomes relevant. Institutional Governability asks whether a public institution can lawfully direct, supervise, contest, correct and sustain technology mediated systems and their effects across time. Administrative Hosting Capacity concerns the institution&#x27;s ability to retain lawful operational control once public authority is mediated through data, digital infrastructure, platforms or automated systems. Applied to data governance, this does not require creating a new institution for every problem. It requires identifying the administrative host and equipping it to perform the work.
+        </p>
+
+        <ul class="governance-test" aria-label="Administrative hosting tests">
+
+          <li><strong>Mandate.</strong> Can the institution define the lawful purpose of a data initiative and stop uses that exceed it?</li>
+
+          <li><strong>Ownership.</strong> Are accountable officials named for decisions at each lifecycle stage, with escalation routes when mandates overlap?</li>
+
+          <li><strong>Operating controls.</strong> Can principles be translated into approvals, impact assessments, access rules, metadata standards, sharing agreements, retention schedules and audit records?</li>
+
+          <li><strong>External control.</strong> Can the institution question vendors, audit systems, enforce contractual safeguards, recover data and exit a failing arrangement?</li>
+
+          <li><strong>Continuity.</strong> Will governance survive staff turnover, project closure, budget pressure, technological change and political transitions?</li>
+
+        </ul>
+
+        <p>
+          Administrative hosting is not bureaucracy for its own sake. It is the mechanism that prevents authority over public data from migrating quietly to technical teams, contractors or platforms that do not carry the same public obligations.
+        </p>
+
+        <h2 id="planning_is_governance">Planning is already governance</h2>
+
+        <p>
+          Our earlier lifecycle work focused closely on planning. That stage is sometimes treated as preparation before the real work begins. In fact, many of the most consequential governance decisions are made before a single record is collected. Planning determines the purpose, legal basis, populations affected, minimum data required, categories of risk, standards for quality and interoperability, consultation duties, anticipated sharing, retention period, disposal method, procurement conditions and resources needed for oversight.
+        </p>
+
+        <p>
+          When those matters are left vague, later safeguards become expensive retrofits. A consent notice cannot cure a purpose that was never properly defined. Encryption cannot correct the collection of unnecessary data. A data sharing agreement cannot repair incompatible classifications. An audit cannot reconstruct decisions that were never documented. Good planning reduces the likelihood that institutions will spend the rest of the lifecycle managing avoidable governance debt.
+        </p>
+
+        <p>
+          The discussion of disposal was especially important. Decisions at the end of the lifecycle are often treated as an IT housekeeping matter, but they are not. Retaining data beyond its purpose can create privacy, security and function creep risks. Destroying it too early can violate public records obligations, erase evidence needed for accountability or weaken institutional memory. Secure disposal therefore requires a documented decision that reconciles data protection, archival value, audit needs, legal holds, vendor copies, backups and any downstream models trained on the data. The lifecycle does not end when a project closes. It ends when the institution can account for what remains.
+        </p>
+
+        <h2 id="education_divide">The education divide is also a data governance divide</h2>
+
+        <p>
+          In our group exercise, we used the digital divide in education as the test case. The immediate barriers were familiar; unreliable connectivity, limited electricity, unaffordable devices, uneven digital skills and inadequate accessible content. Yet the exercise revealed a second divide. Institutions may not possess reliable, comparable and disaggregated data showing which schools have meaningful connectivity, whether devices are usable, whether teachers are supported, whether platforms are accessible to learners with disabilities, and whether access produces better educational outcomes.
+        </p>
+
+        <p>
+          There is a serious visibility problem. Schools that are least connected are also least likely to generate the digital traces used in dashboards and planning systems. If allocation decisions rely heavily on platform activity or online reporting, the institutions easiest to measure can appear to be the institutions most deserving of investment. Data driven planning may then reinforce the advantage of schools that are already connected while the least visible remain excluded. Better governance must therefore combine digital data with offline reporting, community knowledge, local verification and deliberate disaggregation by location, gender, disability and household circumstance.
+        </p>
+
+        <p>
+          The same initiative that seeks to close the divide can create new harms. Education systems may combine identity, attendance, performance, disability and household data. Private platforms may collect behavioural information that schools and parents do not fully understand. Weak consent, indefinite retention, profiling and secondary commercial use can turn inclusion programmes into systems of surveillance. Children require stronger safeguards, not weaker ones, simply because the stated purpose is educational.
+        </p>
+
+        <p>
+          The African Union&#x27;s Digital Education Strategy and Implementation Plan for 2023 to 2028 links digital adoption in education with skills and infrastructure. Data governance is the connective tissue between those priorities. It allows public authorities to determine who is benefiting, who remains excluded, whether vendors are meeting public requirements and whether the data used to close the divide is itself generating unequal treatment. Bridging the education divide cannot therefore be reduced to distributing devices. It requires institutions capable of assessing meaningful access, educational value and rights impacts over time.
+        </p>
+
+        <figure class="article-figure">
+
+          <img src="../images/zimbabwe_data_governance_journey.jpg" alt="Zimbabwe's data governance journey presented during the country peer exchange." width="1536" height="717" loading="lazy">
+
+          <figcaption>Zimbabwe&#x27;s national data governance journey was presented during the country peer exchange. Photograph: author&#x27;s collection.</figcaption>
+
+        </figure>
+
+        <h2 id="harmonisation">Harmonisation should create a floor of trust</h2>
+
+        <p>
+          Regional harmonisation is necessary because the systems that shape digital education and public data do not stop at national borders. Cloud providers, telecommunications companies, learning platforms, content services, vendors, credentials and data flows operate across jurisdictions. Fragmented requirements increase costs for public institutions, make responsible exchange difficult and allow providers to exploit the weakest contractual or regulatory environment. The African Union Data Policy Framework already recognises the need to strengthen and harmonise governance while protecting rights and enabling responsible value creation.
+        </p>
+
+        <p>
+          For Southern Africa, harmonisation should establish a common minimum floor. That floor could include shared terminology and classifications, comparable inclusion indicators, metadata and interoperability requirements, safeguards for children&#x27;s and other sensitive data, minimum clauses for public procurement, rules for cross border transfers, incident reporting expectations, model data sharing agreements and mechanisms for recognising qualifications and learning records. These measures would make cooperation safer and reduce the need for every institution to invent its own basic controls.
+        </p>
+
+        <p>
+          Harmonisation should not mean identical national laws, a single regional database or the transfer of authority to one centre. Countries retain different constitutional arrangements, institutional structures, languages and development priorities. A federated approach is more appropriate because it allows national institutions to retain control of their data and lawful mandates while adhering to common standards that enable trust, portability and accountable exchange. Regional alignment should reinforce public authority, not flatten it.
+        </p>
+
+        <blockquote class="article-callout">
+
+          <p>Regional harmonisation should create a shared floor of trust, not a single centre of control.</p>
+
+        </blockquote>
+
+        <h2 id="sequence_the_roadmap">Sequence the roadmap: do not begin with the platform</h2>
+
+        <p>
+          Technology first implementation is tempting because a platform, portal or data centre is visible. Institutional capacity is less visible and often takes longer to build. Yet purchasing technology before agreeing on purpose, authority, standards and safeguards creates governance debt that becomes harder to correct once systems are integrated and contracts are signed. The workshop&#x27;s roadmap exercise correctly required participants to distinguish what must happen first, next and later.
+        </p>
+
+        <p class="table-caption">
+          A sequenced roadmap for institutionalising data governance
+        </p>
+
+        <div class="article-table-wrap" role="region" aria-label="Sequenced data governance roadmap" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+              <th scope="col">Phase</th>              <th scope="col">Priority actions</th>              <th scope="col">Decision gate</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>First 12 months</td>              <td>Assign a lead institution and formal mandates; complete a data inventory and maturity baseline; agree minimum standards for metadata, interoperability, child data protection, retention, disposal and procurement; select underserved areas for controlled pilots.</td>              <td>Authority, evidence and safeguards are in place before major procurement or integration.</td>
+            </tr>
+            <tr>
+              <td>Months 13 to 24</td>              <td>Operationalise data sharing agreements, impact assessments, access controls, audit logs and vendor clauses; pilot interoperable systems and inclusion measures; train data stewards, teachers, administrators and procurement teams; conduct regional peer review.</td>              <td>Pilots demonstrate lawful operation, inclusion, security and measurable educational value.</td>
+            </tr>
+            <tr>
+              <td>After month 24</td>              <td>Independently evaluate outcomes; scale only what works; institutionalise budgets, maintenance, cybersecurity, remedy and secure disposal; deepen regional interoperability and revise standards as AI and learning analytics evolve.</td>              <td>Scale is supported by evidence, durable capacity and continuing public accountability.</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The sequencing principle is straightforward: governance and evidence first; controlled implementation second; wider deployment only after inclusion, safety, sustainability and public value have been demonstrated. This does not require waiting for perfect institutions before acting. It requires matching the scale and risk of implementation to the institution&#x27;s present ability to govern it. A limited pilot with strong oversight can build capacity. A national rollout without accountable ownership can magnify uncertainty.
+        </p>
+
+        <h2 id="follow_up_support">Follow up support must build institutional hosts</h2>
+
+        <p>
+          Regional workshops are valuable when they create a common language, expose implementation gaps and build relationships among practitioners. Their effect is limited, however, if participants return to institutions that lack a mandate, budget or mechanism for applying what was learned. Follow up support should therefore be judged by whether it strengthens the administrative host, not simply by the number of people trained.
+        </p>
+
+        <ul class="support-list" aria-label="Institutional follow up support">
+
+          <li><strong>Country focal mechanism.</strong> Each participating country needs an institution and senior official responsible for convening the relevant ministries, regulators, statistics bodies, archives, procurement authorities and sector actors.</li>
+
+          <li><strong>Implementation pack.</strong> Shared templates should cover RACI assignments, impact assessments, data inventories, sharing agreements, metadata, retention schedules, incident response and vendor clauses.</li>
+
+          <li><strong>Targeted assistance.</strong> Technical support should respond to a diagnosed institutional gap, such as missing authority, weak interoperability, inadequate records management or lack of procurement leverage, rather than deliver generic training.</li>
+
+          <li><strong>Peer review.</strong> Regular regional reviews can compare progress, test the practicality of common standards and identify where national experimentation offers lessons for others.</li>
+
+          <li><strong>Sustained resourcing.</strong> Pilot finance should be paired with domestic budget planning for staff, maintenance, cybersecurity, accessibility, independent assurance and remedy.</li>
+
+        </ul>
+
+        <p>
+          Communities of practice can help public servants solve recurring problems, but they cannot substitute for formal authority. Training can improve skill, but it cannot create a budget line or compel a vendor to provide audit access. The support architecture must therefore connect learning with mandate, procedure, finance and oversight.
+        </p>
+
+        <h2 id="measure_of_progress">A different measure of progress</h2>
+
+        <p>
+          The number of frameworks adopted is an incomplete measure of progress. A more demanding assessment would ask whether institutions can explain the purpose of a data initiative, identify one accountable actor for each critical decision, demonstrate how risks were assessed, show who has access, trace how data changed, enforce contractual safeguards, receive and resolve complaints, correct errors, and account for retention, archival preservation or secure disposal.
+        </p>
+
+        <p>
+          It would also ask whether governance survives time. Can the institution maintain control after the consultant leaves, the donor project closes, the responsible official is transferred, the vendor changes its product, the dataset is repurposed or a new AI application is attached to the system? Data remains governable only when responsibility, records, technical access and corrective authority remain available across those transitions.
+        </p>
+
+        <p>
+          The Harare workshop supplied practical methods for moving from purpose to principles, from stakeholder maps to accountable roles, and from lifecycle risks to sequenced action. The next responsibility is both national and regional. Countries must assign administrative hosts, equip them, test them through real use cases and make them answerable to the people whose data is being governed. Regional institutions and partners should reinforce that work through common minimum standards, peer learning and targeted implementation support.
+        </p>
+
+        <p>
+          Southern Africa&#x27;s data governance agenda will become credible when it can survive the distance between a framework and a frontline decision. That distance is where rights can be lost, public value diluted and authority displaced. It is also where good institutions can make governance real. A framework becomes governance only when an institution can carry it.
+        </p>
+
+        <h2 id="research_provenance">Research provenance</h2>
+
+        <p>
+          This reflection forms part of the AGCIH Research Programme 2026 to 2030: Institutional Governability in the Age of Artificial Intelligence. It applies AGCIH&#x27;s institutional method to authority, responsibility, dependency, contestability, remedy and continuity across the data lifecycle. Workshop observations are identified as such; the analysis and proposals are AGCIH&#x27;s own.
+        </p>
+
+        <h2 id="references">Selected references and research materials</h2>
+
+
+        <ol class="references-list">
+          <li>
+            <strong>UNESCO.</strong> <a href="https://unesdoc.unesco.org/ark:/48223/pf0000394518" target="_blank" rel="noopener">Data Governance Toolkit: Navigating Data in the Digital Age</a>. July 2025. The Toolkit provides the WHY, HOW, WHO and WHAT organising structure and lifecycle method used during the workshop.
+          </li>
+          <li>
+            <strong>African Union.</strong> <a href="https://au.int/en/documents/20220728/au-data-policy-framework" target="_blank" rel="noopener">AU Data Policy Framework</a>. 28 July 2022. This supplies the continental policy basis for data governance harmonisation, trusted exchange and responsible value creation.
+          </li>
+          <li>
+            <strong>African Union.</strong> <a href="https://au.int/en/documents/20221125/digital-education-strategyand-implementation-plan" target="_blank" rel="noopener">Digital Education Strategy and Implementation Plan 2023 to 2028</a>. 25 November 2022. This provides the education sector context for infrastructure, skills and digital adoption.
+          </li>
+          <li>
+            <strong>Workshop programme.</strong> Southern Africa Regional Workshop on Data Governance in the Digital Age: Data Policy Harmonisation, Harare, Zimbabwe, 12 to 14 August 2026. This documents the event schedule and workshop activities reflected upon in the article.
+          </li>
+          <li>
+            <strong>Africa Governance and Civic Innovation Hub.</strong> AGCIH Research Programme 2026 to 2030: Institutional Governability in the Age of Artificial Intelligence. Internal working document, Version 0.2, 4 August 2026. This supplies the research methodology and institutional lens applied in the article.
+          </li>
+        </ol>
+
+        <h2 id="acknowledgements">Acknowledgements</h2>
+
+        <p>
+          The author gratefully acknowledges UNESCO, the Smart Africa Secretariat and Smart Africa Digital Academy, and the Government of Zimbabwe through the Ministry of ICT, Postal and Courier Services and POTRAZ for convening the Southern Africa Regional Workshop. Appreciation is also extended to fellow participants whose country experiences and group discussions enriched this reflection. The interpretations and proposals advanced in this article are those of the author and do not necessarily represent the views of the organisers or other participants.
+        </p>
+
+        <h2 id="about_the_author">About the author</h2>
+
+        <div class="author-profile">
+
+          <img src="../images/danai_hazel_kudya_harare_workshop.jpg" alt="Danai Hazel Kudya participating in the Harare data governance workshop." width="717" height="1536" loading="lazy">
+
+          <div>
+
+            <p>Danai Hazel Kudya is the Founder and Executive Director of the Africa Governance &amp; Civic Innovation Hub (AGCIH). Her work focuses on institutional readiness, public authority and the practical governance of data, digital systems and artificial intelligence in African public institutions.</p>
+
+          </div>
+
+        </div>
+
+        <div class="article-signature">
+          <strong>Africa Governance and Civic Innovation Hub</strong>
+          <span>Institutional governability &middot; public authority &middot; responsible data governance</span>
+          <div class="article-actions">
+            <a class="btn btn-outline" href="./">Return to Articles</a>
+            <a class="btn btn-outline" href="AGCIH_Who_Will_Host_the_Framework.pdf" target="_blank" rel="noopener">Download PDF</a>
+            <a class="btn btn-primary" href="https://www.agcih.africa">Visit AGCIH</a>
+          </div>
+        </div>
+      </article>
+
+      <aside class="article-nav" aria-label="Article contents">
+        <p>In this article</p>
+        <ol>
+          <li><a href="#when_governance_became_concrete">When governance became concrete</a></li>
+          <li><a href="#institutional_silence">Institutional hosting</a></li>
+          <li><a href="#planning_is_governance">Planning is governance</a></li>
+          <li><a href="#education_divide">The education divide</a></li>
+          <li><a href="#harmonisation">Regional harmonisation</a></li>
+          <li><a href="#sequence_the_roadmap">Sequencing the roadmap</a></li>
+          <li><a href="#follow_up_support">Follow up support</a></li>
+          <li><a href="#measure_of_progress">Measuring progress</a></li>
+          <li><a href="#references">References</a></li>
+        </ol>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>&copy; 2026 Africa Governance &amp; Civic Innovation Hub (AGCIH). All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../terms.html">Terms of Use</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../ip-policy.html">Intellectual Property Policy</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/africa-governance-and-civic-innovation-hub/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
